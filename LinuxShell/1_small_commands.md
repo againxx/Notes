@@ -6,11 +6,12 @@
 4. `head -n <num_lines>` 显示文件的头num_lines行，默认显示10行
 5. `tail -n <num_lines>` 显示文件的尾num_lines行，默认显示10行
 6. `df -h` 显示文件系统的使用情况
-7. `more` 类似`cat`，但仅显示一部分 e.g `ls -alh | more`
-8. `less` 类似`more`，但是支持更多的vim快捷键
-9. `<command 1> | <command 2>` 管道符把前一个命令的标准输出作为后一个命令的标准输入。
+7. `du -h` 显示当前目录下文件的硬盘空间使用情况
+8. `more` 类似`cat`，但仅显示一部分 e.g `ls -alh | more`
+9. `less` 类似`more`，但是支持更多的vim快捷键
+10. `<command 1> | <command 2>` 管道符把前一个命令的标准输出作为后一个命令的标准输入。
 很多命令无法直接从标准输入读入参数（如rm，touch等），这时应在`|`后衔接`xargs`
-10. `seq [<first>] [<increment>] <last>` 输出一个数字序列
-11. `wc` 输出newline, word, and byte的计数
-12. `tee` 能将标准输出复制到文件，并同时显示到屏幕
-13. `tree` 以树状结构输出目录内容
+11. `seq [<first>] [<increment>] <last>` 输出一个数字序列
+12. `wc` 输出newline, word, and byte的计数
+13. `tee` 能将标准输出复制到文件，并同时显示到屏幕
+14. `tree` 以树状结构输出目录内容

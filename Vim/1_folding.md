@@ -19,7 +19,10 @@ command | effect
 :-|:-
 __zi__ | switch folding on or off (整体开关折叠功能)
 __za__ | toggle current fold open/closed (仅开关当前折叠)
+__zo__ | open current fold
+__zO__ | recursively open current fold
 __zc__ | close current fold (如果当前折叠已经关闭，则会进一步关闭上一级折叠)
+__zC__ | recursively close current fold
 __zR__ | open all folds
 __zM__ | close all folds
 __zv__ | expand folds to reveal cursor (zMzv仅展开当前光标处的折叠)

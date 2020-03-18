@@ -1,5 +1,9 @@
 # CMake executable in command line
 
+## 0. Install
+去官网下载最新版本的`.sh`文件
+`sudo sh cmake.sh --prefix=/usr/local/ --exclude-subdir`
+
 ## 1. Generate a project buildsystem
 
 CMake project的关键概念:  

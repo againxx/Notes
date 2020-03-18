@@ -9,6 +9,7 @@ Buffer即内存中待编辑的文件，例`vim .vimrc .zshrc`会同时打开两�
 `:bn[ext]` | 切换到下个buffer
 `:bp[revious]` | 切换到上个buffer
 `:b<N>` | 切换到第N个buffer，`:ls`可以显示buffer的index
+`Ctrl-^` | 切换到最近编辑的buffer，可以用于两个文件之间轮流切换
 
 ## Window
 Window是可视化buffer的一个视点，即将屏幕分窗

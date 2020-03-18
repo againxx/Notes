@@ -19,3 +19,4 @@
 14. `sudo apt edit-sources` 编辑sources.list文件
 15. `apt policy` 可以列出所有的源，包括PPA
 16. `sudo add-apt-repository ppa:<ppa_repository_name>/<ppa>`添加PPA，`sudo add-apt-repository --remove ppa:<ppa_repository_name>/<ppa>`删除PPA
+17. 也可通过删除`/etc/apt/sources.list.d`下的文件来删除PPA
