@@ -13,6 +13,8 @@ git config --global user.email "<your email>"
 * `git init` 初始化本地版本库
 * `git clone <url> [<where to clone>]` 克隆已有的版本库
 * `git clone --depth <n> <url> [<where to clone>]` 克隆已有的版本库，并截取最近n次commits
+* `git remote add origin git@github.com:againxx/***.git` 将一个已有的本地仓库和远程仓库关联，其中origin是远程仓库在本地的名字，是Git的默认叫法
+* `git push -u origin master` 将本地master推送到远程master，并将两者关联，之后只用`git push origin master`即可
 
 ## Three basic concepts
 Git has three basic concepts or area to store information
