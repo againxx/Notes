@@ -22,6 +22,9 @@ Git has three basic concepts or area to store information
 * __Repository__:
 
 **Trasition:**  
+Working directory -> Null
+* `git restore <file>, git checkout -- <file>` 丢弃工作区的修改
+
 Working directory -> Staging area
 * `git add <file>` 添加文件
 * `git add -A` 添加所有文件

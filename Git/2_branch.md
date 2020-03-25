@@ -13,5 +13,9 @@
 ## Merge
 `git merge <name>` 合并分支
 
+## Push
+`git push -u origin <name>` 将本地分支推送到远程仓库
+
 ## Delete
-* `git branch -d <name>` 删除分支
+* `git branch -d <name>` 删除本地分支
+* `git push origin --delete <name>` 删除远程分支 
