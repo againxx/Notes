@@ -20,3 +20,6 @@
 15. `apt policy` 可以列出所有的源，包括PPA
 16. `sudo add-apt-repository ppa:<ppa_repository_name>/<ppa>`添加PPA，`sudo add-apt-repository --remove ppa:<ppa_repository_name>/<ppa>`删除PPA
 17. 也可通过删除`/etc/apt/sources.list.d`下的文件来删除PPA
+18. `sudo apt-mark hold <package_name>` 来锁定包，不让其自动更新
+19. `apt-mark showhold` 列出当前锁定的包
+20. `sudo apt-mark unhold <package_name>` 解除锁定
