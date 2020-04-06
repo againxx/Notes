@@ -64,6 +64,9 @@ The legacy way
 
 ### Nominal Type
 
+The convention is to import types using the form `from typing import Iterable` 
+(as opposed to `import typing` or `import typing as t` or `from typing import *`)
+
 Nominal Type are types that have a name to it within the Python Interpreter.
 ```python
 t: Tuple[int, float] = 0, 1.2
@@ -121,4 +124,13 @@ Disable type checking wherever it's not needed by using the `Any` type hint
 ```python
 def foo(item: Any) -> int:
     item.bar()
+```
+
+An argument can be declared position-only by giving it a name starting with two underscores
+```python
+def quux(__x: int) -> None:
+    pass
+
+quux(2) # fine
+quux(__x=3) # error
 ```
