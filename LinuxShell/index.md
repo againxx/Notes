@@ -6,3 +6,4 @@
 * [super_shortcuts](super_shortcuts)
 * [xargs](xargs)
 * [redirection](redirection)
+* [ranger](ranger)

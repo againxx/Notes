@@ -1,2 +1,2 @@
 # Python
-* [type_hints](type_hints)
+* [type hints](type_hints)

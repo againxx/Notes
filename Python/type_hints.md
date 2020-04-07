@@ -134,3 +134,28 @@ def quux(__x: int) -> None:
 quux(2) # fine
 quux(__x=3) # error
 ```
+
+Function overloads, when you have functions of Union parameters or Union returns, 
+you can use overloads decorator to help type checker understand.
+```python
+from typing import Optional, overload
+
+@overload
+def get_foo(foo_id: None) -> None:
+    pass
+
+@overload
+def get_foo(foo_id: int) -> int:
+    pass
+
+def get_foo(foo_id: Optional[int]) -> Optional[Foo]:
+    if foo_id is None:
+        return None
+    return Foo(foo_id)
+
+reveal_type(get_foo(None)) # None
+reveal_type(get_foo(1))    # Foo
+```
+
+### Duck Type
+Duck theorem: if it quacks like a duck, and acts like a duck, then most definitely for all intended purposes it is a duck.

@@ -2,6 +2,10 @@
 0. `cd` 返回~目录
 1. `touch` 创建新文件/更新修改（访问）时间，访问时间(atime)目前已经不随`cat`等命令更新了
 2. `stat` 显示文件信息（三种时间）
+    * atime: last access time, modern linux tend to optimize atime usage to avoid frequently write to disk
+    * ctime: last change time, which corresponds to metadata changes - typically that's file ownership (username and/or group) and access permissions, 
+      also get updated if the file contents got changed
+    * mtime: last change to file contents
 3. `gdebi` deb包安装工具，可处理依赖
 4. `head -n <num_lines>` 显示文件的头num_lines行，默认显示10行
 5. `tail -n <num_lines>` 显示文件的尾num_lines行，默认显示10行
