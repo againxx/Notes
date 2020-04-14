@@ -9,6 +9,8 @@
 | `Super+h`       | 隐藏窗口                       |
 | `Super+up`      | 最大化窗口                     |
 | `Super+down`    | 恢复窗口                       |
+| `Super+right`   | 在右侧查看分割                 |
+| `Super+left`    | 在左侧查看分割                 |
 | `Super+k`       | 切换上一个工作区（自定义）     |
 | `Super+j`       | 切换下一个工作区（自定义）     |
 | `Shift+Super+k` | 将窗口上移一个工作区（自定义） |

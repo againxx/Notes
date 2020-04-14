@@ -21,7 +21,8 @@ Git has three basic concepts or area to store information
 * __Staging area__: 
 * __Repository__:
 
-**Trasition:**  
+**Trasition:**
+
 Working directory -> Null
 * `git restore <file>, git checkout -- <file>` 丢弃工作区的修改
 

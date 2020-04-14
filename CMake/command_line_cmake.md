@@ -1,7 +1,9 @@
 # CMake executable in command line
 
+[Complete Verion](https://cmake.org/cmake/help/latest/manual/cmake.1.html)
+
 ## 0. Install
-去官网下载最新版本的`.sh`文件
+去官网下载最新版本的`.sh`文件  
 `sudo sh cmake.sh --prefix=/usr/local/ --exclude-subdir`
 
 ## 1. Generate a project buildsystem
@@ -11,20 +13,17 @@ CMake project的关键概念:
 * __Build Tree__: 从包含buildsystem文件和build输出文件（例如：执行文件和库）的最顶层目录开始，以一个CMakeCache.txt文件为标记
 * __Generator__: 实际生成的buildsystem（例如：Makefile, VS sln等） 
 
-----------
 
-**命令格式**
-commands[^1] | description
-:-|:-
-`cmake [<options>] <path-to-source>` | path-to-source处为source tree，在当前目录下生成build tree
-`cmake [<options>] <path-to-existing-build>` | 使用已经存在的build tree，读取CMakeCache.txt中的路径作为source tree
-`cmake [<options>] -S <path-to-source> -B <path-to-build>` | build tree对应的目录可自动生成（如build目录）
+### 命令格式
+| commands[^1]                                               | description                                                         |
+|:-----------------------------------------------------------|:--------------------------------------------------------------------|
+| `cmake [<options>] <path-to-source>`                       | path-to-source处为source tree，在当前目录下生成build tree           |
+| `cmake [<options>] <path-to-existing-build>`               | 使用已经存在的build tree，读取CMakeCache.txt中的路径作为source tree |
+| `cmake [<options>] -S <path-to-source> -B <path-to-build>` | build tree对应的目录可自动生成（如build目录）                       |
 
 [^1]: 方括号代表可选的
 
-----------
-
-**其他参数**  
+### 其他参数
 `-D <var>:<type>=<value>, -D <var>=<value>`  
 `-D<var>:<type>=<value>, -D<var>=<value>`空格可省略  
 创建或者更新CMake `CACHE`项，`CACHE`项主要用于可定制的设置，type是`set(CACHE)`中能指定的一种  
@@ -50,4 +49,22 @@ CMAKE_BUILD_TYPE影响:
 4. MinSizeRel: `-Os -DNDEBUG`
 
 ## 2. Build a project
+
+构建一个已经生成的binary tree  
+`cmake --build <dir> [<options>] [-- <build-tool-options>]`
+| options                            | description                                             |
+|------------------------------------|---------------------------------------------------------|
+| `--build <dir>`                    | binary tree directory                                   |
+| `--parallel [<jobs>], -j [<jobs>]` | 指定最大并行进程数, 省略的话使用原生build工具的默认值   |
+| `--target <tgt>..., -t <tgt>...`   | 构建tgt而不是默认的target, 可以指定多个空格分割的target |
+| `--clean-fisrt`                    | 先build clean target然后再build                         |
+| `--verbose, -v`                    | 开启详细输出, 包括具体的build commands                  |
+| `--`                               | 将剩余的参数传给原生build工具                           |
+
 ## 3. Install a project
+`cmake --install <dir> [<options>]`
+| Options             | Description                 |
+|---------------------|-----------------------------|
+| `--install <dir>`   | binary tree directory       |
+| `--prefix <prefix>` | overide installation prefix |
+| `-v, --verbose`     | enable verbose ouput        |

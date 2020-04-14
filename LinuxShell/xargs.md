@@ -17,3 +17,6 @@
 
 `-0, --null`  
 用null来分隔输入参数，可配合`find -print0`使用
+
+## Examples
+`ls | xargs wc -l` Counting lines for current directory

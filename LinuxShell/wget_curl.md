@@ -19,15 +19,15 @@ options | description
 ## curl URL工具
 **`curl [options] [URL]`**
 
-options | description
-:-|:-
-`-s` | silent mode，类似`wget`的`-q`
-`-o <file>` | 输出到文件
-`-O` | 输出到和远端同名的文件
-`-L` | 跟随重定向
-`-d, --data <data>` | HTTP POST data
-`-b, --cookie <data|filename>` | Send cookies from string/file
-`-c, --cookie-jar <filename>` | Write cookies to filename
-`-j, --junk-seesion-cookies` | Ignore session cookies read from file
-`-f, --fail` | Fail silently (no output at all) on HTTP errors
-`--create-dirs` | 创建必要的本地文件夹
+| options                        | description                                     |
+|:-------------------------------|:------------------------------------------------|
+| `-s`                           | silent mode，类似`wget`的`-q`                   |
+| `-o <file>`                    | 输出到文件                                      |
+| `-O`                           | 输出到和远端同名的文件                          |
+| `-L`                           | 跟随重定向                                      |
+| `-d, --data <data>`            | HTTP POST data                                  |
+| `-b, --cookie <data/filename>` | Send cookies from string/file                   |
+| `-c, --cookie-jar <filename>`  | Write cookies to filename                       |
+| `-j, --junk-seesion-cookies`   | Ignore session cookies read from file           |
+| `-f, --fail`                   | Fail silently (no output at all) on HTTP errors |
+| `--create-dirs`                | 创建必要的本地文件夹                            |
