@@ -1,4 +1,6 @@
 # Vim
+
+## Basic
 * [motion](motion)
 * [operator](operator)
 * [mark](mark)
@@ -7,3 +9,6 @@
 * [normal_mode](normal_mode)
 * [folding](folding)
 * [macro](macro)
+
+## Vimscript
+* [comparison_expression](comparison_expression)
