@@ -15,19 +15,21 @@ marker | 通过markers折叠
 
 ## Folding commands
 
-command | effect
-:-|:-
-__zi__ | switch folding on or off (整体开关折叠功能)
-__za__ | toggle current fold open/closed (仅开关当前折叠)
-__zo__ | open current fold
-__zO__ | recursively open current fold
-__zc__ | close current fold (如果当前折叠已经关闭，则会进一步关闭上一级折叠)
-__zC__ | recursively close current fold
-__zR__ | open all folds
-__zM__ | close all folds
-__zv__ | expand folds to reveal cursor (zMzv仅展开当前光标处的折叠)
-__zj__ | move down to top of next fold
-__zk__ | move up to bottom of previous fold
+| command | effect                                                              |
+|:-------:|:--------------------------------------------------------------------|
+|   `zi`  | switch folding on or off (整体开关折叠功能)                         |
+|   `za`  | toggle current fold open/closed (仅开关当前折叠)                    |
+|   `zo`  | open current fold                                                   |
+|   `zO`  | recursively open current fold                                       |
+|   `zc`  | close current fold (如果当前折叠已经关闭，则会进一步关闭上一级折叠) |
+|   `zC`  | recursively close current fold                                      |
+|   `zR`  | open all folds                                                      |
+|   `zM`  | close all folds                                                     |
+|   `zv`  | expand folds to reveal cursor (zMzv仅展开当前光标处的折叠)          |
+|   `zj`  | move down to top of next fold                                       |
+|   `zk`  | move up to bottom of previous fold                                  |
+|   `[z`  | Move to the start of the current open fold                          |
+|   `]z`  | Move to the end of the current open fold                            |
 
 ## Folding level
 

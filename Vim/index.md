@@ -1,6 +1,7 @@
 # Vim
 
 ## Basic
+* [modes](modes)
 * [motion](motion)
 * [operator](operator)
 * [mark](mark)
