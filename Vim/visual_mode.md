@@ -1,5 +1,6 @@
 # Visual Mode
 `gv` 会重复选择上次Visual mode选中的内容
+`o`或`O`跳至选择区域的开头或结尾
 
 ## Visual Mode Search for Selection
 * Select the text in visual mode (v and move cursor to highlight)

@@ -2,11 +2,11 @@
 
 重定向主要操作三种文件以及其对应的文件描述符(file descriptor)
 
-file | file descriptor | redirection
-:-|:-|:-
-stdin | 0 | `<` / `0<`
-stdout | 1 | `>` / `1>`
-stderr | 2 | `2>`
+| file   | file descriptor | redirection |
+|:-------|:----------------|:------------|
+| stdin  | 0               | `<` / `0<`  |
+| stdout | 1               | `>` / `1>`  |
+| stderr | 2               | `2>`        |
 
 ---------
 
