@@ -36,6 +36,7 @@ Staging area -> Working directory
 
 Staging area -> Repository
 * `git commit -m <message>` 提交更新
+* `git log` 查看提交历史
 
 ## Remote repository
 * `git remote add origin git@github.com:againxx/***.git` 将一个已有的本地仓库和远程仓库关联，其中origin是远程仓库在本地的名字，是Git的默认叫法
