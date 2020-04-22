@@ -24,7 +24,7 @@ Git has three basic concepts or area to store information
 **Trasition:**
 
 Working directory -> Null
-* `git restore <file>, git checkout -- <file>` 丢弃工作区的修改
+* `git restore <file>, git checkout <file>, git checkout -- <file>` 丢弃工作区的修改
 
 Working directory -> Staging area
 * `git add <file>` 添加文件
@@ -37,6 +37,8 @@ Staging area -> Working directory
 Staging area -> Repository
 * `git commit -m <message>` 提交更新
 * `git log` 查看提交历史
+* `git log --stat` 查看提交历史以及相应的修改记录
+* `git diff <hash1> <hash2>` 能比较两次commit之间的差距
 
 ## Remote repository
 * `git remote add origin git@github.com:againxx/***.git` 将一个已有的本地仓库和远程仓库关联，其中origin是远程仓库在本地的名字，是Git的默认叫法
