@@ -1,4 +1,5 @@
 # Python
+* [pip](pip)
 * [type hints](type_hints)
 * [decorators](decorators)
 * [underscore](underscore)

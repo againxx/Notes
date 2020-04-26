@@ -40,6 +40,10 @@ Staging area -> Repository
 * `git log --stat` 查看提交历史以及相应的修改记录
 * `git diff <hash1> <hash2>` 能比较两次commit之间的差距
 
+Repository -> Null
+* `git rm <file>` 删除working directory的文件, 并同时删除文件的index(不再跟踪该文件)
+* `git rm --cached <file>` 只删除文件的index
+
 ## Remote repository
 * `git remote add origin git@github.com:againxx/***.git` 将一个已有的本地仓库和远程仓库关联，其中origin是远程仓库在本地的名字，是Git的默认叫法
 * `git push -u origin master` 将本地master推送到远程master，并将两者关联，之后只用`git push origin master`即可

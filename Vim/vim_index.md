@@ -10,6 +10,7 @@
 * [normal_mode](normal_mode)
 * [folding](folding)
 * [macro](macro)
+* [window](window)
 
 ## Vimscript
 * [comparison_expression](comparison_expression)

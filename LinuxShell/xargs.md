@@ -19,4 +19,5 @@
 用null来分隔输入参数，可配合`find -print0`使用
 
 ## Examples
-`ls | xargs wc -l` Counting lines for current directory
+* `ls | xargs wc -l` Counting lines for current directory
+* `pip freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip install -U` Update all pip packages
