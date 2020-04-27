@@ -1,25 +1,24 @@
 # Type Hints
 
-## Advantages
+## Advantages - 优点
 1. Easier to reason about code
 2. Easier refactoring
 3. Easier to use libraries
 4. Type linters (mypy)
 5. Runtime data validation (pydantic)
 
-## Not Designed for
+## Not Designed for - 不适用
 1. No runtime type inference (解释器运行时不会推导类型, 或者验证传入的参数)
 2. No performance tuning (对程序的性能没有影响)
 
-## Type of What
+## Type of What - 添加于
 1. Function Arguments
 2. Function Return Values
 3. Variables
 
-## Four Ways to Add
+## Four Ways to Add - 四种添加的方式
 
-### Type Annotations
-
+### Type Annotations (python 3.6+)
 ```python
 from typing import List
 class A(object):
@@ -31,7 +30,6 @@ class A(object):
 ```
 
 ### Type Comments
-
 ```python
 from typing import List
 class A(object):
@@ -47,7 +45,6 @@ class A(object):
 ### Interface Stub Files
 
 Add another file with `pyi` extension -- inference file like C++
-
 ```python
 # a.pyi alongside a.py
 from typing import List
@@ -62,7 +59,7 @@ The legacy way
 
 ## What to Add
 
-### Nominal Type
+### Nominal Type - 命名类型
 
 The convention is to import types using the form `from typing import Iterable` 
 (as opposed to `import typing` or `import typing as t` or `from typing import *`)
@@ -172,24 +169,9 @@ reveal_type(get_foo(1))    # Foo
 To find out what type mypy infers for an expression anywhere in your program, wrap it in `reveal_type()`.  
 Mypy will print an error message with the type; remove it again before running the code
 
-### Duck Type
+### Duck Type - 鸭子类型
 Duck theorem: if it quacks like a duck, and acts like a duck, then most definitely for all intended purposes it is a duck.
-```python
-from typing_extensions import Protocol
 
-class Renderable(Protocol):
-    def render(self) -> str: ...
-
-def render(obj: Renderable) -> str:
-    return obj.render()
-
-class Foo:
-    def render(self) -> str:
-        return "Foo!"
-
-render(Foo()) # Clean!
-render(3) # Error: expected Renderable
-```
 #### Standard Duck Type
 ```python
 from typing import Mapping, MutableMapping, Sequence, Iterable, List, Set
@@ -217,7 +199,25 @@ def f(my_mapping: MutableMapping[int, str]) -> Set[str]:
 f({3: 'yes', 4: 'no'})
 ```
 
-### Escape Hatch
+#### Custom Duck Type
+```python
+from typing_extensions import Protocol
+
+class Renderable(Protocol):
+    def render(self) -> str: ...
+
+def render(obj: Renderable) -> str:
+    return obj.render()
+
+class Foo:
+    def render(self) -> str:
+        return "Foo!"
+
+render(Foo()) # Clean!
+render(3) # Error: expected Renderable
+```
+
+### Escape Hatch - 抑制错误警告
 #### Any
 Disable type checking wherever it's not needed by using the `Any` type hint
 ```python
