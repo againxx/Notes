@@ -1,5 +1,7 @@
 # Python
 * [pip](pip)
+* [virtualenv](virtualenv)
+* [conda](conda)
 * [type hints](type_hints)
 * [decorators](decorators)
 * [underscore](underscore)
