@@ -3,7 +3,7 @@
 | commands                            | description                                         |
 |-------------------------------------|-----------------------------------------------------|
 | `pip help [<command>]`              | 查看全部或具体某个command的帮助                     |
-| `pip search <package>`              | 搜索package                                       |
+| `pip search <package>`              | 搜索package                                         |
 | `pip list`                          | 列出所有安装的package                               |
 | `pip list -o, --outdated`           | 列出可以更新的package                               |
 | `pip install -U, --upgrade`         | 更新package                                         |
