@@ -92,6 +92,9 @@ For `namedtuple` you can attach your type information directly
 class Employee(NamedTuple):
     name: str
     id: int
+
+# This is equivalent to
+Employee = collections.namedtuple('Employee', ['name', 'id'])
 ```
 
 Composing type of _one of_ and _optional of_

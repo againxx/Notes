@@ -19,6 +19,7 @@ marker | 通过markers折叠
 |:-------:|:--------------------------------------------------------------------|
 |   `zi`  | switch folding on or off (整体开关折叠功能)                         |
 |   `za`  | toggle current fold open/closed (仅开关当前折叠)                    |
+|   `z;`  | toggle current fold open/closed (自定义)                            |
 |   `zo`  | open current fold                                                   |
 |   `zO`  | recursively open current fold                                       |
 |   `zc`  | close current fold (如果当前折叠已经关闭，则会进一步关闭上一级折叠) |

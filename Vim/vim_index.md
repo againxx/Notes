@@ -17,3 +17,6 @@
 
 ## Plugins
 * [surround](surround)
+
+## Miscellaneous
+* [other_keymapping](other_keymapping)

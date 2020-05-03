@@ -1,4 +1,10 @@
 # Git
 * [basics](basics)
+* [diff](diff)
+* [mv_rm](mv_rm)
+* [log](log)
+* [ignore](ignore)
 * [branch](branch)
 * [undo](undo)
+* [github](github)
+* [zsh_git_plugin](zsh_git_plugin)

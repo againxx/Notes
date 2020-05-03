@@ -3,6 +3,8 @@
 [Original Version](https://www.internalpointers.com/post/beginner-s-look-smart-pointers-modern-c)
 
 ## Basics of Dynamic Memory
+* 动态分配的对象是默认初始化的（内置类型或组合类型的值是未定义的）
+* `new (nothrow)` 如果分配失败返回空指针 (参考C++ Primer 12.1.2)
 * `new T[N]` require to be deleted with `delete[]`, using the wrong form results in undefined behavior
 * 使用动态内存的三个原因:
     1. 程序不知道自己需要使用多少对象
@@ -86,12 +88,21 @@ std::shared_ptr<bool[]> tempPtr(new bool[voxelNum], std::default_delete<bool[]>(
 Unfortunately there's no way to do this when using `std::make_shared`.
 
 ### shared_ptr独有的操作
-|                    |                                                                                  |
-|--------------------|----------------------------------------------------------------------------------|
-| shared_ptr<T> p(q) | p是shared_ptr q的拷贝; 递增q中的计数器. q中的指针必须能转换为T*                  |
-| p = q              | p和q都是shared_ptr, 所保存的指针必须能相互转换, 递减p的引用计数, 递增q的引用计数 |
-| p.unique()         | 若p.use_count()为1返回true, 否则为false                                          |
-| p.use_count()      | 返回与p共享对象的智能指针数; 可能很慢, 主要用于调试                              |
+|                        |                                                                                    |
+|------------------------|------------------------------------------------------------------------------------|
+| shared_ptr<T> p(sp)    | p是shared_ptr sp的拷贝; 递增sp中的计数器. sp中的指针必须能转换为T*                 |
+| p = sp                 | p和sp都是shared_ptr, 所保存的指针必须能相互转换, 递减p的引用计数, 递增sp的引用计数 |
+| p.unique()             | 若p.use_count()为1返回true, 否则为false                                            |
+| p.use_count()          | 返回与p共享对象的智能指针数; 可能很慢, 主要用于调试                                |
+| shared_ptr<T> p(q)     | p管理内置指针q所指向的对象; q必须指向new分配的内存, 且能转换T*                     |
+| shared_ptr<T> p(u)     | p从unique_ptr u那里接管了对象的所有权; 将u置空                                     |
+| shared_ptr<T> p(q, d)  | p接管内置指针q所指对象, p将使用可调用对象d来代替delete                             |
+| shared_ptr<T> p(sp, d) | p是shared_ptr sp的拷贝, p将使用可调用对象d来代替delete                             |
+| p.reset()              | 减少p的计数器, 将p置空                                                             |
+| p.reset(q)             | 减少p的计数器, 令p指向内置指针q                                                    |
+| p.reset(q, d)          | 减少p的计数器, 令p指向内置指针q, 使用可调用对象d来代替delete                       |
+
+**注意: 只有通过拷贝创建的shared_ptr之间, 才会有联动的计数器, 用同一个内置指针(包括通过get()获得的)初始化两个shared_ptr是危险的行为**
 
 ### Circular References
 For example, I'm writing a game where a player has another player as companion.

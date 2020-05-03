@@ -8,3 +8,6 @@
 * [string_formatting](string_formatting)
 * [file_types](file_types)
 * [numpy](numpy)
+* [unit_test](unit_test)
+* [namedtuple](namedtuple)
+* [partial_function](partial_function)
