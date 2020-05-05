@@ -1,6 +1,7 @@
 # Log
 
 * `git log` 查看commit历史，每个commit会带有一个40个字符长的独一无二的标识符(commit ref/hash)
+* `git log -<num>` 查看最近num次提交的历史
 * `git log --oneline` 每个commit历史只用一行显示，包含缩短的commit ref和commit message
 * `git log --stat` 查看提交历史以及相应的修改记录（文件名，修改的行数等）
 * `git log --stat -- <file>` 只查看与某个file相关的提交历史

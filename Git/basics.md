@@ -40,9 +40,8 @@ Staging area -> Repository
 * `git commit` 会打开一个文本编辑器让你输入commit message
 
 ## Remote repository
-* `git remote add origin git@github.com:againxx/***.git` 将一个已有的本地仓库和远程仓库关联，其中origin是远程仓库在本地的名字，是Git的默认叫法
-* `git remote set-url origin git@github.com:againxx/***.git` 将远程库改为SSH连接方式, 每次不需要输入密码
-* `git remote set-url origin https://github.com/againxx/***.git` 将远程库改为HTTPS连接方式, 每次需要输入密码
+* `git remote add <remote_name> git@github.com:againxx/***.git` 将一个已有的本地仓库和远程仓库关联，其中origin是git默认的远程仓库叫法
+* `git remote set-url <remote_name> git@github.com:againxx/***.git` 将远程库改为SSH连接方式, 每次不需要输入密码
+* `git remote set-url <remote_name> https://github.com/againxx/***.git` 将远程库改为HTTPS连接方式, 每次需要输入密码
 * `git remote -v` 列出远程仓库的信息
-* `git push -u origin master` 将本地master推送到远程master，并将两者关联，之后只用`git push origin master`即可
-* `git pull origin master` 多人合作时应记得在push之前pull
+* `git remove rm <remote_name>` 删除远程仓库

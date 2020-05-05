@@ -9,4 +9,5 @@
 * `zb`
 * `<line_num>gg` / `<line_num>G`
 * `:<line_num>` 跳转到指定行号
+* `:+/-<line_num>` 跳转到相对指定行号
 * `{` and `}`
