@@ -25,3 +25,6 @@
 | glgg  | git log --graph                      |
 | glgga | git log --graph --decorate --all     |
 | glog  | git log --oneline --decorate --graph |
+| grh   | git reset                            |
+| grhh  | git reset --hard                     |
+| grs   | git restore                          |
