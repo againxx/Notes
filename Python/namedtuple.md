@@ -4,6 +4,7 @@ Present in module `collections`
 
 Like dictionaries they contain keys that are hashed to a particular value.
 But on contrary, it supports both access from key value and iteration, the functionality that dictionaries lack.
+Besides, it can save some typing than dictionary if you use the same structure multiple times.
 
 [Original Version](https://www.geeksforgeeks.org/namedtuple-in-python/)
 

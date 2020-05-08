@@ -7,4 +7,5 @@
 * [branch](branch)
 * [undo](undo)
 * [github](github)
+* [submodule](submodule)
 * [zsh_git_plugin](zsh_git_plugin)
