@@ -50,6 +50,7 @@
     * `dd` cancel task
 * marking
     * `<Space>` toggle marking file
+    * `*` toggle marking file
     * `v` mark all files
     * `uv` unmark all files
     * `V` toggle visual mode

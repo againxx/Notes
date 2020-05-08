@@ -23,7 +23,7 @@
 ## Replacement
 * `)`, `}`, `]`, `>` wrapped without whitespace (`b` `B` `r` `a` are aliases)
 * `(`, `{`, `[` append an additional space
-* `<C-]` add { } on lines seprate from the content
+* `<C-]>` add { } on lines seprate from the content
 * `t / <` HTML/XML tag
 * `f` wrapped with (), `F` adds addtional spaces, `<C-f>` inserts function name inside ()
 * `s` a leading but not trailing sapce is added, useful for removing parentheses from a function call with `csbs`
