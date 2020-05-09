@@ -9,6 +9,7 @@
 * [visual_mode](visual_mode)
 * [normal_mode](normal_mode)
 * [command_line_mode](command_line_mode)
+* [range](range)
 * [folding](folding)
 * [macro](macro)
 * [window](window)
