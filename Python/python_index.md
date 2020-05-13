@@ -13,3 +13,4 @@
 * [namedtuple](namedtuple)
 * [partial_function](partial_function)
 * [module_package](module_package)
+* [pathlib](pathlib)

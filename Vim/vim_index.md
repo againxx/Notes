@@ -24,6 +24,7 @@
 * [surround](surround)
 * [matchup](matchup)
 * [coc_explorer](coc_explorer)
+* [fugitive](fugitive)
 
 ## Miscellaneous
 * [tricks](tricks)

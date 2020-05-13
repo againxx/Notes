@@ -1,4 +1,4 @@
-# Unit Test
+ # Unit Test
 
 ## Why Would I Test?
 * Prove that code works like I think it should
@@ -29,7 +29,7 @@
     2. Act
     3. Assert
 
-### Others
+### Test Exceptions
 * `with pytest.raises(SomeError)` 期待抛出异常, 如果不抛出则test失败
 * `context.value` can be used for asserting
 
@@ -39,6 +39,26 @@ with pytest.raises(CalculatorError) as context:
     
 assert str(context.value) == 'wrong'
 ```
+### Test Multiple Examples
+
+```python
+@pytest.mark.parametrize(
+    "a, b, expected",
+    [
+        (1, 1, 2),
+        (2, 1, 3),
+        (3, 2, 5),
+    ],
+)
+def test_with_param(a, b, expected):
+    assert demo.add(a, b) == expected
+```
+
+### Put Tests into Class
+
+Just use a class with a name start with `Test` and fill it with some `test_` methods
+
+### Fixture
 
 ## Unit Test for Deep Learning
 

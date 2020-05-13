@@ -3,7 +3,7 @@
 There are three ways in Python for string formatting:
 1. %-formatting
 2. str.format()
-3. f-strings
+3. f-strings (after python3.6)
 
 [Complete Version](https://realpython.com/python-f-strings/)
 

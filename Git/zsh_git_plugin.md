@@ -21,6 +21,12 @@
 | grm   | git rm                               |
 | grmc  | git rm --cached                      |
 | gst   | git status                           |
+| gsta  | git stash save (不能跟message)       |
+| gstaa | git stash apply                      |
+| gstc  | git stash clear                      |
+| gstd  | git stash drop                       |
+| gstl  | git stash list                       |
+| gstp  | git stash pop                        |
 | glg   | git log --stat                       |
 | glgg  | git log --graph                      |
 | glgga | git log --graph --decorate --all     |

@@ -6,6 +6,7 @@
 * [ignore](ignore)
 * [branch](branch)
 * [undo](undo)
+* [stash](stash)
 * [github](github)
 * [submodule](submodule)
 * [zsh_git_plugin](zsh_git_plugin)
