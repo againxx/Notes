@@ -14,6 +14,7 @@
 | gcmsg | git commit -m                        |
 | gco   | git checkout                         |
 | gcm   | git checkout master                  |
+| gcb   | git checkout -b                      |
 | gcp   | git cherry-pick                      |
 | gd    | git diff                             |
 | gds   | git diff --staged                    |
@@ -34,3 +35,5 @@
 | grh   | git reset                            |
 | grhh  | git reset --hard                     |
 | grs   | git restore                          |
+| gsw   | git switch                           |
+| gswc  | git switch -c                        |
