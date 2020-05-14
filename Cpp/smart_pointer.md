@@ -12,9 +12,7 @@
     3. 程序需要在多个对象间共享数据
 
 ## Three Types of Smart Pointer
-
 Defined in `<memory>` header
-
 * `std::unique_ptr`: exclusive version
 * `std::shared_ptr`: several `shared_ptr`s may own the same resource and an internal counter keeps track of them
 * `std::weak_ptr`: like a `std::shared_ptr`, but it doesn't increment the counter
@@ -59,6 +57,23 @@ int main()
 | swap(p, q)             | 交换p和q中的指针                           |
 | p.swap(q)              |                                            |
 
+### unique_ptr独有的操作
+|                       |                                                                   |
+|-----------------------|-------------------------------------------------------------------|
+| unique_ptr<T> u1      | 空unique_ptr, 可以指向类型为T的对象. u1会使用delete来释放它的指针 |
+| unique_ptr<T, D> u2   | u2会使用一个类型为D的可调用对象来释放它的指针                     |
+| unique_ptr<T, D> u(d) | 空unique_ptr, 指向类型为T的对象, 用类型为D的对象d代替delete       |
+| u = nullptr           | 释放u指向的对象, 将u置为空                                        |
+| u.release()           | u放弃对指针的控制权, 返回指针, 并将u置为空                        |
+| u.reset()             | 释放u指向的对象                                                   |
+| u.reset(q)            | 如果提供了内置指针q, 令u指向这个对象; 否则将u置为空               |
+| u.reset(nullptr)      |                                                                   |
+
+**为什么`shared_ptr`只有一个模板参数, 而`unique_ptr`有两个?**
+
+因为`unique_ptr`讲究轻量化, 将deleter放在模板参数里可以减少对象需要的存储空间, 而`shared_ptr`已经拥有引用计数等额外的数据量, 
+将deleter作为对象属性可以增加其灵活性
+
 ## std::shared_ptr
 `std::shared_ptr` has the technique called **reference counting**, and allows for multiple references.
 When the very last one is destroyed the counter goes to zero and the data will be deallocated.
@@ -73,20 +88,6 @@ std::shared_ptr<Object> p2(new Object("Lamp"));
 std::shared_ptr<int>    p1 = std::make_shared<int>();
 std::shared_ptr<Object> p2 = std::make_shared<Object>("Lamp");
 ```
-### Issue with arrays
-Until C++17 there is no easy way to build a `std::shared_ptr` holding an array.
-Prior to C++17 this smart pointer always calls `delete` by default (and not `delete[]`) on its resource:
-
-You can create a workaround by using a **custom deleter**.
-```cpp
-std::shared_ptr<int[]> p2(new int[16], [] (int* i) { 
-delete[] i; // Custom delete
-});
-// Or using default_delete provider by std
-std::shared_ptr<bool[]> tempPtr(new bool[voxelNum], std::default_delete<bool[]>());
-```
-Unfortunately there's no way to do this when using `std::make_shared`.
-
 ### shared_ptr独有的操作
 |                        |                                                                                    |
 |------------------------|------------------------------------------------------------------------------------|
@@ -101,8 +102,6 @@ Unfortunately there's no way to do this when using `std::make_shared`.
 | p.reset()              | 减少p的计数器, 将p置空                                                             |
 | p.reset(q)             | 减少p的计数器, 令p指向内置指针q                                                    |
 | p.reset(q, d)          | 减少p的计数器, 令p指向内置指针q, 使用可调用对象d来代替delete                       |
-
-**注意: 只有通过拷贝创建的shared_ptr之间, 才会有联动的计数器, 用同一个内置指针(包括通过get()获得的)初始化两个shared_ptr是危险的行为**
 
 ### Circular References
 For example, I'm writing a game where a player has another player as companion.
@@ -125,6 +124,29 @@ int main()
 When `jasmine` goes out of scope at the end of the program, its destructor can't cleanup the memory:
 there is still one smart pointer pointing at `jasmine-data`, that is `albert->companion`.
 At this point the program just quits without freeing memory.
+
+### Notice
+**注意: 只有通过拷贝创建的shared_ptr之间, 才会有联动的计数器, 用同一个内置指针(包括通过get()获得的)初始化两个shared_ptr并没有联动计数器**
+
+* 不使用相同的内置指针初始化(或reset)多个智能指针
+* 不delete get()返回的指针
+* 不使用get()初始化或reset另一个智能指针
+* 如果使用get()返回的指针, 记住当最后一个对应的智能指针销毁后, 你的指针就失效了
+* 如果智能指针管理的资源不是new分配的内存, 记得传递给它一个删除器(包括new[]新建的array)
+
+### Issue with arrays
+Until C++17 there is no easy way to build a `std::shared_ptr` holding an array.
+Prior to C++17 this smart pointer always calls `delete` by default (and not `delete[]`) on its resource:
+
+You can create a workaround by using a **custom deleter**.
+```cpp
+std::shared_ptr<int[]> p2(new int[16], [] (int* i) { 
+delete[] i; // Custom delete
+});
+// Or using default_delete provider by std
+std::shared_ptr<bool[]> tempPtr(new bool[voxelNum], std::default_delete<bool[]>());
+```
+Unfortunately there's no way to do this when using `std::make_shared`.
 
 ## std::weak_ptr
 `std::weak_ptr` is basically a `std::shared_ptr` that doesn't increase the reference count.

@@ -2,7 +2,11 @@
 
 Rebase allows one branch to be relocated farther down the history track.
 
-`git checkout feature-branch` && `git rebase master`
+Workflow using rebase:
+1. `git checkout feature-branch`
+2. `git rebase master`
+3. `git checkout master`
+4. `git rebase feature-branch` or `git merge feature-branch`
 
 `git pull --rebase` fetch完后调用rebase而不是merge
 
