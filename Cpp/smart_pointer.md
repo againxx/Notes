@@ -74,6 +74,10 @@ int main()
 因为`unique_ptr`讲究轻量化, 将deleter放在模板参数里可以减少对象需要的存储空间, 而`shared_ptr`已经拥有引用计数等额外的数据量, 
 将deleter作为对象属性可以增加其灵活性
 
+**为什么`make_unique`没有deleter这个模板参数?**
+`make_unique`的作用是封装用`new`创建对象并用`delete`销毁对象这个过程, 如果要应用定制化的删除器, 则同时应该也会使用定制化
+的构造器, 这时使用`make_unique`就没有优势了
+
 ## std::shared_ptr
 `std::shared_ptr` has the technique called **reference counting**, and allows for multiple references.
 When the very last one is destroyed the counter goes to zero and the data will be deallocated.
