@@ -21,6 +21,7 @@
 
 ## 操作缓冲区文本的Ex命令
 | Commands                    | Usage                                          |
+|-----------------------------|------------------------------------------------|
 | :[range]d[elete] [x]        | 删除指定范围内的行[到寄存器x中]                |
 | :[range]y[ank] [x]          | 复制指定范围的行[到寄存器x中]                  |
 | :[line]pu[t] [x]            | 在指定行后粘贴寄存器x中的内容                  |
@@ -31,3 +32,8 @@
 | :[range]norm[al] {commands} | 对指定范围内的每一行执行普通模式命令{commands} |
 | :r[ead] [name]              | 插入文件name(默认是当前文件)的内容到当前光标下 |
 | :[range]r[ead] !{cmd}       | 执行cmd并将标准输出插入到光标下, 或指定行      |
+
+## 其他Ex命令
+| Commands         | Usage                                                        |
+|------------------|--------------------------------------------------------------|
+| :[range]up[date] | like ":w", but only write when the buffer has been modified. |

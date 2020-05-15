@@ -20,6 +20,10 @@
 * [comparison_expression](comparison_expression)
 * [string](string)
 
+## Builtin Tools
+* [vimdiff](vimdiff)
+* [make](make)
+
 ## Plugins
 * [surround](surround)
 * [matchup](matchup)
