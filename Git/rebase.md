@@ -22,5 +22,12 @@ Workflow using rebase:
 
 ![Rebasing](https://www.themoderncoder.com/assets/git-rebase-graphic.png =750x)
 
+## Options for Rebase
+| Option              | Description                                          |
+|---------------------|------------------------------------------------------|
+| --continue          | continue after resolving merge conflict              |
+| --abort             | abort current rebase                                 |
+| --show-current-path | 显示当前正在应用第几个commit, 以及该commit的修改信息 |
+
 ## Rebasing Caveats
 It can also be dangerous if you’re working on a shared branch with other developers because of how Git rewrites commits when rebasing.
