@@ -5,6 +5,7 @@
 | g     | git                                        |
 | ga    | git add                                    |
 | gaa   | git add --all                              |
+| gapa  | git add --patch                            |
 | gb    | git branch                                 |
 | gba   | git branch -a                              |
 | gbd   | git branch -d                              |

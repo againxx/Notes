@@ -30,6 +30,17 @@ Working directory -> Null
 Working directory -> Staging area
 * `git add <file>` 添加文件
 * `git add -A` 添加所有文件
+* `git add -p, git add --patch` 添加一块块的修改
+    * `y` stage this hunk
+    * `n` do not stage this hunk
+    * `q` quit; do not stage this hunk or any of the remaining ones
+    * `a` stage this hunk and all later hunks in this file
+    * `d` do not stage this hunk or any of the later hunks in this file
+    * `e` manually edit the current hunk in vim
+    * `?` print help
+    * `s` split this hunk, only available when current hunk has an unchanged line between edits
+
+[Reference for git-add-patch](https://levelup.gitconnected.com/staging-commits-with-git-add-patch-1eb18849aedb)
 
 Staging area -> Working directory
 * `git reset <file>` 不缓存文件
