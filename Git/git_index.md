@@ -8,6 +8,7 @@
 * [undo](undo)
 * [stash](stash)
 * [rebase](rebase)
+* [merge_conflict](merge_conflict)
 * [github](github)
 * [submodule](submodule)
 * [zsh_git_plugin](zsh_git_plugin)
