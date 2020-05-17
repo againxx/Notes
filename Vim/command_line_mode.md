@@ -34,6 +34,9 @@
 | :[range]r[ead] !{cmd}       | 执行cmd并将标准输出插入到光标下, 或指定行      |
 
 ## 其他Ex命令
-| Commands         | Usage                                                        |
-|------------------|--------------------------------------------------------------|
-| :[range]up[date] | like ":w", but only write when the buffer has been modified. |
+| Commands               | Usage                                                        |
+|------------------------|--------------------------------------------------------------|
+| :[range]up[date]       | like ":w", but only write when the buffer has been modified. |
+| :!{cmd}                | 在shell中执行{cmd}                                           |
+| :[range]w[rite] !{cmd} | 在shell中执行{cmd}, 以[range]作为其标准输入                  |
+| :[range]!{filter}      | 使用外部程序{filter}过滤指定的[range]                        |
