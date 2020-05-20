@@ -29,11 +29,14 @@ On the other hand, if you are doing something like `git rebase origin/master`, y
 [Setting neovim as mergetool](https://www.grzegorowski.com/using-vim-or-neovim-nvim-as-a-git-mergetool)
 ```shell
 git config --global merge.tool nvimdiff
+git config --global diff.tool nvimdiff
 git config --global merge.conflictstyle diff3
 git config --global mergetool.prompt false
 ```
 
 上述命令使用用户自定义的nvimdiff作为merge工具, 在合并时显示共同祖先(BASE), 并在打开nvimdiff时禁止弹窗提示
+
+上述命令还使用nvimdiff作为diff工具, 可以使用`git difftool`来打开diff工具
 
 **rebase时, commit不断的在rebase的分支上回放, 所以rebase时的BASE其实是在不断改变的**
 
