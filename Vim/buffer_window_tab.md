@@ -2,14 +2,18 @@
 
 ## Buffer
 Buffer即内存中待编辑的文件，例`vim .vimrc .zshrc`会同时打开两个buffer
-操作Buffer | Description
-:-|:-
-`:ls, :buffers` | 列出所有的buffer
-`:bd[elete]` | 关闭当前的buffer
-`:bn[ext]` | 切换到下个buffer
-`:bp[revious]` | 切换到上个buffer
-`:b<N>` | 切换到第N个buffer，`:ls`可以显示buffer的index
-`Ctrl-^` | 切换到最近编辑的buffer，可以用于两个文件之间轮流切换
+| 操作Buffer      | Description                                                                                  |
+|:----------------|:---------------------------------------------------------------------------------------------|
+| `:ls, :buffers` | 列出所有的buffer                                                                             |
+| `:bd[elete]`    | 关闭当前的buffer                                                                             |
+| `:bn[ext]`      | 切换到下个buffer                                                                             |
+| `:bp[revious]`  | 切换到上个buffer                                                                             |
+| `:bf[irst]`     | 切换到第一个buffer                                                                           |
+| `:bl[ast]`      | 切换到最后一个buffer                                                                         |
+| `:b<N>`         | 切换到第N个buffer，`:ls`可以显示buffer的index                                                |
+| `:b {bufname}`  | 切换到可以由{bufname}标示的缓冲区, {bufname}只需包含文件路径中足以唯一标识此缓冲区的字符即可 |
+| `bufdo`         | 在`:ls`列出的所有缓冲区上执行Ex命令                                                          |
+| `Ctrl-^`        | 切换到最近编辑的buffer，可以用于两个文件之间轮流切换                                         |
 
 ## Window
 Window是可视化buffer的一个视点，即将屏幕分窗
