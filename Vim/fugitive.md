@@ -9,7 +9,10 @@ Run an arbitrary git command and display any output. `:Git {args}` or `:G {args}
 * `u` 在staged上将所有文件移出缓存区, 在单个文件上将单个文件移出缓存区
 * `U` 将所有文件移出缓存区
 * `cc` 或 `:Gcommit` 用于提交暂存区中的文件
+* `ca` amend the last commit and edit the message
+* `ce` amend the last commit without editing the message
 * `dd` 或 `:Gdiffsplit` 会打开两个水平分割窗口, 显示当前文件的diff信息
+* `dv` 或 `:Gvdiffsplit` 会打开两个垂直分割窗口, 显示当前文件的diff信息
 * `I` 或 `P` 对光标下的文件, 应用`git add --patch`或`git reset --patch`或`git add --intent-to-add`
 * `g?` 显示命令帮助
 
@@ -34,6 +37,8 @@ Run an arbitrary git command and display any output. `:Git {args}` or `:G {args}
 |                      | `:GRename {dest}` | Like `:GMove` but operates relative to the parent dir    |
 
 * `Gpush`
-* `Gclog` 使用quickfix列表显示git log
+* `Gclog` 使用quickfix列表显示git log, 包含所有文件
+* `[range]Gclog` 使用quickfix列表显示所选区域的不同commit间的修改
+* `0Gclog` 使用quickfix列表显示当前文件的不同commit间的修改
 * `Gllog` 使用locallist信息显示git log
 * `Gvdiffsplit` 使用垂直分割的窗口显示diff信息
