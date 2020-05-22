@@ -12,7 +12,7 @@
 * [range](range)
 * [folding](folding)
 * [macro](macro)
-* [window](window)
+* [buffer_window_tab](buffer_window_tab)
 * [text_object](text_object)
 * [tags](tags)
 
