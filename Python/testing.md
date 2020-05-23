@@ -137,6 +137,22 @@ assert_array_almost_equal(actual_arr, desired_arr, decimal=7)
 
 ### Image Testing
 
+### Debugging
+```shell
+pytest --pdb # invoke PDB on every failure
+pytest -x --pdb # drop to PDB on first failure, the end test session
+pytest --pdb --maxfail=3 # drop to PDB for first three failures
+
+pytest --trace # invoke PDB at the start of every test
+```
+
+To set breakpoints in test code.
+```python
+import pdb; pdb.set_trace()
+# Python3.7 or after
+breakpoint()
+```
+
 ### Other Features
 * use `mark` to run specified tests
 
