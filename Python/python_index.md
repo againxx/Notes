@@ -15,3 +15,4 @@
 * [module_package](module_package)
 * [pathlib](pathlib)
 * [pycharm](pycharm)
+* [pdb](pdb)
