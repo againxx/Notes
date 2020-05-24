@@ -26,11 +26,38 @@ Run an arbitrary git command and display any output. `:Git {args}` or `:G {args}
 * `p` 在预览窗口中打开所选提交的文件差异
 * `gq` 退出
 
+## Git Index
+Git index is where you put changes that you want to be included in the next commit.
+You can open the index version of the current file by running any one of the following:
+```
+:Gedit
+:Gedit :0
+:Gedit :%
+```
+
+**Lifecycle of index file between two commits**
+*  To begin with, the contents of the index and working copy files will be exactly the same as the most recent commit.
+*  As you make changes to your working copy, its contents begin to diverge from those of the index file.
+*  Staging a file updates the contents of the index file to match those of the working copy.
+*  When you commit your work, it is the contents of the index file that are saved with that commit object.
+
+![lifecycle of index file](http://vimcasts.org/images/blog/index-lifecycle.png =740x)
+
+## Gwrite & Gread
+The `:Gread` and `:Gwrite` commands can either add a file to the index or reset the file, depending on where they are called from.
+
+| Command   | Active Window | Affect        |
+|-----------|---------------|---------------|
+| `:Gwrite` | working copy  | stage file    |
+| `:Gread`  | working copy  | checkout file |
+| `:Gwrite` | index         | checkout file |
+| `:Gread`  | index         | stage file    |
+
+![Gwrite&Gread](http://vimcasts.org/images/blog/Gread-Gwrite-matrix.png =740x)
+
 ## Others
 | git                  | fugitive          | action                                                   |
 |----------------------|-------------------|----------------------------------------------------------|
-| `:Git add %`         | `:Gwrite`         | Stage current file to the index                          |
-| `:Git checkout %`    | `:Gread`          | Revert current file to last checked in version           |
 | `:Git rm --cached %` | `:GDelete`        | Delete the current file and the corresponding Vim buffer |
 |                      | `:GRemove`        | Like `:GDelete`, but keep the empty buffer around        |
 | `:Git mv % {dest}`   | `:GMove {dest}`   | Rename the current file and the corresponding Vim buffer |
