@@ -28,11 +28,13 @@ Run an arbitrary git command and display any output. `:Git {args}` or `:G {args}
 
 ## Git Index
 Git index is where you put changes that you want to be included in the next commit.
-You can open the index version of the current file by running any one of the following:
+You can open the index version of the current file by running first three commands of the following,
+and open index version of any other file with the last command.
 ```
 :Gedit
 :Gedit :0
 :Gedit :%
+:Gedit :path/to/file
 ```
 
 **Lifecycle of index file between two commits**
