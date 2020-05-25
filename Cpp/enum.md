@@ -92,3 +92,39 @@ int i = color::red;
 // 错误: 限定作用域的枚举类型不会进行隐式转换
 int j = peppers::red;
 ```
+
+要想初始化一个enum对象, 必须使用该enum类型的另一个对象或者它的一个枚举成员
+```cpp
+enum Tokens {INLINE = 128, VIRTUAL = 129};
+void ff(Tokens);
+void ff(int);
+
+Tokens curTok = INLINE;
+ff(128);    // 精确匹配ff(int)
+ff(INLINE); // 精确匹配ff(Tokens)
+ff(curTok)  // 精确匹配ff(Tokens)
+```
+
+## Miscellaneous
+### 指定enum的大小
+* 可以在enum的名字后加上冒号以及想在该enum中使用的类型
+* 如果未指定enum的潜在类型, 限定作用域的enum成员类型默认是int, 不限定作用域的enum成员不存在默认类型, 但是其类型足够大使其能容纳枚举值
+
+```cpp
+enum intValues : unsigned long long {
+    charTyp = 255, intTyp = 65535,
+    long_longTyp = 18446744073709551615ULL
+}
+```
+
+### 枚举类型的前置声明
+* enum的前置声明(无论隐式地还是显示地)必须指定其成员的大小
+* enum的所有声明和定义中成员的大小必须一致
+```cpp
+enum intValues : unsigned long long; // 不限定作用域的, 必须指定成员类型
+enum class open_modes; // 限定作用域的可以使用默认成员类型int
+ // 错误: 已声明为不限定作用域的
+enum class intValues;
+// 错误: intValues已经被声明为unsigned long long
+enum intValues : long;
+```
