@@ -23,7 +23,7 @@
 | grm   | git rm                                     |
 | grmc  | git rm --cached                            |
 | gst   | git status                                 |
-| gsta  | git stash save (不能跟message)             |
+| gsta  | git stash save/push (不能跟message)        |
 | gstaa | git stash apply                            |
 | gstc  | git stash clear                            |
 | gstd  | git stash drop                             |

@@ -5,6 +5,7 @@
 * `git branch -a` 查看当前本地和远程分支
 * `git branch -r` 查看remote-tracking分支
 * `git branch --merged` 查看当前HEAD指针包含的分支，如果一个分支merge成功，可在此处查看到
+* `git branch -vv` 可以查看当前本地分支的upstream
 
 ## Create & Switch
 * `git branch <name>` 创建分支
