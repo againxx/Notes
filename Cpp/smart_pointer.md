@@ -194,6 +194,7 @@ while each Player has now a **weak reference** to it.
 ## Advantage of make_unique and make_shared
 1. Let us forget about the `new` keyword
 2. Make your code safe against exceptions
+3. `make_shared` integrates object allocation and control block allocation which is more efficient
 
 Consider following example
 ```cpp
