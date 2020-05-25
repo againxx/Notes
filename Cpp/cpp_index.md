@@ -8,4 +8,4 @@
 * [enum](enum)
 * [templete_function](templete_function)
 * [pimpl](pimpl)
-* [deconstructor](deconstructor)
+* [copy_control](copy_control)
