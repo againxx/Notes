@@ -7,3 +7,5 @@
 * [sanitizers](sanitizers)
 * [enum](enum)
 * [templete_function](templete_function)
+* [pimpl](pimpl)
+* [deconstructor](deconstructor)
