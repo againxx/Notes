@@ -17,3 +17,4 @@
 * [pycharm](pycharm)
 * [pdb](pdb)
 * [yaml](yaml)
+* [tricks](tricks)
