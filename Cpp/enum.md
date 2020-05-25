@@ -85,14 +85,6 @@ color hair = color::red;
 peppers p2 = peppers::red;
 ```
 
-不限定作用域的枚举类型的对象或枚举成员自动地转换成整型, 因此可以在任何需要整型值的地方使用它们
-```cpp
-// 正确: 不限定作用域的枚举类型的枚举成员隐式地转换成int
-int i = color::red;
-// 错误: 限定作用域的枚举类型不会进行隐式转换
-int j = peppers::red;
-```
-
 要想初始化一个enum对象, 必须使用该enum类型的另一个对象或者它的一个枚举成员
 ```cpp
 enum Tokens {INLINE = 128, VIRTUAL = 129};
@@ -103,6 +95,21 @@ Tokens curTok = INLINE;
 ff(128);    // 精确匹配ff(int)
 ff(INLINE); // 精确匹配ff(Tokens)
 ff(curTok)  // 精确匹配ff(Tokens)
+```
+
+不限定作用域的枚举类型的对象或枚举成员自动地转换成整型, 因此可以在任何需要整型值的地方使用它们.
+不限定作用域的枚举类型传递给整型实参时, 会提提升成int或更大的整型, 但是永远不会提升成unsigned char
+```cpp
+// 正确: 不限定作用域的枚举类型的枚举成员隐式地转换成int
+int i = color::red;
+// 错误: 限定作用域的枚举类型不会进行隐式转换
+int j = peppers::red;
+
+void newf(unsigned char);
+void newf(int);
+unsigned char uc = VIRTUAL;
+newf(VIRTUAL); // 调用newf(int)
+newf(uc);      // 调用newf(unsigned char)
 ```
 
 ## Miscellaneous
