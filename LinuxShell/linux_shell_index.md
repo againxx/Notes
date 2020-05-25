@@ -7,3 +7,4 @@
 * [xargs](xargs)
 * [redirection](redirection)
 * [ranger](ranger)
+* [fc](fc)
