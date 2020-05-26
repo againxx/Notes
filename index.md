@@ -8,3 +8,4 @@
 * [Cuda](Cuda/cuda_index)
 * [Tmux](Tmux/tmux_index)
 * [Deep Learning](DeepLearning/dl_index)
+* [Tools](Tools/tools_index)
