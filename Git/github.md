@@ -16,4 +16,4 @@ Useful Command:
 ## Shared repository
 Collaborators are granted push access to a single shared repository and topic branches are created when changes need to be made.
 Pull requests are useful in this model as they initiate code review and general discussion about a set of changes
-before the changes are merged into the main development branch.
+before the changes are merged into the main development branch. CI (continuous integration) system can also be used in pull requests.
