@@ -11,8 +11,10 @@ Run an arbitrary git command and display any output. `:Git {args}` or `:G {args}
 * `cc` 或 `:Gcommit` 用于提交暂存区中的文件
 * `ca` amend the last commit and edit the message
 * `ce` amend the last commit without editing the message
-* `dd` 或 `:Gdiffsplit` 会打开两个水平分割窗口, 显示当前文件的diff信息
+* `dd` 或 `:Gdiffsplit` 会打开两个分割窗口, 显示当前文件的diff信息, 具体分割方向由`diffopt`决定
 * `dv` 或 `:Gvdiffsplit` 会打开两个垂直分割窗口, 显示当前文件的diff信息
+* `ds` 或 `dh` 或 `:Ghdiffsplit` 会打开两个水平分割窗口, 显示当前文件的diff信息
+* `dq` 退出diff模式
 * `I` 或 `P` 对光标下的文件, 应用`git add --patch`或`git reset --patch`或`git add --intent-to-add`
 * `g?` 显示命令帮助
 
