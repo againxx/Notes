@@ -15,6 +15,8 @@
 * [buffer_window_tab](buffer_window_tab)
 * [text_object](text_object)
 * [tags](tags)
+* [substitute](substitute)
+* [arglist](arglist)
 
 ## Vimscript
 * [comparison_expression](comparison_expression)
