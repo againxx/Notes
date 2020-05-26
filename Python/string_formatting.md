@@ -102,3 +102,8 @@ message = f"Hi {name}. " \
 print(message)
 # Hi Eric. You are a comedian. You were in Monty Python.
 ```
+### Format Output
+```python
+total = 10_100_000_000
+print(f'{total:,}')
+```
