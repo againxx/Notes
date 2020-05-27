@@ -4,6 +4,8 @@
 
 其中range和flags是可选的
 
+![Substitute Summary](https://gitee.com/againxx/image-storage/raw/master/images/vim-substitute.jpg =750x)
+
 ## Flags
 * `g` 全局替换, 即将匹配到的所有项都替换掉, 而不仅仅是第一个
 * `c` 每次替换前确认一下

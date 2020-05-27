@@ -15,12 +15,12 @@ Workflow using rebase:
 * Merging will stuff all changes from feature branch into one large merge commit
 * Git tree may become complex by using merging
 
-![Merging](https://www.themoderncoder.com/assets/git-merge-graphic.png =750x)
+![Merging](https://gitee.com/againxx/image-storage/raw/master/images/git-merge-graphic.png =750x)
 
 * Rebasing will take all of the commits on feature branch and move them on top of master commits
 * Nice clean tree with all your commits laid out nicely in a row
 
-![Rebasing](https://www.themoderncoder.com/assets/git-rebase-graphic.png =750x)
+![Rebasing](https://gitee.com/againxx/image-storage/raw/master/images/git-rebase-graphic.png =750x)
 
 ## Options for Rebase
 | Option              | Description                                          |

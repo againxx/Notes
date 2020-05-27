@@ -45,7 +45,7 @@ and open index version of any other file with the last command.
 *  Staging a file updates the contents of the index file to match those of the working copy.
 *  When you commit your work, it is the contents of the index file that are saved with that commit object.
 
-![lifecycle of index file](http://vimcasts.org/images/blog/index-lifecycle.png =740x)
+![lifecycle of index file](https://gitee.com/againxx/image-storage/raw/master/images/index-lifecycle.png =740x)
 
 ## Gwrite & Gread
 The `:Gread` and `:Gwrite` commands can either add a file to the index or reset the file, depending on where they are called from.
@@ -57,7 +57,7 @@ The `:Gread` and `:Gwrite` commands can either add a file to the index or reset 
 | `:Gwrite` | index         | checkout file |
 | `:Gread`  | index         | stage file    |
 
-![Gwrite&Gread](http://vimcasts.org/images/blog/Gread-Gwrite-matrix.png =740x)
+![Gwrite&Gread](https://gitee.com/againxx/image-storage/raw/master/images/Gread-Gwrite-matrix.png =740x)
 
 ## Others
 | git                  | fugitive          | action                                                   |
