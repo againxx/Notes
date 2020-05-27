@@ -9,3 +9,4 @@
 * [Tmux](Tmux/tmux_index)
 * [Deep Learning](DeepLearning/dl_index)
 * [Tools](Tools/tools_index)
+* [Study_Methodology](StudyMethodology/study_methodology_index)
