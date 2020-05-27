@@ -12,3 +12,4 @@
 * [github](github)
 * [submodule](submodule)
 * [zsh_git_plugin](zsh_git_plugin)
+* [git_tools](git_tools)
