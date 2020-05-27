@@ -4,8 +4,8 @@
 
 ## Basics of Dynamic Memory
 * 动态分配的对象是默认初始化的（内置类型或组合类型的值是未定义的）
-* `new (nothrow)` 如果分配失败返回空指针 (参考C++ Primer 12.1.2)
 * `new T[N]` require to be deleted with `delete[]`, using the wrong form results in undefined behavior
+* `new (nothrow)` 如果分配失败返回空指针 (参考C++ Primer 12.1.2)
 * 使用动态内存的三个原因:
     1. 程序不知道自己需要使用多少对象
     2. 程序不知道所需对象的准确类型
@@ -46,28 +46,28 @@ int main()
 ### unique_ptr和shared_ptr都支持的操作
 |                        |                                            |
 |------------------------|--------------------------------------------|
-| shared_ptr<T> sp       | 空智能指针                                 |
-| unique_ptr<T> up       | 可以指向类型为T的对象                      |
-| make_unique<T>(*args*) | 返回一个unique_ptr, 使用*args*初始化此对象 |
-| make_shared<T>(*args*) | 返回一个shared_ptr, 使用*args*初始化此对象 |
-| p                      | 将p作为条件判断, 若p指向一个对象, 则为true |
-| *p                     | 解引用p, 获得它指向的对象                  |
-| p->mem                 | 等价于(*p).mem                             |
-| p.get()                | 返回p中保存的指针                          |
-| swap(p, q)             | 交换p和q中的指针                           |
-| p.swap(q)              |                                            |
+| `shared_ptr<T> sp`     | 空智能指针                                 |
+| `unique_ptr<T> up`     | 可以指向类型为T的对象                      |
+| `make_unique<T>(args)` | 返回一个unique_ptr, 使用*args*初始化此对象 |
+| `make_shared<T>(args)` | 返回一个shared_ptr, 使用*args*初始化此对象 |
+| `p`                    | 将p作为条件判断, 若p指向一个对象, 则为true |
+| `*p`                   | 解引用p, 获得它指向的对象                  |
+| `p->mem`               | 等价于(*p).mem                             |
+| `p.get()`              | 返回p中保存的指针                          |
+| `swap(p, q)`           | 交换p和q中的指针                           |
+| `p.swap(q)`            |                                            |
 
 ### unique_ptr独有的操作
-|                       |                                                                   |
-|-----------------------|-------------------------------------------------------------------|
-| unique_ptr<T> u1      | 空unique_ptr, 可以指向类型为T的对象. u1会使用delete来释放它的指针 |
-| unique_ptr<T, D> u2   | u2会使用一个类型为D的可调用对象来释放它的指针                     |
-| unique_ptr<T, D> u(d) | 空unique_ptr, 指向类型为T的对象, 用类型为D的对象d代替delete       |
-| u = nullptr           | 释放u指向的对象, 将u置为空                                        |
-| u.release()           | u放弃对指针的控制权, 返回指针, 并将u置为空                        |
-| u.reset()             | 释放u指向的对象                                                   |
-| u.reset(q)            | 如果提供了内置指针q, 令u指向这个对象; 否则将u置为空               |
-| u.reset(nullptr)      |                                                                   |
+|                         |                                                                   |
+|-------------------------|-------------------------------------------------------------------|
+| `unique_ptr<T> u1`      | 空unique_ptr, 可以指向类型为T的对象. u1会使用delete来释放它的指针 |
+| `unique_ptr<T, D> u2`   | u2会使用一个类型为D的可调用对象来释放它的指针                     |
+| `unique_ptr<T, D> u(d)` | 空unique_ptr, 指向类型为T的对象, 用类型为D的对象d代替delete       |
+| `u = nullptr`           | 释放u指向的对象, 将u置为空                                        |
+| `u.release()`           | u放弃对指针的控制权, 返回指针, 并将u置为空                        |
+| `u.reset()`             | 释放u指向的对象                                                   |
+| `u.reset(q)`            | 如果提供了内置指针q, 令u指向这个对象; 否则将u置为空               |
+| `u.reset(nullptr)`      |                                                                   |
 
 **为什么`shared_ptr`只有一个模板参数, 而`unique_ptr`有两个?**
 
@@ -75,7 +75,8 @@ int main()
 将deleter作为对象属性可以增加其灵活性
 
 **为什么`make_unique`没有deleter这个模板参数?**
-`make_unique`的作用是封装用`new`创建对象并用`delete`销毁对象这个过程, 如果要应用定制化的删除器, 则同时应该也会使用定制化
+
+`make_unique`的作用是封装用`new`创建对象并用`delete`销毁对象这个过程, 如果要应用定制的删除器, 则同时应该也会使用定制
 的构造器, 这时使用`make_unique`就没有优势了
 
 ## std::shared_ptr
@@ -93,19 +94,19 @@ std::shared_ptr<int>    p1 = std::make_shared<int>();
 std::shared_ptr<Object> p2 = std::make_shared<Object>("Lamp");
 ```
 ### shared_ptr独有的操作
-|                        |                                                                                    |
-|------------------------|------------------------------------------------------------------------------------|
-| shared_ptr<T> p(sp)    | p是shared_ptr sp的拷贝; 递增sp中的计数器. sp中的指针必须能转换为T*                 |
-| p = sp                 | p和sp都是shared_ptr, 所保存的指针必须能相互转换, 递减p的引用计数, 递增sp的引用计数 |
-| p.unique()             | 若p.use_count()为1返回true, 否则为false                                            |
-| p.use_count()          | 返回与p共享对象的智能指针数; 可能很慢, 主要用于调试                                |
-| shared_ptr<T> p(q)     | p管理内置指针q所指向的对象; q必须指向new分配的内存, 且能转换T*                     |
-| shared_ptr<T> p(u)     | p从unique_ptr u那里接管了对象的所有权; 将u置空                                     |
-| shared_ptr<T> p(q, d)  | p接管内置指针q所指对象, p将使用可调用对象d来代替delete                             |
-| shared_ptr<T> p(sp, d) | p是shared_ptr sp的拷贝, p将使用可调用对象d来代替delete                             |
-| p.reset()              | 减少p的计数器, 将p置空                                                             |
-| p.reset(q)             | 减少p的计数器, 令p指向内置指针q                                                    |
-| p.reset(q, d)          | 减少p的计数器, 令p指向内置指针q, 使用可调用对象d来代替delete                       |
+|                          |                                                                                    |
+|--------------------------|------------------------------------------------------------------------------------|
+| `shared_ptr<T> p(q)`     | p管理内置指针q所指向的对象; q必须指向new分配的内存, 且能转换T*                     |
+| `shared_ptr<T> p(sp)`    | p是shared_ptr sp的拷贝; 递增sp中的计数器. sp中的指针必须能转换为T*                 |
+| `shared_ptr<T> p(up)`    | p从unique_ptr up那里接管了对象的所有权; 将up置空                                   |
+| `shared_ptr<T> p(q, d)`  | p接管内置指针q所指对象, p将使用可调用对象d来代替delete                             |
+| `shared_ptr<T> p(sp, d)` | p是shared_ptr sp的拷贝, p将使用可调用对象d来代替delete                             |
+| `p = sp`                 | p和sp都是shared_ptr, 所保存的指针必须能相互转换, 递减p的引用计数, 递增sp的引用计数 |
+| `p.unique()`             | 若p.use_count()为1返回true, 否则为false                                            |
+| `p.use_count()`          | 返回与p共享对象的智能指针数; 可能很慢, 主要用于调试                                |
+| `p.reset()`              | 减少p的计数器, 将p置空                                                             |
+| `p.reset(q)`             | 减少p的计数器, 令p指向内置指针q                                                    |
+| `p.reset(q, d)`          | 减少p的计数器, 令p指向内置指针q, 使用可调用对象d来代替delete                       |
 
 ### Circular References
 For example, I'm writing a game where a player has another player as companion.
@@ -175,15 +176,15 @@ if (std::shared_ptr<int> np = wp1.lock()) { // np不为空则条件成立
 ```
 
 ### weak_ptr支持的操作 
-|                   |                                                                            |
-|-------------------|----------------------------------------------------------------------------|
-| weak_ptr<T> w     | 空weak_ptr可以指向类型为T的对象                                            |
-| weak_ptr<T> w(sp) | 与shared_ptr sp指向相同对象的weak_ptr. T必须能转换为sp指向的类型           |
-| w = p             | p可以是一个shared_ptr或weak_ptr. w与p共享对象                              |
-| w.reset()         | 将w置为空                                                                  |
-| w.use_count()     | 与w共享对象的shared_ptr的数量                                              |
-| w.expired()       | 若w.use_count()为0, 返回true, 否则false                                    |
-| w.lock()          | 若expired为true, 返回一个空shared_ptr; 否则返回一个指向w的对象的shared_ptr |
+|                     |                                                                            |
+|---------------------|----------------------------------------------------------------------------|
+| `weak_ptr<T> w`     | 空weak_ptr可以指向类型为T的对象                                            |
+| `weak_ptr<T> w(sp)` | 与shared_ptr sp指向相同对象的weak_ptr. T必须能转换为sp指向的类型           |
+| `w = p`             | p可以是一个shared_ptr或weak_ptr. w与p共享对象                              |
+| `w.reset()`         | 将w置为空                                                                  |
+| `w.use_count()`     | 与w共享对象的shared_ptr的数量                                              |
+| `w.expired()`       | 若w.use_count()为0, 返回true, 否则false                                    |
+| `w.lock()`          | 若expired为true, 返回一个空shared_ptr; 否则返回一个指向w的对象的shared_ptr |
 
 ### weak_ptr解决循环引用
 `std::weak_ptr` can also used to break a **circular reference**.
