@@ -6,5 +6,7 @@
 * [super_shortcuts](super_shortcuts)
 * [xargs](xargs)
 * [redirection](redirection)
+* [wildcards](wildcards)
 * [ranger](ranger)
 * [fc](fc)
+* [find](find)
