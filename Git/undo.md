@@ -10,11 +10,16 @@
 * `git commit --amend -m <message>` 可以修正上次提交的信息, 注意这样会修改commit的hash值, 最好只在push之前进行
 * `git commit --amend` 可以将额外的staged files纳入最近一次提交
 * `git cherry-pick <hash>` 将一个分支的commit复制到另外一个分支
-* `git reset --soft <hash>` 回退到之前的commit, 提交的修改会返回到staging area
-* `git reset [--mixed] <hash>` 回退到之前的commit, 提交的修改会返回到working directory
-* `git reset --hard <hash>` 回退到之前的commit, tracked file的修改会全部消失, untracked file还会存在
+* `git reset --soft <hashs>` 将之前一个或多个commit的修改回退到staging area
+* `git reset [--mixed] <hash>` 将之前commit的修改回退到working directory, 因为即修改了历史又修改了working directory, 所以被称为mixed
+* `git reset --hard <hashs>` 将之前一个或多个commit的修改丢弃, tracked file的修改会全部消失, untracked file还会存在
 * `git reflog` 会列出之前所有引用过的分支记录(hash), 可以利用这个hash值来撤销reset操作
 * `git checkout <hash>` 回到reset撤销操作之前的commit, 这个时候会处于detached HEAD状态，需要额外创建一个分支来保存它,
 checkout本身也可以切换到任何历史提交
+* `git checkout <hash> <files>` 将中一个或多个文件回退到历史版本, 丢弃修改后的版本(即历史版本)会放在staging area
 * `git revert <hash>` 在别人已经pull之前的commit的情况下, revert会生成一个新的commit, 撤销到之前commit的状态,
 当你再次push之后, 别人就能同步你对commit的撤销了
+
+## Examples
+* `git reset HEAD` 将staging area的内容全部回退到working directory
+* `git reset --soft HEAD~5` 将最近五次的commit回退到staging area
