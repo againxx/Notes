@@ -10,3 +10,4 @@
 * [ranger](ranger)
 * [fc](fc)
 * [find](find)
+* [fzf](fzf)
