@@ -19,6 +19,8 @@ checkout本身也可以切换到任何历史提交
 * `git checkout <hash> <files>` 将中一个或多个文件回退到历史版本, 丢弃修改后的版本(即历史版本)会放在staging area
 * `git revert <hash>` 在别人已经pull之前的commit的情况下, revert会生成一个新的commit, 撤销到之前commit的状态,
 当你再次push之后, 别人就能同步你对commit的撤销了
+* `git reflog` 拥有比`git log` 更细粒度的log记录, reflog的记录针对当前分支
+* 使用`git reset --hard <hash>` 操作从reflog获得的hash, 即可完全回退到该历史节点
 
 ## Examples
 * `git reset HEAD` 将staging area的内容全部回退到working directory
