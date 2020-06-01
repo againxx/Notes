@@ -229,7 +229,7 @@ def foo(item: Any) -> int:
 ```
 
 #### cast
-Tell type checker the type in some speical cases by using `cast`. It's only for mypy -- there's no runtime check.
+Tell type checker the type in some special cases by using `cast`. It's only for mypy -- there's no runtime check.
 ```python
 from typing import cast
 my_confit = get_config_attr("my_config")
