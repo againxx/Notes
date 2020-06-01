@@ -11,6 +11,23 @@
     * 其他有助于梯度传播的方法: batch normalization, residual connection, **深度可分离卷积**
 
 ## Chapter 2
+### 2.1 初始神经网络
+这一节展示了第一个Keras的例子
+```python
+# numpy中的dtype可以用字符串表示, 但是不推荐
+train_images = train_images.astype('float32') / 255
+# to_categorical 将整数label转换为one hot label
+train_labels = to_categorical(train_labels)
+```
+
+### 2.2 神经网络的数据表示
+* n维张量 = nD张量 = n轴张量 = n阶张量 (推荐)
+* 维度既可以表示沿着某个轴上的元素个数(比如5D向量), 也可以表示张量中轴的个数(5D张量)
+* 张量的三个关键属性:
+    - 轴的个数 ndim
+    - 形状 shape
+    - 数据类型 dtype
+* Numpy (以及大多数其他库) 中不存在字符串张量, 因为张量存储在预先分配的连续内存段中, 而字符串的长度是可变的, 无法用这种方式存储
 
 ## Chapter 3
 ### 3.1 神经网络剖析
@@ -71,5 +88,5 @@ Keras是一个模型级的库, 不处理张量操作, 求微分等低层次的�
 * 强化学习
 
 **P.S.**
-* 多标签分类(multilabel classifcation) 每个输入样本都可以分配多个标签, 每个样本的标签个数通常是可变的.
+* 多标签分类(multilabel classification) 每个输入样本都可以分配多个标签, 每个样本的标签个数通常是可变的.
 * minibatch中的样本数通常取2的幂, 这样便于GPU上的内存分配
