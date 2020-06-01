@@ -40,3 +40,5 @@
 | :!{cmd}                | 在shell中执行{cmd}                                           |
 | :[range]w[rite] !{cmd} | 在shell中执行{cmd}, 以[range]作为其标准输入                  |
 | :[range]!{filter}      | 使用外部程序{filter}过滤指定的[range]                        |
+| :earlier <num>m        | 回退操作历史, num分钟前                                      |
+| :later <num>m          | 前进操作历史, num分钟后                                      |

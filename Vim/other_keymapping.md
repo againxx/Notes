@@ -5,3 +5,4 @@
 * `ZZ` same as :x
 * `ZQ` same as :q!
 * `ZA` same as :qa
+* `U` 撤销整行的操作
