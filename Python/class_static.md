@@ -56,3 +56,21 @@ person2 = Person.from_birth_year('again', 1996)
 
 print Person.is_adult(22)
 ```
+
+## Class Variable
+定义在class内, 但是在所有方法之外的变量为class variable, 可以使用classmethod来初始化class variable
+```python
+class Scanbot2dConfig:
+    config_path = Path(__file__).parent / "configs/config.yaml"
+    _total_config_data: Dict[str, Any] = {}
+
+    def __init__(self):
+        if not Scanbot2dConfig._total_config_data:
+            Scanbot2dConfig.load_config()
+        self._config_data = Scanbot2dConfig._total_config_data
+
+    @classmethod
+    def load_config(cls):
+        with cls.config_path.open('r') as file_descriptor:
+            cls._total_config_data = yaml.full_load(file_descriptor)
+```
