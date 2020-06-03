@@ -19,3 +19,4 @@
 * [yaml](yaml)
 * [tricks](tricks)
 * [class_static](class_static)
+* [super](super)
