@@ -1,6 +1,6 @@
 # Pinned Host Memory
 
-![Pageable Memory & Pinned Memory](https://devblogs.nvidia.com/wp-content/uploads/2012/12/pinned-1024x541.jpg)
+![Pageable Memory & Pinned Memory](https://gitee.com/againxx/image-storage/raw/master/images/pinned-1024x541.jpg =750x)
 
 * CPU端分配的内存默认是pageable的，而GPU不能直接获取pageable的主机端内存
 * 当数据需要在主机端和设备端进行copy时，CUDA driver需要分配临时的page-locked/pinned内存作为中转
