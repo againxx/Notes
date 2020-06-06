@@ -17,6 +17,7 @@
 * [tags](tags)
 * [substitute](substitute)
 * [arglist](arglist)
+* [regexp](regexp)
 
 ## Vimscript
 * [comparison_expression](comparison_expression)
