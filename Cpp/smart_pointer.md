@@ -38,11 +38,21 @@ void compute(std::unique_ptr<int[]> p) { ... }
 
 int main()
 {
-    std::unique_ptr<int[]> ptr = std::make_unique<int[]>(1024);
-    std::unique_ptr<int[]> ptr_copy = ptr; // ERROR! Copy is not allowed
+    std::unique_ptr<int[]> ptr1 = std::make_unique<int[]>(1024);
+    std::unique_ptr<int[]> ptr2 = ptr1; // ERROR! Copy is not allowed
+    std::unique_ptr<int[]> ptr2(ptr1);  // ERROR! Copy is not allowed
+    std::unique_ptr<int[]> ptr3;
+    ptr3 = ptr2;                        // ERROR! Assign is not allowed
     compute(ptr);  // ERROR! `ptr` is passed by copy, and copy is not allowed
 }
+
+// 可以拷贝或赋值一个将要销毁的unique_ptr (实际上是move)
+unique_ptr<int> clone(int p)
+{
+    return unique_ptr<int>(new int(p));
+}
 ```
+
 ### unique_ptr和shared_ptr都支持的操作
 |                        |                                            |
 |------------------------|--------------------------------------------|
@@ -69,10 +79,20 @@ int main()
 | `u.reset(q)`            | 如果提供了内置指针q, 令u指向这个对象; 否则将u置为空               |
 | `u.reset(nullptr)`      |                                                                   |
 
+可以通过调用`release`或`reset`转移指针的所有权
+```cpp
+unique_ptr<string> p2(p1.release());
+unique_ptr<string> p3(new string("New string"));
+p2.reset(p3.release()); // reset释放了p2原来指向的内存
+
+p2.release();           // 错误: p2不会释放内存, 而且我们丢失了指针
+auto p = p2.release();  // 正确: 但我们必须记得delete(p)
+```
+
 **为什么`shared_ptr`只有一个模板参数, 而`unique_ptr`有两个?**
 
-因为`unique_ptr`讲究轻量化, 将deleter放在模板参数里可以减少对象需要的存储空间, 而`shared_ptr`已经拥有引用计数等额外的数据量, 
-将deleter作为对象属性可以增加其灵活性
+因为`unique_ptr`讲究轻量化, 将deleter放在模板参数里可以减少对象需要的存储空间, 并且提高运行时性能 (不需要通过指针调用deleter);
+而`shared_ptr`已经拥有引用计数等额外的数据量, 将deleter作为对象属性可以增加其灵活性 (参考C++ Primer 16.1.6)
 
 **为什么`make_unique`没有deleter这个模板参数?**
 
