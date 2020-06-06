@@ -11,3 +11,4 @@
 * [fc](fc)
 * [find](find)
 * [fzf](fzf)
+* [systemd](systemd)
