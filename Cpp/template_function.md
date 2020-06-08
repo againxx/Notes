@@ -1,7 +1,7 @@
-# Templete Function
+# Template Function
 
 ```cpp
-templete <typename T>
+template <typename T>
 int compare(const T &v1, const T &v2)
 {
     if (v1 < v2) return -1;
@@ -9,7 +9,7 @@ int compare(const T &v1, const T &v2)
     return 0;
 }
 
-// templete argument can be implicitly deduced by compiler
+// template argument can be implicitly deduced by compiler
 // instantiates int compare(const int &v1, const int &v2)
 cout << compare(1, 0) << endl;
 // instantiates int compare(const vector<int>&, const vector<int>&)
