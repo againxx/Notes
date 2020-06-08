@@ -8,5 +8,6 @@
 * [Cuda](Cuda/cuda_index)
 * [Tmux](Tmux/tmux_index)
 * [Deep Learning](DeepLearning/dl_index)
+* [Reinforcement Learning](ReinforcementLearning/rl_index.md)
 * [Tools](Tools/tools_index)
-* [Study_Methodology](StudyMethodology/study_methodology_index)
+* [Study Methodology](StudyMethodology/study_methodology_index)
