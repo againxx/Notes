@@ -1,7 +1,5 @@
 # Smart Pointer
 
-[Original Version](https://www.internalpointers.com/post/beginner-s-look-smart-pointers-modern-c)
-
 ## Basics of Dynamic Memory
 * 动态分配的对象是默认初始化的（内置类型或组合类型的值是未定义的）
 * `new T[N]` require to be deleted with `delete[]`, using the wrong form results in undefined behavior
@@ -230,3 +228,6 @@ void function(std::make_unique<A>(), std::make_unique<B>()) { ... }
 
 The point is `std::make_unique<A>` and `std::make_unique<B>` are now temporary objects,
 and cleanup of temporary objects is correctly specified in the C++ standard.
+
+## Reference
+[A beginner's look at smart pointers in modern C++](https://www.internalpointers.com/post/beginner-s-look-smart-pointers-modern-c)
