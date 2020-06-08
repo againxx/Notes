@@ -6,6 +6,7 @@
 * [valgrind](valgrind)
 * [sanitizers](sanitizers)
 * [enum](enum)
-* [templete_function](templete_function)
+* [template_function](template_function)
 * [pimpl](pimpl)
 * [copy_control](copy_control)
+* [forward_delcaration](forward_delcaration)
