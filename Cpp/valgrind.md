@@ -17,7 +17,7 @@ valgrind [valgrind-options] your-prog [your-prog-options]
 * `-O1` balance between speed and accuracy
 * `-O0` slow
 * `-O2` and above is not recommended as Memcheck occasionally reports uninitialised-value errors which don’t really exist.
-* `-fno-inline` 不对函数进行inline展开, 使得函数调用链看起来更清
+* `-fno-inline` 不对函数进行inline展开, 使得函数调用链看起来更清晰
 
 ## 工具集
 Valgrind分为两部分, core和tools, 各有各自的参数.
@@ -31,22 +31,22 @@ Valgrind分为两部分, core和tools, 各有各自的参数.
 ### Core
 | Option                            | Description                                                                        |
 |-----------------------------------|------------------------------------------------------------------------------------|
-| --tool=<tool_name>                | 选择工具                                                                           |
-| --log-fd=<file_descriptor>        | 将结果输出到文件描述符, 默认是2(stderr)                                            |
-| --log-file=<file_name>            | 将结果输出到文件                                                                   |
-| --read-inline-info=yes            | 读取内联函数信息, 同样能让函数调用链更清晰, 即使编译时有内联                       |
-| -v                                | 详细输出                                                                           |
-| -v -v                             | 更详细的输出                                                                       |
-| --gen-suppressions=<no/yes/all>   | 为每一条error输出相应的suppression格式, yes需要用户确认, all则输出所有suppressions |
-| --default-suppressions=no         | 不使用默认的suppressions                                                           |
-| --suppressions=/path/to/file.supp | 使用指定的suppression文件, 可指定多次                                              |
-| --num-callers=<number>            | 设置stack traces中显示的最大数量, 默认是12                                         |
+| `--tool=<tool_name>`                | 选择工具                                                                           |
+| `--log-fd=<file_descriptor>`        | 将结果输出到文件描述符, 默认是2(stderr)                                            |
+| `--log-file=<file_name>`            | 将结果输出到文件                                                                   |
+| `--read-inline-info=yes`            | 读取内联函数信息, 同样能让函数调用链更清晰, 即使编译时有内联                       |
+| `-v`                                | 详细输出                                                                           |
+| `-v -v`                             | 更详细的输出                                                                       |
+| `--gen-suppressions=<no/yes/all>`   | 为每一条error输出相应的suppression格式, yes需要用户确认, all则输出所有suppressions |
+| `--default-suppressions=no`         | 不使用默认的suppressions                                                           |
+| `--suppressions=/path/to/file.supp` | 使用指定的suppression文件, 可指定多次                                              |
+| `--num-callers=<number>`            | 设置stack traces中显示的最大数量, 默认是12                                         |
 
 ### Memcheck
 | Option                             | Description                                       |
 |------------------------------------|---------------------------------------------------|
-| --leck-check=<no/summary/yes/full> | 默认为summary, 设置为full/yes会将每个泄露单独列出 |
-| --track-origins=yes                | 默认为no, 控制是否追踪uninitialised values的来源  |
+| `--leak-check=<no/summary/yes/full>` | 默认为summary, 设置为full/yes会将每个泄露单独列出 |
+| `--track-origins=yes`                | 默认为no, 控制是否追踪uninitialised values的来源  |
 
 ## Suppression
 1. First line: a name in the summary of used suppressions
