@@ -73,6 +73,7 @@ C++ primer 6.2.6节
 * initializer_list对象中的元素永远是常量值, 无法改变
 * 向initializer_list形参中传递一个值的序列, 必须把序列放在一对花括号内
 * 含有initializer_list形参的函数也可以同时拥有其他形参
+* initializer_list可以在参数列表的任意位置 (不必是最后一个)
 
 ```cpp
 void error_msg(ErrCode e, initializer_list<string> il)
