@@ -65,8 +65,9 @@ Just use a class with a name start with `Test` and fill it with some `test_` met
 ### Fixture
 
 * Fixture可以用来处理一些多个tests公用的setup
-* Fixture需要定义在`conftest.py`中, fixture会在调用它的测试函数之前被调用
+* Fixture可以定义在`test_xxx.py`中, 或者定义在`conftest.py`中, fixture会在调用它的测试函数之前被调用
 * 一个测试函数能调用多个fixtures, 自定义的fixture也能调用其他的fixture
+* Fixture可以指定scope, 比如对整个test文件都可用
 ```python
 @pytest.fixture
 def my_fixture():
@@ -99,7 +100,7 @@ from unittest.mock import patch
 
 def mocked_current_utc_time():
     return datetime.datetime(2018, 3, 26, 12)
-    
+
 @patch('demo.current_utc_time', new=mocked_current_utc_time)
 def test_that_mock_works():
     result = demo.current_utc_time()
@@ -137,6 +138,26 @@ assert_array_almost_equal(actual_arr, desired_arr, decimal=7)
 
 ### Image Testing
 
+利用mpl包来进行针对matplotlib的图片测试, 使用之前先`pip install pytest-mpl`
+
+```python
+@pytest.mark.mpl_image_compare(remove_text=True)
+def test_plotting_result():
+    # some plotting code here and return the figure directly
+    return fig
+
+# mpl_image_compare还有个tolerance参数可以设置图片的误差范围
+@pytest.mark.mpl_image_compare(remove_text=True, tolerance=0.1)
+```
+
+mpl会默认在tests/baseline里找test图片的ground truth. 可以让其先生成, 然后人工比较, 之后即可作为真解测试.
+```shell
+# 生成图片供肉眼查看
+pytest -k test_plotting_result --mpl-generate-path=tests/baseline
+# 实际的测试
+pytest --mpl
+```
+
 ### Debugging
 ```shell
 pytest --pdb # invoke PDB on every failure
@@ -161,7 +182,7 @@ breakpoint()
 Test all weights have been trained
 
 ```python
-def test_convnet():
+def test_conv_net():
   image = tf.placeholder(tf.float32, (None, 100, 100, 3)
   model = Model(image)
   sess = tf.Session()
