@@ -1,4 +1,5 @@
 # Python
+* [operator_precedence](operator_precedence)
 * [pip](pip)
 * [virtualenv](virtualenv)
 * [conda](conda)
