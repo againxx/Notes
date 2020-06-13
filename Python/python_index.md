@@ -21,3 +21,4 @@
 * [tricks](tricks)
 * [class_static](class_static)
 * [super](super)
+* [switch_case_statement](switch_case_statement)
