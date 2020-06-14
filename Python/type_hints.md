@@ -66,7 +66,8 @@ The convention is to import types using the form `from typing import Iterable`
 
 Nominal Type are types that have a name to it within the Python Interpreter.
 ```python
-t: Tuple[int, float] = 0, 1.2
+t1: Tuple[int, float] = 0, 1.2
+t2: Tuple[int, ...] = 0, 1, 2, 3 # use ... to specify a variable-length tuple
 d: Dict[str, int] = {"a": 1, "b": 2}
 d: MutableMapping[str, int] = {"a": 1, "b": 2}
 l: List[int] = [1, 2, 3]
@@ -107,7 +108,7 @@ Annotate a callable (function) value
 ```python
 def f(num1: int, my_float: float = 3.5) -> float:
     return num1 + my_float
-    
+
 x: Callable[[int, float], float] = f
 ```
 
