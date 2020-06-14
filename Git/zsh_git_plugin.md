@@ -41,6 +41,7 @@
 | ggl   | git pull origin $(current_branch)          |
 | ggu   | git pull --rebase origin $(current_branch) |
 | gp    | git push                                   |
+| gpf   | git push --force-with-lease                |
 | gpf!  | git push --force                           |
 | ggp   | git push origin $(current_branch)          |
 | ggf   | git push --force origin $(current_branch)  |
