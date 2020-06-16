@@ -67,6 +67,30 @@
 类似一些编程语言`expr1 -operator expr2`中的`expr2`只有必要的时候才执行
 
 ## Actions
+注意: action和test之间的顺序有影响, 下面命令会打印出所有文件名, 因为action本身也有真假, 会影响后续test或者action是否执行
+```shell
+find ~ -print -type f -name '*.bak'
+```
+
+### Predefined Actions
+| Action           | Description                                                   |
+|------------------|---------------------------------------------------------------|
+| `-delete`        | Delete the currently matching file                            |
+| `-ls`            | Perform the equivalent of `ls -dils` on the matching file     |
+| `-fls <file>`    | Like `-ls`, but write the result to file                      |
+| `-print`         | Default action, output the full pathname of the matching file |
+| `-fprint <file>` | Print the full file name into file                            |
+| `-print0`        | Like `-print`, but use null char as the delimiter             |
+| `-quit`          | Quit once a match has been made                               |
+
+### User-Defined Actions
+| Action                    | Description                                            |
+|---------------------------|--------------------------------------------------------|
+| `-exec <command> {} ;`    | 执行指定的command, {} 指代匹配文件                     |
+| `-exec <command> {} +`    | 类似`-exec`, 将多个匹配项组合到同一个command参数列表里 |
+| `-execdir <command> {} ;` | 类似`-exec`, 但是在包含匹配文件的目录处执行command     |
+
+注意: 因为花括号和分号对shell来说有特殊含义, 需要用用引号括起来, 或者转义
 
 ## Options
 
