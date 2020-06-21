@@ -1,5 +1,6 @@
 # Git
 * [basics](basics)
+* [config](config)
 * [diff](diff)
 * [mv_rm](mv_rm)
 * [log](log)

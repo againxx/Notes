@@ -6,10 +6,10 @@
 git config --global user.name "<your name>"
 git config --global user.email "<your email>"
 ```
-* `git config --list` 能列出当前所有的设置
 * `git config --global http.proxy "<http://url:port>"` 来设置http代理
 * `git config --global color.ui` 能设置颜色
-* `git help <verb>` 或 `git <verb> --help` 来列出对应动作的帮助信息
+* `git help <verb>` 或 `git <verb> --help` 或 `man git-<verb>` 来列出对应动作的帮助信息
+* `git <verb> -h` 可以获得更简明的帮助输出
 
 ## Initialize repository
 * `git init` 初始化本地版本库
