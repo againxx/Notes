@@ -8,3 +8,4 @@ Some functionalities that Vim doesn't have.
 4. Edit and execute jupyter notebook, debugging in notebook cells
 5. Visualize, modify and query databases
 6. Autocompletion for SQL in string
+7. Postfix completion `<some_code>.if` will fix this if statement
