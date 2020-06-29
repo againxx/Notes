@@ -28,6 +28,7 @@
 * [make](make)
 
 ## Plugins
+* [plugin_list](plugin_list)
 * [surround](surround)
 * [matchup](matchup)
 * [coc_explorer](coc_explorer)
