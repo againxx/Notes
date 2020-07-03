@@ -54,30 +54,8 @@ dbus-send --print-reply --dest=org.gnome.NautilusPreviewer /org/gnome/NautilusPr
 ### Zutilo
 * 为Zotero右键菜单中, 添加了条目管理相关的菜单(标签复制, 粘贴, 文档关联等)
 * 允许为Zotero的很多功能设置快捷键
-#### Shortcuts
-| Keybinding     | Description            |
-|----------------|------------------------|
-| `Ctrl-s`       | 开关条目属性窗口       |
-| `Ctrl-e`       | 开关分类窗口           |
-| `Ctrl-h`       | 聚焦分类窗口           |
-| `Ctrl-l`       | 聚焦条目窗口           |
-| `Ctrl-Shift-k` | 快速查找               |
-| `Ctrl-f`       | 快速查找               |
-| `Ctrl-i`       | 编辑条目信息           |
-| `Ctrl-n`       | 添加条目笔记           |
-| `Ctrl-t`       | 添加条目标签           |
-| `Ctrl-r`       | 添加关联文献           |
-| `Ctrl-Shift-t` | 开关标签选择器         |
-| `Alt-r`        | 关联条目               |
-| `Ctrl-o`       | 打开附件文件位置       |
-| `Ctrl-d`       | 删除条目标签           |
-| `Ctrl-y`       | 复制条目标签           |
-| `Ctrl-p`       | 粘贴条目标签           |
-| `Ctrl-/`       | 聚焦标签搜索框         |
-| `-`            | 折叠文库, 或条目附件   |
-| `+`            | 展开文库, 或条目附件   |
-| `Alt`          | 高亮所选条目的所在分类 |
-| `Shift`        | 移动所选条目而不是复制 |
+
+[#shortcuts](#shortcuts)
 
 ### Zotero-Better-BibTex
 方便设置citation key和.bib文件
@@ -101,6 +79,30 @@ Vim插件, 可以在markdown中引用Zotero的文献
 3. Markdown据有文档管理功能 (主要指一些笔记软件)
     - 实现文档all-in-one
 
+## Shortcuts
+| Keybinding     | Description            |
+|----------------|------------------------|
+| `Ctrl-s`       | 开关条目属性窗口       |
+| `Ctrl-e`       | 开关分类窗口           |
+| `Ctrl-h`       | 聚焦分类窗口           |
+| `Ctrl-l`       | 聚焦条目窗口           |
+| `Ctrl-Shift-k` | 快速查找               |
+| `Ctrl-f`       | 快速查找               |
+| `Ctrl-i`       | 编辑条目信息           |
+| `Ctrl-n`       | 添加条目笔记           |
+| `Ctrl-t`       | 添加条目标签           |
+| `Ctrl-r`       | 添加关联文献           |
+| `Ctrl-Shift-t` | 开关标签选择器         |
+| `Alt-r`        | 关联条目               |
+| `Ctrl-o`       | 打开附件文件位置       |
+| `Ctrl-d`       | 删除条目标签           |
+| `Ctrl-y`       | 复制条目标签           |
+| `Ctrl-p`       | 粘贴条目标签           |
+| `Ctrl-/`       | 聚焦标签搜索框         |
+| `-`            | 折叠文库, 或条目附件   |
+| `+`            | 展开文库, 或条目附件   |
+| `Alt`          | 高亮所选条目的所在分类 |
+| `Shift`        | 移动所选条目而不是复制 |
 
 ## Other
 * 与他人合作, 可以采用群组功能
