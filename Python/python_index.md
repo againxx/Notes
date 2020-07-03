@@ -10,6 +10,7 @@
 * [string_formatting](string_formatting)
 * [file_types](file_types)
 * [numpy](numpy)
+* [pandas](pandas)
 * [testing](testing)
 * [namedtuple](namedtuple)
 * [partial_function](partial_function)
