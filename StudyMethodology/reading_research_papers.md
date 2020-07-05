@@ -17,7 +17,7 @@ Take multiple passes through the paper
 4. Read the whole thing, but skip the parts that don't make sense
 
 ## Questions to Keep in Mind
-1. What did authors try to accomplish?
+1. What did the authors try to accomplish?
 2. What were the key elements of the approach?
 3. What can you use yourself?
 4. What other references do you want to follow?
@@ -26,8 +26,17 @@ Take multiple passes through the paper
 1. Twitter
 2. Subreddit
 3. Conferences
+4. [PaperWithCode](https://paperswithcode.com/)
 4. Friends
+
+## How to Understand Deeply
+1. Math
+    - Read through the paper, and rederive it from scratch by yourself
+2. Code
+    - Run open source code
+    - Reimplement it from scratch
 
 ## Reference
 [Andrew Ng CS230](https://www.youtube.com/watch?v=733m6qBH-jI)
+[How You Should Read Research Papers According To Andrew Ng](https://towardsdatascience.com/how-you-should-read-research-papers-according-to-andrew-ng-stanford-deep-learning-lectures-98ecbd3ccfb3)
 
