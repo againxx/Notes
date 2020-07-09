@@ -1,6 +1,6 @@
 # Study Methodology
 
 * note_taking
-* [research](research)
-* [reading research papers](reading_research_papers)
+* [research](research.md)
+* [reading research papers](reading_research_papers.md)
 * programming

@@ -1,3 +1,3 @@
 # CMake
-* [command_line_cmake](command_line_cmake)
-* [add_executable_library](add_executable_library)
+* [command_line_cmake](command_line_cmake.md)
+* [add_executable_library](add_executable_library.md)

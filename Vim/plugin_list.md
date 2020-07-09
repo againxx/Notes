@@ -1,6 +1,7 @@
 # List of Interesting Plugins
 
 ## Writing
+:plugin:
 * junegunn/goyo - Focus mode
     - chrisbra/NrrwRgn
 * junegunn/limelight.vim - Remove non-focused syntax

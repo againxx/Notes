@@ -15,6 +15,9 @@
 ## Indexes
 * 行默认的index为从0开始的整数
 * `df.set_index("<column_name>")` 使用某一个column的值作为index, 默认是非inplace的, 可以通过参数`inplace=True`来指定
+* `df.index` 列出当前使用的index
+* `df.reset_index()` 重置index为从0开始的整数
+* `read_csv(..., index_col='<column_name')` 在读取DateFrame的时候, 设置index为某一列
 
 ## Options
 * `pd.set_option('display.max_columns', 85)` 对Jupyter notebook有效, ipython好像无效

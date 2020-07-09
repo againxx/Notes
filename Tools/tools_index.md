@@ -1,3 +1,3 @@
 # Tools
 
-* [zotero](zotero)
+* [zotero](zotero.md)

@@ -1,5 +1,7 @@
 # Fugitive
 
+:plugin:
+
 Run an arbitrary git command and display any output. `:Git {args}` or `:G {args}`
 
 ## Gstatus / G
