@@ -55,7 +55,7 @@ dbus-send --print-reply --dest=org.gnome.NautilusPreviewer /org/gnome/NautilusPr
 * 为Zotero右键菜单中, 添加了条目管理相关的菜单(标签复制, 粘贴, 文档关联等)
 * 允许为Zotero的很多功能设置快捷键
 
-[#shortcuts](#shortcuts)
+[shortcuts](#shortcuts)
 
 ### Zotero-Better-BibTex
 方便设置citation key和.bib文件
@@ -65,8 +65,10 @@ Vim插件, 可以在markdown中引用Zotero的文献
 
 ## Add Reference
 ### Word
+使用Zotero针对Word的插件
 
 ### Latex
+使用Better BibTex
 
 ### Markdown
 实用Markdown写论文的优点:
@@ -80,8 +82,9 @@ Vim插件, 可以在markdown中引用Zotero的文献
     - 实现文档all-in-one
 
 ## Shortcuts
+
 | Keybinding     | Description            |
-|----------------|------------------------|
+|:--------------:|:----------------------:|
 | `Ctrl-s`       | 开关条目属性窗口       |
 | `Ctrl-e`       | 开关分类窗口           |
 | `Ctrl-h`       | 聚焦分类窗口           |
