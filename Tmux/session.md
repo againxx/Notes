@@ -1,6 +1,6 @@
 # Session
 
-| shortcuts  | description                           |
+| Shortcuts  | Description                             |
 |------------|-----------------------------------------|
 | `prefix+L` | switch to last session                  |
 | `prefix+s` | list all sessions                       |
