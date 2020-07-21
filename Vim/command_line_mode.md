@@ -5,18 +5,18 @@
 ## 命令行窗口快捷键
 * `<C-b>` go to the beginning of the command
 * `<C-e>` go to the end of the command
-* `<C-d>`可列出当前可用的补全(目前设置下和`<Tab>`等同)
-* `<C-r><C-w>`把当前光标下的word插入命令行
-* `<C-r><C-a>`把当前光标下的WORD插入命令行
+* `<C-d>` 可列出当前可用的补全 (目前设置下和`<Tab>`等同)
+* `<C-r><C-w>` 把当前光标下的word插入命令行
+* `<C-r><C-a>` 把当前光标下的WORD插入命令行
 * `@:` 重复上次的Ex命令, 运行过一次之后可再用`@@`重复
 
 ## 命令行窗口
-* use `q:` in normal mode to open the editable buffer for all history commands(command-line window)
+* use `q:` in normal mode to open the editable buffer for all history commands (command-line window)
 * use `q/` to open search history window
 * `<C-f>` in command line mode has the same effect as `q:`, useful in `<C-r>=`
 * in command-line window
     - use `<Enter>` to execute the command
-    - use `<C-c>`(I remap it to `<C-c><C-x>`) to continue in command line mode
+    - use `<C-c>` (I remap it to `<C-c><C-x>`) to continue in command line mode
     - use `:q` to discard the command line and go back to normal mode
 
 ## 操作缓冲区文本的Ex命令
@@ -40,5 +40,5 @@
 | :!{cmd}                | 在shell中执行{cmd}                                           |
 | :[range]w[rite] !{cmd} | 在shell中执行{cmd}, 以[range]作为其标准输入                  |
 | :[range]!{filter}      | 使用外部程序{filter}过滤指定的[range]                        |
-| :earlier <num>m        | 回退操作历史, num分钟前                                      |
-| :later <num>m          | 前进操作历史, num分钟后                                      |
+| :earlier {num}m        | 回退操作历史, num分钟前                                      |
+| :later {num}m          | 前进操作历史, num分钟后                                      |
