@@ -22,14 +22,14 @@ Git has three basic concepts or area to store information
 * __Staging area__: 
 * __Repository__:
 
-**Trasition:**
+**Transition:**
 
 Working directory -> Null
 * `git restore <file>, git checkout <file>, git checkout -- <file>` 丢弃工作区的修改
 
 Working directory -> Staging area
 * `git add <file>` 添加文件
-* `git add -A` 添加所有文件
+* `git add -A` add, modify, and remove index entries to match the working tree 
 * `git add -p, git add --patch` 添加一块块的修改
     * `y` stage this hunk
     * `n` do not stage this hunk
@@ -49,10 +49,11 @@ Staging area -> Working directory
 Staging area -> Repository
 * `git commit -m <message>` 提交更新
 * `git commit` 会打开一个文本编辑器让你输入commit message
+* `git commit -v` 会打开文本编辑器, 同时详细的输出所有staging area (即将commit的修改) 中文件的diff情况
 
 ## Remote repository
 * `git remote add <remote_name> git@github.com:againxx/***.git` 将一个已有的本地仓库和远程仓库关联，其中origin是git默认的远程仓库叫法
+* `git remove rm <remote_name>` 删除远程仓库
+* `git remote -v` 列出远程仓库的信息
 * `git remote set-url <remote_name> git@github.com:againxx/***.git` 将远程库改为SSH连接方式, 每次不需要输入密码
 * `git remote set-url <remote_name> https://github.com/againxx/***.git` 将远程库改为HTTPS连接方式, 每次需要输入密码
-* `git remote -v` 列出远程仓库的信息
-* `git remove rm <remote_name>` 删除远程仓库

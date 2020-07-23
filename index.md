@@ -12,3 +12,4 @@
 * [Reinforcement Learning](ReinforcementLearning/rl_index.md)
 * [Tools](Tools/tools_index.md)
 * [Study Methodology](StudyMethodology/study_methodology_index.md)
+* [Reading](Reading/reading_index.md)
