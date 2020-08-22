@@ -64,7 +64,7 @@ The legacy way
 The convention is to import types using the form `from typing import Iterable` 
 (as opposed to `import typing` or `import typing as t` or `from typing import *`)
 
-Nominal Type are types that have a name to it within the Python Interpreter.
+**Nominal Type** are types that have a name to it within the Python Interpreter.
 ```python
 t1: Tuple[int, float] = 0, 1.2
 t2: Tuple[int, ...] = 0, 1, 2, 3 # use ... to specify a variable-length tuple
@@ -252,3 +252,20 @@ Reserve this one for bugs in the type checker, or some other limitations we can'
 def is_visible(self) -> bool:
     ...
 ```
+
+## Questions
+### What is the difference between TypeVar and NewType?
+> TypeVar let you refer to the same type more than once without specifying exactly which type it is.
+
+Use type `Action` in both parameter and return value
+```python
+Action = TypeVar('Action')
+
+def action(self, action: Action) -> Action:
+    pass
+```
+
+> A NewType is for when you want to declare a distinct type without actually doing the work of creating a new type
+> or worry about the overhead of creating new class instances.
+
+[Stack overflow answer](https://stackoverflow.com/questions/58755948/what-is-the-difference-between-typevar-and-newtype)
