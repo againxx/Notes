@@ -2,6 +2,17 @@
 
 New in Python 3.2
 
+## Cues
+* What is positional argument?
+* How to add a positional argument?
+* How to add an optional argument and its short version?
+* What does `action="store_true"` do?
+* What does `action="count"` do?
+* What does `default` do?
+* How to add conflicting arguments?
+* What's the default type of an argument? How to change it?
+* How to add help documents and description of the program?
+
 ## How to use
 ```python
 import argparse
