@@ -52,3 +52,6 @@ class Geek(object):
         
 print(Geek()) # GeeksforGeeks
 ```
+
+## Reference
+[__new__ in Python - GeeksforGeeks](https://www.geeksforgeeks.org/__new__-in-python/)
