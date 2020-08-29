@@ -55,3 +55,12 @@ s = a.sum() # s: tensor(6)
 s.item() # use item() to access the actual python value of a scalar tensor
 b = torch.tensor(1) # directly create a scalar tensor
 ```
+
+## GPU tensors
+* Every tensor type has its GPU equivalent, which reside in the `torch.cuda` package instead of just `torch`
+* To convert tensors between CPU and GPU, there is a tensor method `to(device)`, that creats a copy of the tensor to a specified device
+    - "cpu"
+    - "cuda"
+    - "cuda:1" (second GPU card)
+    - using `torch.device` class, which accepts the device name and optional index
+* To access the device that your tensor is currently residing in, it has a `device` property
