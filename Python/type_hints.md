@@ -104,6 +104,24 @@ Union[None, int, str] # one of
 Optional[float] # either float or None
 ```
 
+Type classes themselves
+* A variable annotated with `C` may accept a value of type `C`
+* In contrast, a variable annotated with `Type(C)` may accept values that are classes themselves
+```python
+a = 3         # Has type 'int'
+b = int       # Has type 'Type[int]'
+
+class User: ...
+class BasicUser(User): ...
+class ProUser(User): ...
+class TeamUser(User): ...
+
+# Accepts User, BasicUser, ProUser, TeamUser, ...
+def make_new_user(user_class: Type[User]) -> User:
+    # ...
+    return user_class()
+```
+
 Annotate a callable (function) value
 ```python
 def f(num1: int, my_float: float = 3.5) -> float:
