@@ -7,3 +7,8 @@ Every tensor operation has two variants:
 Two places to look for operations:
 * The `torch` package, where the fucntion accepts the tensor as an argument
 * The `tensor` class, where it operates on the called tensor
+
+## Common Operations
+* `view()` return a view tensor that shares the same underlying data with the original tensor
+* `is_contiguous()` returns True if self tensor is contiguous in memory in the order specified by memory format
+* `contiguous()` copying data when the tensor is not contiguous
