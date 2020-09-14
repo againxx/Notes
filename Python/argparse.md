@@ -6,9 +6,11 @@ New in Python 3.2
 * What is positional argument?
 * How to add a positional argument?
 * How to add an optional argument and its short version?
+* How get the value of an argument?
 * What does `action="store_true"` do?
 * What does `action="count"` do?
 * What does `default` do?
+* How to restrict the values an option can take?
 * How to add conflicting arguments?
 * What's the default type of an argument? How to change it?
 * How to add help documents and description of the program?
@@ -23,7 +25,7 @@ parser.add_argument("arg_name", help="Help docs", type=int) # default type is st
 # optional argument
 parser.add_argument("-o", "--output", help="Another help docs", action="store_true")
 parser.add_argument("-v", "--verbosity", help ="increse output verbosity", type=int, choices=[0, 1, 2])
-parser.parse_args()
+args = parser.parse_args()
 ```
 
 ## Different types of argument
@@ -69,10 +71,10 @@ answer = args.x**args.y
 
 if args.quiet:
     print(answer)
-    elif args.verbose:
-        print("{} to the power {} equals {}".format(args.x, args.y, answer))
-        else:
-            print("{}^{} == {}".format(args.x, args.y, answer))
+elif args.verbose:
+    print("{} to the power {} equals {}".format(args.x, args.y, answer))
+else:
+    print("{}^{} == {}".format(args.x, args.y, answer))
 ```
 
 ## Reference
