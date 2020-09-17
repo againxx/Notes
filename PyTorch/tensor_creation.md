@@ -30,9 +30,13 @@ b = torch.FloatTensor([[1, 2, 3], [3, 2, 1]])
 ```
 
 ### Converting
+* `torch.tensor()` always copies `data`
+* use `torch.as_tensor()` to avoid a copy, if you have a numpy array
 ```python
 n = np.zeros(shape=(3, 2)) # dtype=np.float64 by default
-b = torch.tensor(n) # dtype=torch.float64
+b_copy = torch.tensor(n) # dtype=torch.float64
+# or
+b_nocopy = torch.as_tensor(n, dtype=torch.float64)
 
 c = torch.tensor(n, dtype=torch.float32)
 ```
