@@ -2,7 +2,7 @@
 
 **Ex命令影响范围广且距离远**
 
-## 命令行窗口快捷键
+## 命令行模式快捷键
 * `<C-b>` go to the beginning of the command
 * `<C-e>` go to the end of the command
 * `<C-d>` 可列出当前可用的补全 (目前设置下和`<Tab>`等同)
