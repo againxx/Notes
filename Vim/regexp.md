@@ -19,6 +19,13 @@
 | `\_.` | 任意字符, 包含行尾 (换行符算一个字符, 可以跨行搜索) |
 
 ## Character Classes
-|      |              |
-|------|--------------|
-| `\w` | [0-9A-Za-z_] |
+|      |                                             |
+|------|---------------------------------------------|
+| `\k` | keyword character                           |
+| `\K` | like `\k`, but excluding digits             |
+| `\w` | word character: [0-9A-Za-z_]                |
+| `\W` | non-word character: [^0-9A-Za-z_]           |
+| `\s` | whitespace character: \<Space\> and \<Tab\> |
+| `\S` | non-whitespace character                    |
+| `\d` | digit: [0-9]                                |
+| `\D` | non-digit: [^0-9]                           |
