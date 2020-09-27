@@ -3,3 +3,4 @@
 * `put <reg>` put contents in <reg> into buffer for continuous editing
 * `"<reg>y` yank back into <reg>
 * Use `A-C` for append keys to `a-c`
+* Add `@a-c` to the last of the corresponding marcos can recursively execute the macro
