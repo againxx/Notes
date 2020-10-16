@@ -11,11 +11,11 @@
 * How to change the value of a given key of a namedtuple?
 
 ## Basic
-Present in module `collections`
-
-Like dictionaries they contain keys that are hashed to a particular value.
+* Present in module `collections`
+* Like dictionaries they contain keys that are hashed to a particular value.
 But on contrary, it supports both access from key value and **iteration**, the functionality that dictionaries lack.
 Besides, it can save some typing than dictionary if you use the same structure multiple times.
+* It's often used when a class only has a few properties but no method (like structure in C++)
 
 ## Access Operations
 There are three ways to access namedtuple's elements
