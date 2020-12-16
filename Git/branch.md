@@ -10,6 +10,7 @@
 ## Create & Switch
 * `git branch <name>` 创建分支
 * `git checkout <name>, git switch <name>` 切换分支
+* `git checkout -` 切换到最近的分支
 * `git checkout -b <name>, git switch -c <name>` 创建并切换分支
 * 切换分支时若有工作区或暂存区有文件会被覆盖, 则不能切换分支
 * 切换分支时有些文件可能会出现或者消失

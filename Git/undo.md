@@ -4,12 +4,14 @@
 
 ## Undo in Working Directory
 * `git restore <file>, git checkout <file>, git checkout -- <file>` 丢弃工作区的修改
-* `git clean -df` 丢弃untracked file和untracked directory(-d), `-f`表示focus, 还可以使用`-i`进行交互式clean
+* `git clean -df` 丢弃untracked file和untracked directory(-d), `-f`表示force, 还可以使用`-i`进行交互式clean
 
 ## Undo Commit
 * `git commit --amend -m <message>` 可以修正上次提交的信息, 注意这样会修改commit的hash值, 最好只在push之前进行
 * `git commit --amend` 可以将额外的staged files纳入最近一次提交
-* `git cherry-pick <hash>` 将一个分支的commit复制到另外一个分支
+* `git cherry-pick <hash1> <hash2> ...` 将一个分支的commits(可以是多个)复制到另外一个分支
+    - 默认会在当前分支上新建N个commits, 与原始分支对应
+    - `git cherry-pick <hash> -n` 则会将其他分支的commit转移到缓存区, 然后可以再进一步手动commit
 * `git reset --soft <hash>` 将之前一个或多个commit的修改回退到staging area
 * `git reset [--mixed] <hash>` 将之前commit的修改回退到working directory, 因为即修改了历史又修改了working directory, 所以被称为mixed
 * `git reset --hard <hash>` 将之前一个或多个commit的修改丢弃, tracked file的修改会全部消失, untracked file还会存在
