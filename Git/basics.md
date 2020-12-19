@@ -28,7 +28,7 @@ Working directory -> Null
 * `git restore <file>, git checkout <file>, git checkout -- <file>` 丢弃工作区的修改
 
 Working directory -> Staging area
-* `git add <file>` 添加文件
+* `git add <file>` 跟踪新文件/把已跟踪的文件放到暂存区/合并时把有冲突的文件标记为已解决状态
 * `git add -A` add, modify, and remove index entries to match the working tree 
 * `git add -p, git add --patch` 添加一块块的修改
     * `y` stage this hunk
@@ -44,12 +44,18 @@ Working directory -> Staging area
 
 Staging area -> Working directory
 * `git reset <file>` 不缓存文件
+* `git restore --staged <file>` 同上
 * `git reset` 不缓存所有文件
 
 Staging area -> Repository
 * `git commit -m <message>` 提交更新
 * `git commit` 会打开一个文本编辑器让你输入commit message
 * `git commit -v` 会打开文本编辑器, 同时详细的输出所有staging area (即将commit的修改) 中文件的diff情况
+* `git commit -a` 跳过使用暂存区域, 把所有已跟踪的文件暂存起来一并提交
+
+![State Transition](https://gitee.com/againxx/image-storage/raw/master/images/20201219095340.png =750x)
+
+## What is index?
 
 ## Remote repository
 * `git remote add <remote_name> git@github.com:againxx/***.git` 将一个已有的本地仓库和远程仓库关联，其中origin是git默认的远程仓库叫法

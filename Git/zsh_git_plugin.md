@@ -11,6 +11,9 @@
 | gbd   | git branch -d                              |
 | gcf   | git config --list                          |
 | gc    | git commit -v                              |
+| gca   | git commit -v -a                           |
+| gcam  | git commit -a -m                           |
+| gca!  | git commit -v -a --amend                   |
 | gc!   | git commit -v --amend                      |
 | gcmsg | git commit -m                              |
 | gco   | git checkout                               |
