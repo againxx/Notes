@@ -29,6 +29,10 @@ import collections
 # Declaring namedtuple() 
 Student = collections.namedtuple('Student', ['name', 'age', 'DOB']) 
 
+# With default values
+fields = ("age", "eye_color", "hair_color")
+Profile = collections.namedtuple("Profile", fields, defaults=(18, "brown", "blue")
+
 # Type hint for namedtuple, equivalent to the above declaration
 class Student(NamedTuple):
     name: str
@@ -66,6 +70,8 @@ di = {'name': "Nikhil", 'age': 19 , 'DOB': '1391997'}
 # using _make() to return namedtuple()
 print("The namedtuple instance using iterable is: ")
 print(Student._make(li))
+# same as using unpacking from iterable
+print(Student(*li))
 
 # using _asdict() to return an OrderedDict()
 print("The OrderedDict instance using namedtuple is: ")
@@ -81,7 +87,7 @@ print(Student(**di))
 * `_replace()`: change the values mapped with the passed keyname
 
 ```python
-# using _fields to display all the keynames of namedtuple()
+# using _fields to display all the key names of namedtuple()
 print("All the fields of students are: ")
 print(S._fields)
 
@@ -93,6 +99,10 @@ print(S._replace(name='againxx'))
 # AttributeError: can't set attribute
 S.name = 'againxx'
 ```
+
+## Performance
+* namedtuple的实例消耗的内存和tuple一样, 因为字段名都被存放在对应的类里
+* 这个实例甚至比普通对象实例要小一些, 因为Python不用`__dict__`来存放这些实例的属性
 
 ## Reference
 [geeksforgeeks - namedtuple in python](https://www.geeksforgeeks.org/namedtuple-in-python/)
