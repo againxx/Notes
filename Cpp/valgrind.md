@@ -25,6 +25,7 @@ Valgrind分为两部分, core和tools, 各有各自的参数.
 * memcheck (default)
 * cachegrind (cache and branch-prediction profiler)
 * callgrind (call-graph generating cache profiler)
+    - 可以显示编译后的程序一共有多少条指令
 * kcachegrind 可视化callgrind和cachegrind的输出文件
 
 ## Options
