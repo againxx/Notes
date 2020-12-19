@@ -13,3 +13,4 @@
 * [find](find.md)
 * [fzf](fzf.md)
 * [systemd](systemd.md)
+* [ps](ps.md)
