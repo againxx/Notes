@@ -26,3 +26,36 @@ public:
     }
 };
 ```
+
+## Cost of using static
+There was an enhancement to C++11 guranteeing that the initialization of static variables happens in a thread safe manner, so
+    - The complier has to check whether the static variable has already been constructed
+    - If not, it will perform a lock and construct the variable for us
+    - So, every time we run a function with a static variable, there will be a overload for checking its state
+
+```cpp
+struct C
+{
+    static const std::string &magic_static()
+    {
+        static const std::string s = "bob";
+        return s;
+    }
+    // class initialization
+    const std::string &s = magic_static();
+    
+    const std::string &magic_static_ref()
+    {
+        return s;
+    }
+};
+
+// This is more expansive
+C::magic_static().size();
+// Than this
+C c;
+c.magic_static_ref().size();
+```
+
+## Reference
+[C++ Weekly - Ep 2 Cost of Using Statics - YouTube](https://www.youtube.com/watch?v=B3WWsKFePiM&list=PLs3KjaCtOwSZ2tbuV1hx8Xz-rFZTan2J1&index=2)
