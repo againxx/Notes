@@ -6,6 +6,8 @@
 * `git restore <file>, git checkout <file>, git checkout -- <file>` 丢弃工作区的修改
 * `git clean -df` 丢弃untracked file和untracked directory(-d), `-f`表示force, 还可以使用`-i`进行交互式clean
 
+## Undo in Staging Area (Index)
+
 ## Undo Commit
 * `git commit --amend -m <message>` 可以修正上次提交的信息, 注意这样会修改commit的hash值, 最好只在push之前进行
 * `git commit --amend` 可以将额外的staged files纳入最近一次提交

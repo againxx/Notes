@@ -1,5 +1,6 @@
 # Git
 * [basics](basics.md)
+* [status](status.md)
 * [config](config.md)
 * [diff](diff.md)
 * [mv_rm](mv_rm.md)
@@ -14,3 +15,4 @@
 * [submodule](submodule.md)
 * [zsh_git_plugin](zsh_git_plugin.md)
 * [git_tools](git_tools.md)
+* [tag](tag.md)
