@@ -8,3 +8,4 @@
 * `git diff --color-words` 显示具体修改的单词，而不是修改的行
 * `git diff --word-diff` 同上，显示方式稍有不同
 * `git diff --stat` 只列出文件修改的情况，而不列出具体的代码
+* `git difftool` 命令来调用diff工具输出diff的分析结果
