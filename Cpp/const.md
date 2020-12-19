@@ -1,5 +1,24 @@
 # Const
 
+## 顶层const和底层const
+* 只有指针才区分顶层const和底层const的概念
+* 顶层const: 对象本身是常量
+* 底层const: 所指对象是常量
+* 引用只有底层const, 无论是写在类型名前还是后
+* 其余对象只有顶层const
+
+```cpp
+int i = 0;
+int *const p1 = &i;       // 不能改变p1的值, 顶层const
+const int ci = 42;        // 不能改变ci的值, 顶层const
+const int *p2 = &ci;      // 允许改变p2的值, 但是不能改变p2所指对象的值, 底层const
+const int *const p3 = p2; // 靠右的是顶层const, 靠左的是底层const
+const int &r = ci;        // 用于申明引用的const都是底层const
+int const &r = ci;        // 等价于上述申明
+int *p = p3;              // 不能用有底层const的指针去初始化一个没有底层const的指针
+int &r = ci;              // 底层const的引用同理
+```
+
 ## 基于const的重载
 C++ primer 7.3.2
 
