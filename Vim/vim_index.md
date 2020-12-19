@@ -12,6 +12,7 @@
 * [range](range.md)
 * [folding](folding.md)
 * [macro](macro.md)
+* [register](register.md)
 * [buffer_window_tab](buffer_window_tab.md)
 * [text_object](text_object.md)
 * [tags](tags.md)
@@ -19,6 +20,8 @@
 * [arglist](arglist.md)
 * [regexp](regexp.md)
 * [g_command](g_command.md)
+* [file_navigation](file_navigation.md)
+* [executing_shell_command](executing_shell_command.md)
 
 ## Vimscript
 * [comparison_expression](comparison_expression.md)
