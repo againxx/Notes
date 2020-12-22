@@ -7,6 +7,9 @@
 * `git clean -df` 丢弃untracked file和untracked directory(-d), `-f`表示force, 还可以使用`-i`进行交互式clean
 
 ## Undo in Staging Area (Index)
+* `git reset <file>` 不缓存文件
+* `git restore --staged <file>` 同上
+* `git reset` 不缓存所有文件
 
 ## Undo Commit
 * `git commit --amend -m <message>` 可以修正上次提交的信息, 注意这样会修改commit的hash值, 最好只在push之前进行
@@ -15,7 +18,7 @@
     - 默认会在当前分支上新建N个commits, 与原始分支对应
     - `git cherry-pick <hash> -n` 则会将其他分支的commit转移到缓存区, 然后可以再进一步手动commit
 * `git reset --soft <hash>` 将之前一个或多个commit的修改回退到staging area
-* `git reset [--mixed] <hash>` 将之前commit的修改回退到working directory, 因为即修改了历史又修改了working directory, 所以被称为mixed
+* `git reset [--mixed] <hash>` 将之前commit的修改回退到working directory, 因为即修改了commit object又修改了index, 所以被称为mixed
 * `git reset --hard <hash>` 将之前一个或多个commit的修改丢弃, tracked file的修改会全部消失, untracked file还会存在
 * `git reflog` 会列出之前所有引用过的分支记录(hash), 可以利用这个hash值来撤销reset操作
 * `git checkout <hash>` 回到reset撤销操作之前的commit, 这个时候会处于detached HEAD状态，需要额外创建一个分支来保存它,
