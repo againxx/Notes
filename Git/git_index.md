@@ -16,3 +16,4 @@
 * [zsh_git_plugin](zsh_git_plugin.md)
 * [git_tools](git_tools.md)
 * [tag](tag.md)
+* [wildcards](wildcards.md)
