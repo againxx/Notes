@@ -34,7 +34,7 @@
 * rename
     * `cw` rename totally
     * `a` rename at end of the filename, before suffix
-    * `i` rename at begin of the filename
+    * `I` rename at begin of the filename
     * `A` rename at end of the filename
 * `d` cut
     * `dd` normal cut
