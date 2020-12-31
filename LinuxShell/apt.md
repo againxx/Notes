@@ -23,3 +23,4 @@
 18. `sudo apt-mark hold <package_name>` 来锁定包，不让其自动更新
 19. `apt-mark showhold` 列出当前锁定的包
 20. `sudo apt-mark unhold <package_name>` 解除锁定
+21. `sudo apt -o Acquire::socks::proxy="socks5://127.0.0.1:1080/" update` 临时使用socks5代理
