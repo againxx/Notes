@@ -7,3 +7,11 @@
 * `git log --stat -- <file>` 只查看与某个file相关的提交历史
 * `git log --patch` 查看具体的代码修改历史（类似diff的方式展现）
 * `git log --graph` 以ascii码树的形式展示commit历史
+
+## Commit Ranges
+
+### double dot
+用来比较两个分支之间的差异, 即一个分支有而另一个分支没有的提交
+* `git log master..dev` 显示dev分支有而master分支没有的提交
+* `git log dev..master` 显示master分支有而dev分支没有的提交
+* `git log origin/master..[HEAD]` 显示HEAD分支和远程master分支之间的差异, HEAD是可缺省的, 可以帮助了解哪些提交将推送到远端
