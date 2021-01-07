@@ -14,6 +14,7 @@
     * `/` & `n` & `N` search/jump
     * `f` fast find and open
     * `zf` filter(only show matched terms)
+    * `zz` same as above
     * `<C-f>` find with fzf
 * `g` jumps
     * `gh` goto home folder
@@ -27,7 +28,7 @@
     * `yp` copy full file path
     * `yn` copy file name
     * `yd` copy directory path
-    * `y`. yank file name without extension
+    * `y.` yank file name without extension
 * `p` paste
     * `pp` normal paste
     * `po` paste and overwrite
@@ -61,5 +62,9 @@
     * `bd` create directory (mkcd)
     * `C` compress files
     * `X` extract here
+* preview
+    * `zi` toggle image preview
+    * `zp` toggle file preview
+    * `zP` toggle directory preview
 * others
     * `bg` change background wallpaper with High Ubunterra
