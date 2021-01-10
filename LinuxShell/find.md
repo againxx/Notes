@@ -6,6 +6,8 @@
 ### Name Test
 * `-name <pattern>`
 * `-iname <pattern>` 类似`-name`测试条件, 但是不区分大小写
+* `-path <pattern>` 测试完整路径而不是文件名 
+* `-regex <pattern>` 使用正则表达式匹配完整路径名, 默认使用Emacs Regular Expression
 
 ### Type Test
 `-type <file_type>`
@@ -89,16 +91,18 @@ find ~ -print -type f -name '*.bak'
 | `-exec <command> {} ;`    | 执行指定的command, {} 指代匹配文件                     |
 | `-exec <command> {} +`    | 类似`-exec`, 将多个匹配项组合到同一个command参数列表里 |
 | `-execdir <command> {} ;` | 类似`-exec`, 但是在包含匹配文件的目录处执行command     |
+| `-ok <command> {} ;`      | 类似`-exec`, 但是执行命令前询问用户                    |
 
 注意: 因为花括号和分号对shell来说有特殊含义, 需要用用引号括起来, 或者转义
 
 ## Options
 
 这些选项被用来控制find命令的搜索范围, 当构建find表达式时, 它们可能被其他的test和action包含
-| Option             | Description                                                                                            |
-|--------------------|--------------------------------------------------------------------------------------------------------|
-| -depth             | 先处理目录中的文件, 再处理目录自身, 当指定-delete时, 会自动应用这个选项                                |
-| -maxdepth <levels> | 当执行test和action时, 设置进入目录树的最大级别数                                                       |
-| -mindepth <levels> | 在应用test和action之前, 设置进入目录树的最小级别数                                                     |
-| -mount             | 指导find不要搜索挂载到其他文件系统上的目录                                                             |
-| -noleaf            | 指导find不要基于搜索类Unix的文件系统作出的假设, 来优化它的搜索, 当扫描Windows文件系统, 或者CD-ROMs使用 |
+| Option               | Description                                                                                            |
+|----------------------|--------------------------------------------------------------------------------------------------------|
+| `-depth`             | 先处理目录中的文件, 再处理目录自身, 当指定-delete时, 会自动应用这个选项                                |
+| `-maxdepth <levels>` | 当执行test和action时, 设置进入目录树的最大级别数                                                       |
+| `-mindepth <levels>` | 在应用test和action之前, 设置进入目录树的最小级别数                                                     |
+| `-mount`             | 指导find不要搜索挂载到其他文件系统上的目录                                                             |
+| `-noleaf`            | 指导find不要基于搜索类Unix的文件系统作出的假设, 来优化它的搜索, 当扫描Windows文件系统, 或者CD-ROMs使用 |
+| `-regextype <type>`  | 设置所使用的正则表达式类型, `-regextype help`查看可用类型                                              |
