@@ -28,3 +28,6 @@
 * `f` wrapped with (), `F` adds addtional spaces, `<C-f>` inserts function name inside ()
 * `s` a leading but not trailing sapce is added, useful for removing parentheses from a function call with `csbs`
 
+## Insert mode
+* `<C-g>s` will insert surrounds and put cursor inside it
+* `<C-g>S` will put surrounds at its own line
