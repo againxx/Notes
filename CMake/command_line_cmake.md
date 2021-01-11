@@ -32,7 +32,7 @@ CMake project的关键概念:
 
 `-G <generator-name>`
 
-**不同CMAKE_BUILD_TYPE的区别**  
+**不同CMAKE_BUILD_TYPE的区别**
 
 CMAKE_BUILD_TYPE影响:
 1. Optimization (level) [`-O0, -O1, -O2, -O3, -Ofast, -Os, -Oz, -Og, -O, -O4`]
