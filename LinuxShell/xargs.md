@@ -4,7 +4,7 @@
 
 **用法:**
 
-从标准输入由空格或者新行分割的参数项\<append-arguments\>，并依次执行  
+从标准输入读入由空格或者新行分割的参数项\<append-arguments\>，并依次执行  
 `<command> [initial-arguments] <append-arguments>`
 
 **Options:**
@@ -21,6 +21,13 @@
 `--show-limits`  
 查看command line的上限, 若指定的参数数量超过该上限, `xargs`会每次用最大参数数量执行command, 直到所有参数均消耗完
 
+`-l <number>, --max-lines`  
+每number行调用一次command, 注意与`-n`的区别, `-l`相当于只以新行作为分割来执行若干次command, 但是构造每个command
+的参数列表时, 还是会考虑其他的分隔符
+
 ## Examples
 * `ls | xargs wc -l` Counting lines for current directory, 注意`wc`可以直接接受标准输入, 不需要嵌套`xargs`
 * `pip freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip install -U` Update all pip packages
+* `xargs rm < install_manifest.txt` 删除cmake install安装的文件
+* `cat install_manifest.txt | xargs -l1 dirname | sudo xargs rmdir -p` 删除cmake install留下的空目录
+    - 可能会有很多报错, 因为要删除的目录非空, 可以通过`rmdir`的`--ignore-fail-on-non-empty`参数来抑制错误输出
