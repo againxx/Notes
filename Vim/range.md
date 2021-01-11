@@ -19,3 +19,5 @@ m;n 第二个行标以第m行作为参考的范围
 | /pattern/             | 再下一个搜索结果所在的行                             |
 | ?pattern?             | 反向搜索                                             |
 | /pattern1//pattern2/d | 先找到pattern1对应的行, 再在该行后找pattern2对应的行 |
+
+* `<num>:` 可以将接下来的num行作为range插入command line中
