@@ -12,6 +12,7 @@
 * [fc](fc.md)
 * [find](find.md)
 * [fzf](fzf.md)
+* [ripgrep](ripgrep.md)
 * [systemd](systemd.md)
 * [ps](ps.md)
 * [source](source.md)
