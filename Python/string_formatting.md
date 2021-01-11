@@ -103,7 +103,11 @@ print(message)
 # Hi Eric. You are a comedian. You were in Monty Python.
 ```
 ### Format Output
+* use `=` can output `<expr>=<value>`
+
 ```python
 total = 10_100_000_000
-print(f'{total:,}')
+print(f'{total:,}') # 10,100,000,000
+print(f'{total:_}') # 10_100_000_000
+print(f'{total=}') # total=10100000000, since python3.8
 ```
