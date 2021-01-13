@@ -43,7 +43,7 @@ struct C
     }
     // class initialization
     const std::string &s = magic_static();
-    
+
     const std::string &magic_static_ref()
     {
         return s;
