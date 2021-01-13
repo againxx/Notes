@@ -7,8 +7,10 @@
 
 ## Difference
 * `auto` 会实际计算表达式的值来为变量进行初始化, 同时推断类型
-* `decltype` 仅仅推断类型而不实际计算表达式
 * `auto` 会去掉顶层const
+* `auto` 会去掉reference
+* `auto` 倾向于保留尽可能简单的类型(核心类型), 而去掉了引用和const这些附属修饰
+* `decltype` 仅仅推断类型而不实际计算表达式
 * `decltype` 不会去掉顶层const
 
 ## Example
@@ -27,4 +29,16 @@ std::cout << typeid(c2).name() << '\n'; // int
 std::cout << typeid(c3).name() << '\n'; // int&
 std::cout << typeid(f1).name() << '\n'; // int
 std::cout << typeid(f2).name() << '\n'; // const int
+
+auto increment(int& a) // the deduced type is int
+{
+    a++;
+    return a;
+}
+
+decltype(auto) increment(int& a) // the deduced type is int&
+{
+    a++;
+    return a;
+}
 ```
