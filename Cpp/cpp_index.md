@@ -10,6 +10,7 @@
 * [gdb](gdb.md)
 * [initialization](initialization.md)
 * [inline](inline.md)
+* [member function pointer](member_function_pointer.md)
 * [pimpl](pimpl.md)
 * [sanitizers](sanitizers.md)
 * [smart pointer](smart_pointer.md)
