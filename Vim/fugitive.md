@@ -4,18 +4,33 @@ Run an arbitrary git command and display any output. `:Git {args}` or `:G {args}
 
 ## Gstatus / G
 * `<C-n> / <C-p>` 上下移动到修改过的文件, 回车可打开该文件
+* `[count]gu` jump to file [count] in the "Untracked" or "Unstaged" section
+* `[count]gU` jump to file [count] in the "Unstaged" section
+* `[count]gs` jump to file [count] in the "Staged" section
+* `[count]gp` jump to file [count] in the "Unpushed" section
+* `[count]gP` jump to file [count] in the "Unpulled" section
+
+### Staging/unstaging maps
 * `-` 将文件移入或移出暂存区, normal和visual模式可用
 * `s` 在unstaged上将所有文件移入缓存区, 在单个文件上将单个文件移入缓存区
 * `u` 在staged上将所有文件移出缓存区, 在单个文件上将单个文件移出缓存区
 * `U` 将所有文件移出缓存区
+* `I` 或 `P` 对光标下的文件, 应用`git add --patch`或`git reset --patch`或`git add --intent-to-add`
+
+### Commit maps
 * `cc` 或 `:Gcommit` 用于提交暂存区中的文件
+* `cvc` create a commit with `-v`, 会显示完整的diff
 * `ca` amend the last commit and edit the message
 * `ce` amend the last commit without editing the message
+* `cw` reword the last commit
+
+### Diff maps
 * `dd` 或 `:Gdiffsplit` 会打开两个分割窗口, 显示当前文件的diff信息, 具体分割方向由`diffopt`决定
 * `dv` 或 `:Gvdiffsplit` 会打开两个垂直分割窗口, 显示当前文件的diff信息
 * `ds` 或 `dh` 或 `:Ghdiffsplit` 会打开两个水平分割窗口, 显示当前文件的diff信息
 * `dq` 退出diff模式
-* `I` 或 `P` 对光标下的文件, 应用`git add --patch`或`git reset --patch`或`git add --intent-to-add`
+
+### Others
 * `g?` 显示命令帮助
 
 ## Gblame
