@@ -30,6 +30,7 @@ std::unique_ptr<int>    p1 = std::make_unique<int>();
 std::unique_ptr<int[]>  p2 = std::make_unique<int[]>(50);
 std::unique_ptr<Object> p3 = std::make_unique<Object>("Lamp");
 ```
+
 There can be at most one `std::unique_ptr` pointing at any one resource. You can't have multiple references to its dynamic data.
 ```cpp
 void compute(std::unique_ptr<int[]> p) { ... } 
@@ -87,15 +88,19 @@ p2.release();           // 错误: p2不会释放内存, 而且我们丢失了�
 auto p = p2.release();  // 正确: 但我们必须记得delete(p)
 ```
 
-**为什么`shared_ptr`只有一个模板参数, 而`unique_ptr`有两个?**
+### Caveats
+1. 为什么`shared_ptr`只有一个模板参数, 而`unique_ptr`有两个?
+    - 因为`unique_ptr`讲究轻量化, 将deleter放在模板参数里可以减少对象需要的存储空间, 并且提高运行时性能 (不需要通过指针调用deleter);
+      而`shared_ptr`已经拥有引用计数等额外的数据量, 将deleter作为对象属性可以增加其灵活性 (参考C++ Primer 16.1.6)
+2. 为什么`make_unique`没有deleter这个模板参数?
+    - `make_unique`的作用是封装用`new`创建对象并用`delete`销毁对象这个过程, 如果要应用定制的删除器, 则同时应该也会使用定制
+      的构造器, 这时使用`make_unique`就没有优势了
+3. Cannot use `make_unique<int[5]>()`, i.e. known bound array, the reason is twofold
+    - there is no size parameter in `unique_ptr<int[]>`, so `make_unique` should be consistent with it
+    - Add array size to the type may make compiler instantiate a single class for just this size, it's a waste
+4. Cannot use `unique_ptr` with `std::begin / std::cbegin` or `std::end / std::cend`
+    - these functions can take a `T (&arg)[N]` as argument, but not pointer which is unable to compute size
 
-因为`unique_ptr`讲究轻量化, 将deleter放在模板参数里可以减少对象需要的存储空间, 并且提高运行时性能 (不需要通过指针调用deleter);
-而`shared_ptr`已经拥有引用计数等额外的数据量, 将deleter作为对象属性可以增加其灵活性 (参考C++ Primer 16.1.6)
-
-**为什么`make_unique`没有deleter这个模板参数?**
-
-`make_unique`的作用是封装用`new`创建对象并用`delete`销毁对象这个过程, 如果要应用定制的删除器, 则同时应该也会使用定制
-的构造器, 这时使用`make_unique`就没有优势了
 
 ## std::shared_ptr
 `std::shared_ptr` has the technique called **reference counting**, and allows for multiple references.
