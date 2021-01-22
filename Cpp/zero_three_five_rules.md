@@ -103,6 +103,7 @@ person & operator=(const person & that) = delete;
 > The rule of five adds another two functions, move constructor and move assignment operator
 
 > The rule of zero states that you are allowed to not write any of the special member functions when creating your class
+> 注意: 现代C++其实大部分时候鼓励遵循the rule of zero, 也即不需要创建自己的析构函数, 因为这样可能会增加额外的不需要的复杂性.
 
 ## Reference
 [c++ - What is The Rule of Three? - Stack Overflow](https://stackoverflow.com/questions/4172722/what-is-the-rule-of-three)
