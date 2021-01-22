@@ -1,10 +1,16 @@
 # Static
 
 ## Static variable in global scope
-定义在所有函数和类外的static变量只对当前编译单元(.cpp文件)可见, 其他编译单元无法使用该static变量
+* 定义在所有函数和类外的static变量只对当前编译单元(.cpp文件)可见, 其他编译单元无法使用该static变量
+* 全局static函数也只在该编译单元中可见
 
 ## Static variable in class
 申明在类内的static变量为该类所有实例公共所有, 需要在类外再定义一遍(此时不需要加static)
+    - 因为类中所列的成员变量其实都只是声明
+    - 真正的定义应该发生在该类对象定义的时候(猜测)
+    - 而static变量属于类而不属于对象, 所以不会随着任何一个对象的定义而定义, 因而只能单独在类外定义
+    - `static const / constexpr int` 变量虽然能提供类内初时值, 但是只能用作值替换, 而无法取地址
+    - 如果类内提供了初时值, 则定义时不能再指定初时值了
 
 ## Static method in class
 static method只能访问类的static变量, 原因是其没有类实例的指针(this)作为隐式参数传入, 类似python的classmethod
@@ -14,6 +20,8 @@ static method只能访问类的static变量, 原因是其没有类实例的指�
     - 静态变量意味着该变量始终存在, 第一次定义时分配, 之后便不再重复分配了
     - 但是局部变量意味着该变量只能在申明它的作用域中访问
 * 静态局部变量可以用来简化单例模式的代码
+* 或者帮助确认静态变量的初始化顺序, 因为C++没法保证全局static变量的初始化顺序, 所以如果全局static变量之间有相互依赖关系,
+  可以考虑将其变成局部static变量
 
 ```cpp
 class Singleton

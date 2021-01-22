@@ -14,5 +14,6 @@
 * [pimpl](pimpl.md)
 * [sanitizers](sanitizers.md)
 * [smart pointer](smart_pointer.md)
+* [static](static.md)
 * [template function](template_function.md)
 * [valgrind](valgrind.md)
