@@ -3,6 +3,7 @@
 ## Static variable in global scope
 * 定义在所有函数和类外的static变量只对当前编译单元(.cpp文件)可见, 其他编译单元无法使用该static变量
 * 全局static函数也只在该编译单元中可见
+* 注意这种静态声明的做法其实是从C语言继承而来的, 现在已经被C++标准取消了, 现在的做法是使用**未命名命名空间**
 
 ## Static variable in class
 申明在类内的static变量为该类所有实例公共所有, 需要在类外再定义一遍(此时不需要加static)
