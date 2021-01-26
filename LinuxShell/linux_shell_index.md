@@ -18,3 +18,4 @@
 * [xargs](xargs.md)
 * [zsh aliases](zsh_aliases.md)
 * [array](array.md)
+* [bracket parenthesis](bracket_parenthesis.md)
