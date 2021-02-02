@@ -1,6 +1,8 @@
 # LinuxShell
 
 * [apt](apt.md)
+* [array](array.md)
+* [bracket parenthesis](bracket_parenthesis.md)
 * [fc](fc.md)
 * [find](find.md)
 * [fzf](fzf.md)
@@ -9,6 +11,7 @@
 * [ranger](ranger.md)
 * [redirection](redirection.md)
 * [ripgrep](ripgrep.md)
+* [sed](sed.md)
 * [small commands](small_commands.md)
 * [source](source.md)
 * [super shortcuts](super_shortcuts.md)
@@ -17,5 +20,3 @@
 * [wildcards](wildcards.md)
 * [xargs](xargs.md)
 * [zsh aliases](zsh_aliases.md)
-* [array](array.md)
-* [bracket parenthesis](bracket_parenthesis.md)
