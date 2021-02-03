@@ -15,11 +15,12 @@ git config --global user.email "<your email>"
 * `git init` 初始化本地版本库
 * `git clone <url> [<where to clone>]` 克隆已有的版本库
 * `git clone --depth <n> <url> [<where to clone>]` 克隆已有的版本库，并截取最近n次commits
+* `git clone --branch / -b <branch name> <url> [<where to clone>]` 克隆某个分支
 
 ## Three basic concepts
 Git has three basic concepts or area to store information
 * __Working directory__: untracked files
-* __Staging area__: 
+* __Staging area__:
 * __Repository__:
 
 **Transition:**
