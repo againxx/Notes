@@ -1,4 +1,4 @@
-# catkin_make & catkin_make_isolated
+# Catkin Build System
 
 ## History of catkin_make
 ### Why need catkin_make?
