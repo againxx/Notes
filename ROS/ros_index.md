@@ -4,6 +4,7 @@
 
 ## Command-Line Tools
 * [wstool](wstool.md)
+* [rosdep](rosdep.md)
 
 ## Gazebo
 * [sdf](sdf.md)

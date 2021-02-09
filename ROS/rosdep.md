@@ -1,4 +1,4 @@
-# rosdep
+# Rosdep
 rosdep is a command-line tool for installing system dependencies.
 
 * `sudo rosdep init` initialize rosdep
