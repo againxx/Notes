@@ -4,6 +4,7 @@
 
 ## Command-Line Tools
 * [wstool](wstool.md)
+* [rosclean](rosclean.md)
 * [rosdep](rosdep.md)
 
 ## Gazebo
