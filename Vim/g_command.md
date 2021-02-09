@@ -10,4 +10,5 @@
 * `<num>g_` 跳转到第num行的末尾, 包含当前行
 * `gq` format by motion or visual selected
 * `gv` 重新高亮之前的选区
+* `gn` / `gN` visual select next match, or extend selection region to the next match
 * `gi` 跳转到最后一次离开插入模式的地方并进入插入模式
