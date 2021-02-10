@@ -14,7 +14,8 @@
     - 如果类内提供了初时值, 则定义时不能再指定初时值了
 
 ## Static method in class
-static method只能访问类的static变量, 原因是其没有类实例的指针(this)作为隐式参数传入, 类似python的classmethod
+* static method只能访问类的static变量, 原因是其没有类实例的指针(this)作为隐式参数传入, 类似python的classmethod
+* 在类外定义static method时不能重复static关键字
 
 ## Static variable in local scope
 * 可以从作用域和生命周期两个视角来看待静态局部变量
