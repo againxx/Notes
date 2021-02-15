@@ -74,6 +74,23 @@ The `:Gread` and `:Gwrite` commands can either add a file to the index or reset 
 
 ![Gwrite&Gread](https://gitee.com/againxx/image-storage/raw/master/images/Gread-Gwrite-matrix.png =740x)
 
+## Gedit
+The `:Gedit` command can explore the git object database (open a read-only buffer)
+* `:Gedit <SHA1>` open any git objects (blob, tree, commit, tag)
+* `:Gedit <branch>:<path/to/file>` open a file on a given branch
+* `:Gedit <branch>:%` open current file on a given branch
+
+### Commit object
+A buffer containing a textual representation of that commit, like `git show <SHA1>` in shell
+* press `<Enter>` on a reference to a parent to open that commit object
+* press `<Enter>` on a reference to a tree to open that tree object
+* press `<Enter>` on a diff summary line to diff the specified file before and after that commit
+
+### Tree object
+* press `a` to toggle between `git show` and `git ls-tree` views
+* press `-` to go up a level to the parent tree or commit objects
+* press `C` to open the commit object containing current tree object
+
 ## Others
 | git                  | fugitive          | action                                                   |
 |----------------------|-------------------|----------------------------------------------------------|
