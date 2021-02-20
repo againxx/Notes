@@ -26,6 +26,7 @@
 ## Vimscript
 * [comparison_expression](comparison_expression.md)
 * [string](string.md)
+* [user_defined_command](user_defined_command.md)
 
 ## Builtin Tools
 * [vimdiff](vimdiff.md)
