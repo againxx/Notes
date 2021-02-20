@@ -1,6 +1,6 @@
 # Logging
 
-## logger levels
+## change logger levels
 ### command line
 `rosservice call /<node-name>/set_logger_level ros.<package-name> <level>`
 
