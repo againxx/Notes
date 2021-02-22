@@ -35,3 +35,4 @@
 28. `cal`
 29. `free` 显示内存的使用情况
 30. `ctrl-d` = exit
+31. `faketime` 为某个command提供一个虚假的时间
