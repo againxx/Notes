@@ -1,5 +1,9 @@
 # Auto & Decltype
 
+## Auto
+* `auto` 以引用对象的类型作为推导类型, 而不包含引用本身, 所以`&`符号需要单独写出来
+* `auto` 会去掉顶层const, 但保留底层const, 顶层const需要明确指出
+
 ## Decltype
 * 变量的`decltype`永远是变量的类型, 即引用类型的变量`decltype`之后得到引用类型
 * 表达式的`decltype`由表达式结果是左值还是右值决定, 左值表达式的类型是引用, 右值表达式不是
@@ -14,6 +18,21 @@
 * `decltype` 不会去掉顶层const
 
 ## Example
+```cpp
+int i = 0, &r = 1;
+auto a = r; // int
+
+const int ci = i, &cr = ci;
+auto b = ci;        // int
+auto c = cr;        // int
+auto d = &i;        // int*
+auto e = &ci;       // const int*
+const auto f = ci;  // const int
+auto &g = ci;       // const int&
+auto &h = 42;       // error, h will be deduced to int&
+const auto &j = 42; // const int&
+```
+
 ```cpp
 int a = 3;
 auto c1 = a;
