@@ -2,6 +2,7 @@
 
 * [auto_decltype](auto_decltype.md)
 * [basics](basics.md)
+* [cast](cast.md)
 * [const](const.md)
 * [copy control](copy_control.md)
 * [core dump](core_dump.md)
