@@ -24,6 +24,7 @@
 * 静态局部变量可以用来简化单例模式的代码
 * 或者帮助确认静态变量的初始化顺序, 因为C++没法保证全局static变量的初始化顺序, 所以如果全局static变量之间有相互依赖关系,
   可以考虑将其变成局部static变量
+* 注意不同lambda instances之间共享同一个static local variable, 可以考虑object data member结合mutable
 
 ```cpp
 class Singleton
