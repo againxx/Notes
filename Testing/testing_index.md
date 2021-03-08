@@ -1,5 +1,8 @@
 # Testing
 
+## Common Sense
+* [rationale](rationale.md)
+
 ## Python
 * [hypothesis](hypothesis.md)
 
