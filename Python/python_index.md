@@ -20,7 +20,6 @@
 * [priority_queue](priority_queue.md)
 * [partial_function](partial_function.md)
 * [metaclass](metaclass.md)
-* [module_package](module_package.md)
 * [pathlib](pathlib.md)
 * [pycharm](pycharm.md)
 * [pdb](pdb.md)
@@ -30,6 +29,8 @@
 * [super](super.md)
 * [switch_case_statement](switch_case_statement.md)
 * [jupyter](jupyter.md)
+* [module](module.md)
+* [package](package.md)
 
 ## Magic Methods
 * [__new__method](__new__method)
