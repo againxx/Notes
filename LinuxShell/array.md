@@ -1,5 +1,7 @@
 # Array
 
+* bash do not have multi-dimensional array
+
 ## Normal Array
 ```bash
 os=("ubuntu" "windows" "kali")
