@@ -4,3 +4,4 @@
 * [targets](targets.md)
 * [debug](debug.md)
 * [position_independent_code](position_independent_code.md)
+* [cuda_architectures](cuda_architectures.md)
