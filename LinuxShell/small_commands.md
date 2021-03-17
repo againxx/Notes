@@ -40,3 +40,4 @@
 33. `sudo !!` 可以快速使用sudo重新运行上一次的命令, 特别适合忘记加sudo的时候
 34. `mtr` 比ping更详细的网络包跟踪软件
 35. `alt-.` 插入上一条命令的参数到当前位置
+36. `strings` 可以打印二进制文件中的字符串, 可以用来查看二进制的gcc编译版本`strings -a <binary/library> |grep "GCC: ("`
