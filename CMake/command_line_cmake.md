@@ -9,7 +9,7 @@
 CMake project的关键概念:  
 * __Source Tree__: 从包含源文件的最顶层目录开始，以一个顶层CMakeLists.txt为标记
 * __Build Tree__: 从包含buildsystem文件和build输出文件（例如：执行文件和库）的最顶层目录开始，以一个CMakeCache.txt文件为标记
-* __Generator__: 实际生成的buildsystem（例如：Makefile, VS sln等） 
+* __Generator__: 实际生成的buildsystem（例如：Makefile, VS sln等）
 
 
 ### 命令格式
