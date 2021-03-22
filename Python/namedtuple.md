@@ -2,16 +2,18 @@
 
 ## Cues
 * What's different between namedtuple and dict?
-* How to construct a namedtuple object?
-* How many ways can we use to access the elements of the namedtuple?
-* How to convert a dict to a namedtuple?
-* How to convert a namedtuple to an OrderedDict?
-* How to construct a namedtuple from an iterable object?
-* How to show all keynames of a namedtuple?
-* How to change the value of a given key of a namedtuple?
+* How do I construct a namedtuple object?
+* How many ways can I use to access the elements of the namedtuple?
+* How do I convert a dict to a namedtuple?
+* How do I convert a namedtuple to an OrderedDict?
+* How do I construct a namedtuple from an iterable object?
+* How do I show all keynames of a namedtuple?
+* How do I change the value of a given key of a namedtuple?
+* Do I know there are two different ways to use namedtuples?
+* What are drawbacks to using namedtuples?
 
 ## Basic
-* Present in module `collections`
+* Present in module `collections` / `typing`
 * Like dictionaries they contain keys that are hashed to a particular value.
 But on contrary, it supports both access from key value and **iteration**, the functionality that dictionaries lack.
 Besides, it can save some typing than dictionary if you use the same structure multiple times.
@@ -23,11 +25,12 @@ There are three ways to access namedtuple's elements
 * keyname
 * getattr()
 ```python
-# importing "collections" for namedtuple() 
-import collections 
+# importing "collections" for namedtuple()
+import collections
+from typing import NamedTuple
 
-# Declaring namedtuple() 
-Student = collections.namedtuple('Student', ['name', 'age', 'DOB']) 
+# Declaring namedtuple()
+Student = collections.namedtuple('Student', ['name', 'age', 'DOB'])
 
 # With default values
 fields = ("age", "eye_color", "hair_color")
@@ -39,20 +42,20 @@ class Student(NamedTuple):
     age: int
     DOB: str
 
-# Adding values 
-S = Student('Nandini', 19, '2541997') 
+# Adding values
+S = Student('Nandini', 19, '2541997')
 
-# Access using index 
-print("The Student age using index is: ", end="") 
-print(S[1]) 
+# Access using index
+print("The Student age using index is: ", end="")
+print(S[1])
 
-# Access using name 
-print("The Student name using keyname is: ", end="") 
+# Access using name
+print("The Student name using keyname is: ", end="")
 print(S.name) # Cannot be accessed by S['name']
 
-# Access using getattr() 
-print("The Student DOB using getattr() is: ", end="") 
-print(getattr(S, 'DOB')) 
+# Access using getattr()
+print("The Student DOB using getattr() is: ", end="")
+print(getattr(S, 'DOB'))
 ```
 
 ## Conversion Operations
@@ -103,6 +106,16 @@ S.name = 'againxx'
 ## Performance
 * namedtuple的实例消耗的内存和tuple一样, 因为字段名都被存放在对应的类里
 * 这个实例甚至比普通对象实例要小一些, 因为Python不用`__dict__`来存放这些实例的属性
+
+## Implicitly Generated Methods
+* `__repr__`
+* `__eq__` `__ne__` `__lt__` `__gt__` `__le__` `__ge__`
+* `__add__` `__mul__`
+* `__len__`
+
+## Problems
+* `NamedTuple` is inherited from `tuple`
+    - Consequently, it comes with many undesirable dunder method
 
 ## Reference
 [geeksforgeeks - namedtuple in python](https://www.geeksforgeeks.org/namedtuple-in-python/)

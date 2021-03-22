@@ -31,6 +31,7 @@
 * [jupyter](jupyter.md)
 * [module](module.md)
 * [package](package.md)
+* [attrs](attrs.md)
 
 ## Magic Methods
 * [__new__method](__new__method)
