@@ -22,6 +22,7 @@ However, it results from running the interpreter when optimization settings are 
 * The optimizer is enabled by adding the "-O" flag when we invoke the Python interpreter `python -O <script>`.
 * Having the optimizer enabled creates smaller bytecode files. The optimizer, which doesn't do a whole lot,
 removes assert statements from your bytecode and speeds up execution.
+* `-O0` flag removes both assertion statements and `__doc__` strings
 
 ## .pyd
 In contrast to the preceding two, it's a platform-specific to Windows
