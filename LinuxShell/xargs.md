@@ -21,9 +21,15 @@
 `--show-limits`  
 查看command line的上限, 若指定的参数数量超过该上限, `xargs`会每次用最大参数数量执行command, 直到所有参数均消耗完
 
-`-l <number>, --max-lines`  
+`-L <number>, -l<number>, --max-lines=<number>`  
 每number行调用一次command, 注意与`-n`的区别, `-l`相当于只以新行作为分割来执行若干次command, 但是构造每个command
 的参数列表时, 还是会考虑其他的分隔符
+
+`-p --interactive`  
+交互式的方式运行每条命令, 需要手动输入Y/N, 可以查看xargs构造的命令来debug
+
+`-I <replace_str>`  
+将初时参数中的replace str用从标准输入读到的参数替代, 可以用于构造标准输出的参数不在最后的命令, 但是注意该参数隐含-L 1, 所以一次只替换一行
 
 ## Examples
 * `ls | xargs wc -l` Counting lines for current directory, 注意`wc`可以直接接受标准输入, 不需要嵌套`xargs`
