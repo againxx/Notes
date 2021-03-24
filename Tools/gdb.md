@@ -41,4 +41,12 @@
 
 ## Stack back trace
 * `backtrace` display the call stack of current function, current function is at top
-
+* `f[rame] [level] <frame_num>` select stack frame with level n, frame 0 is the innermost (currently executing) frame
+* `f address <stack_address>` select stack frame with stack address
+    - check the address using `info frame`
+* `f fucntion <function_name>` select the stack frame for function function-name
+    - If there are multiple stack frames for function function-name then the inner most stack frame is selected.
+* `f view <stack_address> [pc_addr]` view a frame that is not part of GDB's backtrace giving a optional _program counter address_
+    - This is useful mainly if the chaining of stack frames is damaged by a bug, making it impossible for GDB to assign stack numbers
+* `up [num]` move num frame up the stack toward outermost frame (if num is positive)
+* `down [num]` num defaults to 1
