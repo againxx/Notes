@@ -20,3 +20,4 @@
 * [wildcards](wildcards.md)
 * [xargs](xargs.md)
 * [zsh aliases](zsh_aliases.md)
+* [exa](exa.md)
