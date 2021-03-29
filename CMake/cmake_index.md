@@ -6,3 +6,5 @@
 * [position_independent_code](position_independent_code.md)
 * [cuda_architectures](cuda_architectures.md)
 * [find_package](find_package.md)
+* [GoogleTest](googletest.md)
+* [FetchContent](fetch_content.md)

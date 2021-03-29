@@ -29,6 +29,11 @@ In module mode, CMake searches for a file named `Find<PackageName>.cmake`
 * Firstly, it searches in `CMAKE_MODULE_PATH`
 * Then, among Find Modules provided by the CMake installation
 
+#### What's the problem of module mode?
+* There is a lot of guessing in `Find<PackageName>.cmake` file. The package authors actually know the usage requirement of their packages
+  but the information is completely thrown away when they created the packages
+* Therefore, only use a find module for **third party** libraries that do not **support clients to use CMake**
+
 ### Config mode
 In config mode, CMake searches for a file named `<PackageName>Config.cmake / <lower-case-package-name>-config.cmake`
 * A cache entry called `<PackageName>_DIR` is created to hold the directory containing the config file
