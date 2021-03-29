@@ -60,6 +60,7 @@ of the expression's value.
 * `unt` stands for `until` and will continue execution up until a specified line
 * It behaves similarly to `n` command, when no line number is given
 * The only difference: `unt` will iterate through entire loops automatically, instead of just moving forward one iteration
+* `return` continue execution until current function's return statement
 
 ## Watches
 * Use `display` to display variables or expression outputs each time it changes (add to watchlist)
@@ -80,5 +81,12 @@ undisplay
 
 ## PDB++
 Open source drop-in replacement for `pdb` that adds support for colorful output, sticky mode and other conveniences.
-* `sticky` command will keep a long list on the screen, above the interactive debugger.
+* `sticky [start end]` command will keep a long list on the screen, above the interactive debugger.
+    - every time the current position changes, the screen is repainted and the whole **function** shown
+    - If start and end are given, only lines within that range will be displayed
+* `longlist (ll)` command for listing current function, it seems original pdb also has this functionality
+    - In case of post-mortem debugging, the line which actually raised the exception is marked with `>>`
+* `interact` start an interactive interpreter containing all names defined in current scope
+* `display <expression> / undisplay <expression>` evaluate expressions in display list every step, and print them every time their values changed
+* prefer printing variable in scope first, use `!!<command_name>` to force the builtin command execution
 * Use `@pdb.hideframe` to hide a function's associated stack frame from `where`, `up` and `down` commands.
