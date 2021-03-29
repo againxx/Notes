@@ -24,3 +24,7 @@
 19. `apt-mark showhold` 列出当前锁定的包
 20. `sudo apt-mark unhold <package_name>` 解除锁定
 21. `sudo apt -o Acquire::socks::proxy="socks5://127.0.0.1:1080/" update` 临时使用socks5代理
+
+## Other apt-related tools
+* `apt-file show/list <package_name>` list contents of a package
+* `apt-file search <file_name>` search which package contains the given file
