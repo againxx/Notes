@@ -8,6 +8,7 @@
 * [CMake](CMake/cmake_index.md)
 * [Cpp](Cpp/cpp_index.md)
 * [Cuda](Cuda/cuda_index.md)
+* [Java](Java/java_index.md)
 * [Tmux](Tmux/tmux_index.md)
 * [Testing](Testing/testing_index.md)
 * [Deep Learning](DeepLearning/dl_index.md)
