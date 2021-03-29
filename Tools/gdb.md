@@ -2,6 +2,7 @@
 
 ## Running
 * `run <args>` run a program with arguments
+* `start <args>` run a program with arguments and stop at main()
 * `file <executable>` 读入一个可执行文件
 
 ## Information
@@ -16,9 +17,31 @@
 * `b <file_name>:<function>`
 * `b +offset / -offset` 当前栈帧中正在执行的源代码前后设置断点
 * `b *address` 在虚拟内存地址处设置断点
-* `d <breakpoint_num>` delete breakpoint, the number is showed by `info b`
+* `d <breakpoint_num>` delete breakpoint, the number is showed by `info b`, 不提供number的话则删除所有的断点
 * `enable <breakpoint_num>`
 * `disable <breakpoint_num>`
+
+### Hardware breakpoints
+利用x86架构的debug registers, 从而可以让程序全速执行; 否则每执行一条指令时都需要检查表达式的值, 效率极低
+* `watch <expression>` 当表达式的值发生变化时, 停止执行
+* `watch -l/-location <expression>` 当表达式的值对应的内存地址处的值发生变化时, 停止执行
+
+```cpp
+int a = 1;
+int b = 2;
+int c = 1;
+int *p = &a;
+// watch *p
+p = &c; // not break
+p = &b; // break
+
+// watch -l p
+p = &c; // break
+p = &b; // break
+```
+
+* `rwatch <expression>` 当表达式的值被读取时, 停止执行
+* `rwatch -l/-location <expression>` 当表达式的值对应的内存地址处的值被读取时, 停止执行
 
 ## Step
 * `next` c/cpp程序中的下一行(step over)
