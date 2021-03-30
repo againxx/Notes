@@ -32,6 +32,8 @@ CMake project的关键概念:
 
 `-G <generator-name>`
 
+`-P <cmake-script-file>` run a script
+
 **不同CMAKE_BUILD_TYPE的区别**
 
 CMAKE_BUILD_TYPE影响:

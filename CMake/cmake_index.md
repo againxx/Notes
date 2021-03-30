@@ -8,3 +8,4 @@
 * [find_package](find_package.md)
 * [GoogleTest](googletest.md)
 * [FetchContent](fetch_content.md)
+* [install](install.md)
