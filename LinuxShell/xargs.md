@@ -29,7 +29,7 @@
 交互式的方式运行每条命令, 需要手动输入Y/N, 可以查看xargs构造的命令来debug
 
 `-I <replace_str>`  
-将初时参数中的replace str用从标准输入读到的参数替代, 可以用于构造标准输出的参数不在最后的命令, 但是注意该参数隐含-L 1, 所以一次只替换一行
+将初始参数中的replace str用从标准输入读到的参数替代, 可以用于构造标准输出的参数不在最后的命令, 但是注意该参数隐含-L 1, 所以一次只替换一行
 
 ## Examples
 * `ls | xargs wc -l` Counting lines for current directory, 注意`wc`可以直接接受标准输入, 不需要嵌套`xargs`
