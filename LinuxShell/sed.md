@@ -1,6 +1,11 @@
 # Sed
 
 ## Pattern space & Hold space
+sed有两块存储文本的空间, 默认的pattern space和额外的hold space, 在sed启动时, hold space中默认包含一个空白行
+* `h` 将pattern space中的内容复制到hold space中
+* `H` 将pattern space中的内容附加到hold space后
+* `g` 将hold space中的内容复制到pattern space中
+* `G` 将hold space中的内容附加到pattern space中
 
 ## Substitute command: s
 * Use `&` as the matched string
