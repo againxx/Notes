@@ -11,6 +11,7 @@
 * [Java](Java/java_index.md)
 * [Tmux](Tmux/tmux_index.md)
 * [Testing](Testing/testing_index.md)
+* [Linking](Linking/linking_index.md)
 * [Deep Learning](DeepLearning/dl_index.md)
 * [Design Pattern](DesignPattern/design_pattern_index.md)
 * [Reinforcement Learning](ReinforcementLearning/rl_index.md)
