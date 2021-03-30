@@ -1,4 +1,4 @@
 # Design Pattern
 
-* Singleton
-* [Visitor](Visitor.md)
+* [Singleton](singleton.md)
+* [Visitor](visitor.md)
