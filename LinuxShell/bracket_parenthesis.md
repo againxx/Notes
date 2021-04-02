@@ -1,7 +1,8 @@
 # Bracket & Parenthesis in Bash
 
 ## Single Square Bracket
-Same as `test` command
+* Same as `test` command without `$`
+* When used with `$[ ]`, it can perform some basic integer arithmetic wihout escape `*`, `<` ...
 
 ### Caveats
 * `<` and `>` are viewed as redirection operators
