@@ -17,3 +17,4 @@
 * [static](static.md)
 * [swap](swap.md)
 * [template function](template_function.md)
+* [concepts](concepts.md)
