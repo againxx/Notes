@@ -13,6 +13,7 @@
 * [ripgrep](ripgrep.md)
 * [sed](sed.md)
 * [small commands](small_commands.md)
+* [rust_command_line_tools](rust_command_line_tools.md)
 * [source](source.md)
 * [super shortcuts](super_shortcuts.md)
 * [systemd](systemd.md)
