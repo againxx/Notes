@@ -7,6 +7,7 @@
 * [copy control](copy_control.md)
 * [core dump](core_dump.md)
 * [enum](enum.md)
+* [extern](extern.md)
 * [forward delcaration](forward_delcaration.md)
 * [initialization](initialization.md)
 * [inline](inline.md)
