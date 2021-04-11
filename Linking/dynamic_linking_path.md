@@ -5,6 +5,7 @@
 * Will linker search `/etc/ld.so.conf` or `LD_LIBRARY_PATH`??
 
 ## Searching Paths for Loader
-* `/etc/ld.so.conf`
-* `LD_LIBRARY_PATH`
 * `RPATH`
+* `LD_LIBRARY_PATH`
+* `/etc/ld.so.conf`
+* `/lib` and `/usr/lib`

@@ -1,7 +1,7 @@
 # RPATH
 
 * RPATH designates run-time search path hard-coded in an executable or library file
-* Dynamic linking loaders use the rpath to find required libraries
+* Dynamic linking **loaders** use the rpath to find required libraries
 * A path to the shared libraries will be encoded into the header of the executable if rpath is set, overriding or supplementing the system default search paths
 
 ## Why shoud we set RPATH
@@ -25,6 +25,11 @@ And the libraries are looked for in the same directory where the executable is f
 
 ## How to set RPATH
 ### During compilation
+* `gcc -Wl,-rpath <path/to/libraries>` -rpath is the option of `ld` not `gcc`, so we need to use `-Wl,` to specify it
+
+**Note:**
+* Using `gcc -L <path/to/libraries>` only let the linker add dependency successfully, but it will not add the specified path into `rpath`
+* By using `ldd`, the dependent libraries will be marked `not found`
 
 ### After compilation
 * `chrpath -r ` this command could fail if no rpath was set previously
