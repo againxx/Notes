@@ -19,3 +19,4 @@
 * [swap](swap.md)
 * [template function](template_function.md)
 * [concepts](concepts.md)
+* [class struct difference](class_struct_difference.md)
