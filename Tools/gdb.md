@@ -73,3 +73,15 @@ p = &b; // break
     - This is useful mainly if the chaining of stack frames is damaged by a bug, making it impossible for GDB to assign stack numbers
 * `up [num]` move num frame up the stack toward outermost frame (if num is positive)
 * `down [num]` num defaults to 1
+
+## Attach to Running Process
+* `gdb -p <PID> <program>`
+
+In recent linux kernel, if you try to attach debugger to a running process, even if by the same user,
+gdb will politely refuse with error message:
+> ptrace: Operation not permitted.
+
+The reason is a newly enabled security feature YAMA to specifically restrict inspecting memory of other programs.
+
+* To enable once, as root `echo 0 > /proc/sys/kernel/yama/ptrace_scope`
+* To enable permanently, `echo kernel.yama.ptrace_scope = 0 > /etc/sysctl.d/10-ptrace.conf`
