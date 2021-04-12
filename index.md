@@ -21,3 +21,4 @@
 * [ROS](ROS/ros_index.md)
 * [Programming Guides](ProgrammingGuides/programming_guides_index.md)
 * [English](English/english_index.md)
+* [Projects](Projects/projects_index.md)
