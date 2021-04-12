@@ -5,3 +5,6 @@
 ```
 
 ## add_library
+
+### Alias libraries
+Just like `typedef` in c/c++

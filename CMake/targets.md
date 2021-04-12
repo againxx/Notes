@@ -1,5 +1,9 @@
 # Targets
 
+## Two Main Ways to Add Targets
+* `add_executable`
+* `add_library`
+
 ## Pseudo Targets
 Don't represent outputs of the buildsystem, but only input such as external dependencies, aliases or other non-build artifacts
 
@@ -24,7 +28,7 @@ Reasons:
 
 ### Interface Target
 * Has no `LOCATION` and is mutable, but is otherwise similar to `IMPORTED` target
-* 主要用来表示一些概念上的target, 对纯头文件库进行封装, 或者封装一些usage requirement
+* 主要用来表示一些概念上的target, 对纯头文件库进行封装, 或者封装一些usage requirement / property
 * 只能是library, 不能是executable
 * `add_library(<name> INTERFACE [IMPORTED [GLOBAL]])`
 
