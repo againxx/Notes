@@ -191,6 +191,22 @@ reveal_type(get_foo(1))    # Foo
 To find out what type mypy infers for an expression anywhere in your program, wrap it in `reveal_type()`.  
 Mypy will print an error message with the type; remove it again before running the code
 
+#### Class Variables (Static Members)
+```python
+from typing import ClassVar
+class Starship:
+    stats: ClassVar[dict[str, int]] = {} # class variable, belongs to the whole class
+    damage: int = 10                     # instance variable, belongs to an object
+```
+
+#### Conditional Import for Type Checking
+* `TYPE_CHECKING` is a special constant assumed to be **True** by 3rd party static type checkers but **False** at runtime
+```python
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from torch import Tensor
+```
+
 ### Duck Type - 鸭子类型
 Duck theorem: if it quacks like a duck, and acts like a duck, then most definitely for all intended purposes it is a duck.
 
