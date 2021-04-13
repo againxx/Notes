@@ -74,6 +74,13 @@ p = &b; // break
 * `up [num]` move num frame up the stack toward outermost frame (if num is positive)
 * `down [num]` num defaults to 1
 
+## Process Information
+* `info proc` check the process id (PID) of debugged executable
+* `info proc mappings` check virtual memory layout
+* `cat /proc/<PID>/maps` check virtual memory layout of the given process
+* `maintenance info sections` can examine elf file sections information and their corresponding loading address
+* `info proc cwd`
+
 ## Attach to Running Process
 * `gdb -p <PID> <program>`
 
