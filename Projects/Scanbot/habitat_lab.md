@@ -4,7 +4,7 @@
 
 ```plantuml
 package base_trainer {
-    class BaseTrainer {
+    abstract class BaseTrainer {
         {static} supported_tasks
         -_setup_eval_config()
         +eval()
@@ -14,20 +14,16 @@ package base_trainer {
         {abstract} -_eval_checkpoint()
     }
 
-    class BaseRLTrainer {
+    abstract class BaseRLTrainer {
         +config
         +num_updates_done
         +num_steps_done
         +flush_secs
         -_last_checkpoint_percent
 
-        {abstract} +train()
         +percent_done()
         +is_done()
         +should_checkpoint()
-        {abstract} +save_checkpoint()
-        {abstract} +load_checkpoint()
-        {abstract} -_eval_checkpoint()
 
         {static} -_pause_envs()
     }
@@ -170,24 +166,71 @@ package embodied_task {
 package vector_env {
     () "_make_env_fn()"
     class VectorEnv {
-        +observation_spaces
-        +number_of_episodes
-        +action_spaces
-        +num_envs
-        -_workers
-        -_auto_reset_done
-        -_mp_ctx
-        -_connection_read_fns
-        -_connection_write_fns
+        +observation_spaces: List
+        +number_of_episodes: List
+        +action_spaces: List
+        -_num_envs: int
+        -_workers: List
+        -_paused: List
+        -_auto_reset_done: bool
+        -_mp_ctx: BaseContext
+        -_connection_read_fns: List
+        -_connection_write_fns: List
 
+        +num_envs()
+        +current_episode()
+        +count_episodes()
+        +episode_over()
+        +get_metrics()
+        +reset()
+        +reset_at()
+        +step()
+        +step_at()
+        +async_step()
+        +async_step_at()
+        +wait_step()
+        +wait_step_at()
+        +pause_at()
+        +resume_all()
+        +call()
+        +call_at()
+        +render()
+        +close()
         -_spawn_workers()
+        -__worker_env()
         -_valid_start_methods()
+        -_warn_cuda_tensors()
     }
 
     class ThreadedVectorEnv {
         -_spawn_workers()
     }
 
+    class _ReadWrapper {
+        read_fn: Callable
+        rank: int
+        is_waiting: bool
+    }
+
+    class _WriteWrapper {
+        write_fn: Callable
+        read_wrapper: _ReadWrapper
+    }
     VectorEnv <|-- ThreadedVectorEnv
+    _WriteWrapper::read_wrapper -- _ReadWrapper
+
+    note right of VectorEnv::num_envs()
+        _num_envs - #_paused
+    end note
+
+    note right of VectorEnv::_warn_cuda_tensors()
+        action tensor is recommenced to be a cpu tensor
+    end note
+
+    note left of ThreadedVectorEnv: easier for debugging
+    note right of ThreadedVectorEnv::_spawn_workers()
+        use Queue and Thread instead of Pipe and Process
+    end note
+
 }
 ```
