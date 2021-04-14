@@ -25,4 +25,5 @@
 
 ## dir() Function
 * The built-in `dir(module_name)` function is used to determine which names the module defines
-* Without arguments, it lists the all types of names defined currently (variables, functions, modules)
+* Without arguments, it lists the all types of names defined by you currently (variables, functions, modules)
+* Use `import builtins; dir(builtins)` to list builtin names
