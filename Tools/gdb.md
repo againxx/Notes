@@ -81,6 +81,11 @@ p = &b; // break
 * `maintenance info sections` can examine elf file sections information and their corresponding loading address
 * `info proc cwd`
 
+## Symbol Information
+* `info sharedlibrary` list currently loaded shared libraries
+* `info functions` list all known function symbols
+* `add-symbol-file <elf_file>` load extra symbols from the given file
+
 ## Attach to Running Process
 * `gdb -p <PID> <program>`
 
