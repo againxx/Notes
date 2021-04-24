@@ -1,56 +1,44 @@
 # Habitat Lab
 
-## Baselines
-
+## Agent
 ```plantuml
-package base_trainer {
-    abstract class BaseTrainer {
-        {static} supported_tasks
-        -_setup_eval_config()
-        +eval()
-        {abstract} +train()
-        {abstract} +save_checkpoint()
-        {abstract} +load_checkpoint()
-        {abstract} -_eval_checkpoint()
+package agent {
+    abstract class Agent {
+        {abstract} +reset()
+        {abstract} +act()
     }
-
-    abstract class BaseRLTrainer {
-        +config
-        +num_updates_done
-        +num_steps_done
-        +flush_secs
-        -_last_checkpoint_percent
-
-        +percent_done()
-        +is_done()
-        +should_checkpoint()
-
-        {static} -_pause_envs()
-    }
-
-    BaseTrainer <|-- BaseRLTrainer
-
-    note right of BaseTrainer::eval()
-        call _eval_checkpoint() defined in derived classes
-    end note
 }
+```
 
-package ppo_trainer {
-    class PPOTrainer {
-        +train()
-        -_init_train()
-        -_init_envs()
+## Environment
+```plantuml
+package env {
+    class Env {
+        +observation_space: SpaceDict
+        +action_space: SpaceDict
+        +number_of_episodes: int
+        +sim: Simulator
+        +task: EmbodiedTask
+        +current_episode: Episode
+        +episode_iterator
+        +episodes: List
+        +episode_start_time: float
+        +episode_over: bool
+        -_config: Config
+        -_dataset: Dataset
+        -_current_episode_index: int
+        -_max_episode_seconds: int
+        -_max_episode_steps: int
+        -_elapsed_steps: int
+        -_elapsed_seconds: float
+
+        +reset()
+        +step()
+        +get_metrics()
+        -_past_limit()
+        -_reset_stats()
+        -_update_step_stats()
     }
-
-    BaseRLTrainer <|-- PPOTrainer
-    note right of PPOTrainer::train()
-        * _init_train()
-        * _init_envs()
-    end note
-}
-
-package env_utils {
-    () "construct_envs()"
 }
 ```
 
@@ -111,7 +99,7 @@ package simulator {
 }
 ```
 
-## Tasks
+## Embodied Task
 ```plantuml
 package embodied_task {
     class Measure {
@@ -232,5 +220,58 @@ package vector_env {
         use Queue and Thread instead of Pipe and Process
     end note
 
+}
+```
+
+## Baselines
+```plantuml
+package base_trainer {
+    abstract class BaseTrainer {
+        {static} supported_tasks
+        -_setup_eval_config()
+        +eval()
+        {abstract} +train()
+        {abstract} +save_checkpoint()
+        {abstract} +load_checkpoint()
+        {abstract} -_eval_checkpoint()
+    }
+
+    abstract class BaseRLTrainer {
+        +config
+        +num_updates_done
+        +num_steps_done
+        +flush_secs
+        -_last_checkpoint_percent
+
+        +percent_done()
+        +is_done()
+        +should_checkpoint()
+
+        {static} -_pause_envs()
+    }
+
+    BaseTrainer <|-- BaseRLTrainer
+
+    note right of BaseTrainer::eval()
+        call _eval_checkpoint() defined in derived classes
+    end note
+}
+
+package ppo_trainer {
+    class PPOTrainer {
+        +train()
+        -_init_train()
+        -_init_envs()
+    }
+
+    BaseRLTrainer <|-- PPOTrainer
+    note right of PPOTrainer::train()
+        * _init_train()
+        * _init_envs()
+    end note
+}
+
+package env_utils {
+    () "construct_envs()"
 }
 ```
