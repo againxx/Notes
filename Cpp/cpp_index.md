@@ -24,3 +24,6 @@
 ## Container
 * [string](string.md)
 * [queue](queue.md)
+
+## Tricks
+* [double-stringize_trick](double-stringize_trick.md)
