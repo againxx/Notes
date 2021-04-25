@@ -145,18 +145,26 @@ Type hint callback function
 def feeder(get_next_item: Callback[[], str]) -> None:
 ```
 
-One can define it's own generic containers by using the `TypeVar` construction, `TypeVar` is like template T in C++, 
-the class inherits from `Generic[T]` is like template class in C++
+#### Generic Type
+
+One can define it's own generic containers by using the `TypeVar` construction, `TypeVar` is like template T in C++,
+the class inherits from `Generic[T]` is like a template class in C++
 ```python
 T = TypeVar('T')
-class Magic(Generic[T]): # Template class
+# Template class
+class Magic(Generic[T]):
     def __init__(self, value: T) -> None:
         self.value: T = value
 
+# Use int to instantiate the Magic template
 def square_values(vars: Iterable[Magic[int]]) -> None:
     for v in vars:
         v.value = v.value * v.value
 ```
+
+A type variable may specify an upper bound of the inheritance chain using `bound=<type>`
+
+#### Position-Only Argument
 
 An argument can be declared position-only by giving it a name starting with two underscores
 ```python
@@ -166,6 +174,8 @@ def quux(__x: int) -> None:
 quux(2) # fine
 quux(__x=3) # error
 ```
+
+#### Function Overload
 
 Function overloads, when you have functions of Union parameters or Union returns, 
 you can use overloads decorator to help type checker understand.
