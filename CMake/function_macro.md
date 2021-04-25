@@ -9,7 +9,8 @@ endfunction()
 
 ## Use arguments
 * All following arguments will not include the function name, unlike bash `$0`
-    * `ARGN` all arguments passed to function
+    * `ARGV` all arguments passed to function
+    * `ARGN` all arguments passed to function except the expected one ("unused" arguments)
     * `ARGC` how many arguments were passed in
     * `ARGV0`, `ARGV1` ... the first, second, ... argument
 
