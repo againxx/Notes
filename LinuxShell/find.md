@@ -4,9 +4,9 @@
 
 ## Tests
 ### Name Test
-* `-name <pattern>`
+* `-name <pattern>` 使用shell通配符
 * `-iname <pattern>` 类似`-name`测试条件, 但是不区分大小写
-* `-path <pattern>` 测试完整路径而不是文件名 
+* `-path <pattern>` 测试完整路径而不是文件名
 * `-regex <pattern>` 使用正则表达式匹配完整路径名, 默认使用Emacs Regular Expression
 
 ### Type Test
