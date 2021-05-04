@@ -20,6 +20,7 @@
 * [template function](template_function.md)
 * [concepts](concepts.md)
 * [class struct difference](class_struct_difference.md)
+* [one definition rule](one_definition_rule.md)
 
 ## Container
 * [string](string.md)
