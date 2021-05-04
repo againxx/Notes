@@ -9,6 +9,7 @@
 * [sanitizers](sanitizers.md)
 * [nm](nm.md)
 * [pkg config](pkg-config.md)
+* [make](make.md)
 
 ## Binary Utils
 * size
