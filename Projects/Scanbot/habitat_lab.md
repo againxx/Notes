@@ -10,6 +10,29 @@ package agent {
 }
 ```
 
+## Dataset
+
+```plantuml
+package dataset {
+    class Episode {
+        +episode_id: str
+        +scene_id: str
+        +start_position: List
+        +start_rotation: List
+        +info: Dict
+        -_shortest_path_cache
+    }
+
+    class Dataset<EpisodeType> {
+        +episodes: List
+        {static} scene_from_scene_path()
+        {static} get_scenes_to_load()
+    }
+
+    Dataset "1" *-- "*" Episode
+}
+```
+
 ## Environment
 ```plantuml
 package env {
@@ -128,7 +151,7 @@ package embodied_task {
         +get_metrics() : Metrics
         +check_measure_dependencies()
         -_get_measure_index()
-        measures
+        +measures: Dict
     }
 
     Measurements "1" *-- "*" Measure
