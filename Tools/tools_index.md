@@ -14,3 +14,4 @@
 ## Binary Utils
 * size
 * xxd
+* [addr2line](addr2line.md)
