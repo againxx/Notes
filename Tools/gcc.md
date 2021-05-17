@@ -11,3 +11,6 @@
 ## Options for Code Generation Conventions
 * `-fcommon` whether to put uninitialized global variables into COMMON block, the default is `-fno-common` (put them in .bss section)
     - this behavior is inconsistent with C++ and may have speed and code size penalty
+
+## Options for Developers
+* `-fdump-class-hierarchy` output a representation of each class's hierarchy and virtual function table layout to a file `<source>.class`
