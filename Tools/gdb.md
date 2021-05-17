@@ -61,6 +61,8 @@ p = &b; // break
 * `printf "<format>", <var>` 用C printf函数的格式显示变量的值(only once)
 * `x/<fmt> <address>` examine memory at address
 * `info reg` show values of registers
+* `info variables` show addresses and symbol names for all global and static variables
+* `p &<symbol_name>` print the address of the symbol
 
 ## Stack back trace
 * `backtrace` display the call stack of current function, current function is at top
