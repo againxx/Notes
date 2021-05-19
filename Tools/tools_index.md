@@ -15,3 +15,6 @@
 * size
 * xxd
 * [addr2line](addr2line.md)
+
+## Performance
+* [perf](perf.md)
