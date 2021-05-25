@@ -106,3 +106,4 @@ find ~ -print -type f -name '*.bak'
 | `-mount`             | 指导find不要搜索挂载到其他文件系统上的目录                                                             |
 | `-noleaf`            | 指导find不要基于搜索类Unix的文件系统作出的假设, 来优化它的搜索, 当扫描Windows文件系统, 或者CD-ROMs使用 |
 | `-regextype <type>`  | 设置所使用的正则表达式类型, `-regextype help`查看可用类型                                              |
+| `-L`                 | follow symbol links, 有时候有些文件找不到, 可能是因为对应的目录是链接                                  |
