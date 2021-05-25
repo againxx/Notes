@@ -103,3 +103,9 @@ fun:main
 * Mismatched free() / delete / delete []
 * Source and destination overlap in memcpy
 * Argument ’size’ of function malloc has a fishy (possibly negative) value
+
+## Cooperate with GDB
+* `--vgdb=<no/yes/full>` valgrind will provide a "gdbserver" when `yes/full` is specified
+    - `vgdb` is a valgrind version "gdb" command line tool, which can send monitor commands to the valgrind when no gdb is being used
+* `--vgdb-error=<number>` freeze the program after number errors
+* `--vgdb-stop-at=<set>` freeze the program for other events
