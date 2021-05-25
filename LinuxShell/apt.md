@@ -28,3 +28,4 @@
 ## Other apt-related tools
 * `apt-file show/list <package_name>` list contents of a package
 * `apt-file search <relative_path>/<file_name>` search which package contains the given file
+* `apt-cache search` 类似`apt search`
