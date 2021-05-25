@@ -7,6 +7,9 @@
 
 ## Options That Control Optimization
 * `-fif-conversion` attempt to transform conditional jumps into branch-less equivalents (e.g. conditional moves)
+* `-fomit-frame-pointer` don't keep the frame pointer in a register (RBX) for functions that don't need one
+    - this can make RBX be used as general purpose register and spare the room for optimizations
+    - but make the debugger harder for back tracing (don't know where the stack frames begin and end)
 
 ## Options for Code Generation Conventions
 * `-fcommon` whether to put uninitialized global variables into COMMON block, the default is `-fno-common` (put them in .bss section)
@@ -14,3 +17,6 @@
 
 ## Options for Developers
 * `-fdump-class-hierarchy` output a representation of each class's hierarchy and virtual function table layout to a file `<source>.class`
+
+## Reference
+[c - Trying to understand gcc option -fomit-frame-pointer - Stack Overflow](https://stackoverflow.com/questions/14666665/trying-to-understand-gcc-option-fomit-frame-pointer)
