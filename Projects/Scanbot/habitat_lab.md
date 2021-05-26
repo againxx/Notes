@@ -69,8 +69,8 @@ package env {
 ```plantuml
 package simulator {
     class Simulator {
-        sensor_suite
-        action_space
+        +sensor_suite: SensorSuite
+        +action_space: Space
 
         +reset()
         +step()
@@ -93,14 +93,21 @@ package simulator {
     }
 
     class AgentState {
-        position
-        rotation
+        +position: ndarray
+        +rotation: ndarray
     }
 
     class ShortestPathPoint {
-        position
-        rotation
-        action
+        +position: List
+        +rotation: List
+        +action: int
+    }
+
+    class SensorSuite {
+        +sensors: Dict
+        +observation_spaces: spaces
+        +get(): Sensor
+        +get_observations(): Observations
     }
 
     enum SensorType {
@@ -123,23 +130,38 @@ package simulator {
 ```
 
 ## Embodied Task
+* Each `Action` has its own state for each episode, which will be reset in `Action::reset`
+* `EmbodiedTask::reset` will reset `_sim` and `actions` state
+* `Measure` is used for performance metrics and rewards
+    - `reset_metric()` is called from `env.Env` on reset
+    - `update_metric()` is called from `env.Env` on step
+* `Measurements` is a collection of `Measure`
+    - `reset_measures()` call all `measure.reset_metric()`
+    - `update_measures()` call all `measure.update_metric()`
+    - one measure can depend on other measures, use `check_measure_dependencies()` for assertion
+
 ```plantuml
 package embodied_task {
-    class Measure {
-        reset_metric()
-        update_metric()
-        get_metric()
-        uuid
-        _metric
+    abstract class Action {
+        {abstract} +reset()
+        {abstract} +step(): Observations
+        {abstract} +action_space
     }
 
-    note right of Measure::reset_metric()
-        called from env.Env on reset()
-    end note
+    abstract class SimulatorTaskAction {
+        -_config: Config
+        -_sim: Simulator
+    }
 
-    note right of Measure::update_metric()
-        called from env.Env on step()
-    end note
+    Action <|-- SimulatorTaskAction
+
+    abstract class Measure {
+        {abstract} +reset_metric()
+        {abstract} +update_metric()
+        +get_metric()
+        {abstract} +uuid: str
+        -_metric
+    }
 
     class Metrics {
         dict
@@ -157,18 +179,196 @@ package embodied_task {
     Measurements "1" *-- "*" Measure
     Measurements::get_metrics -> Metrics
 
-    note left of Measurements::reset_measures()
-        call all measure.reset_metric()
-    end note
+    class EmbodiedTask {
+        +measurements: Measurements
+        +sensor_suite: SensorSuite
+        +actions: OrderedDict
+        -_sim: Simulator
+        -_dataset: Dataset
+        +action_space: ActionSpace
+        +is_episode_active: bool
+        +reset(): Observations
+        +step(): Observations
+        +get_action_name()
+        {abstract} +overwrite_sim_config(): Config
+        {abstract} -_check_episode_is_active(): bool
+        +seed()
+        -_init_entities()
+    }
+}
 
-    note left of Measurements::update_measures()
-        call all measure.update_metric()
-    end note
+package nav {
+    class NavigationGoal {
+        +position: List
+        +radius
+    }
 
-    note left of Measurements::check_measure_dependencies()
-        one measure can depend on other measures
-    end note
+    class RoomGoal {
+        +room_id: str
+        +room_name: [str]
+    }
 
+    NavigationGoal <|-- RoomGoal
+    dataset::Episode <|-- NavigationEpisode
+    NavigationEpisode "1" *-- "*" NavigationGoal
+
+    class NavigationEpisode {
+        +goals: List
+        +start_room: [str]
+        +shortest_paths
+    }
+
+    class Success {
+        -_get_uuid(): str
+        +reset_metric()
+        +update_metric()
+    }
+
+    class SPL {
+        -_get_uuid(): str
+        +reset_metric()
+        -_euclidean_distance()
+        +update_metric()
+    }
+
+    class SoftSPL {
+        -_get_uuid(): str
+        +reset_metric()
+        +update_metric()
+    }
+
+    class Collisions {
+        -_get_uuid(): str
+        +reset_metric()
+        +update_metric()
+    }
+
+    class DistanceToGoal {
+        -_get_uuid(): str
+        +reset_metric()
+        +update_metric()
+    }
+
+    class TopDownMap {
+        -_get_uuid(): str
+        +get_original_map()
+        -_draw_point()
+        -_draw_goals_view_points()
+        -_draw_goals_positions()
+        -_draw_goals_aabb()
+        -_draw_shortest_path()
+        -_is_on_same_floor()
+        +reset_metric()
+        +update_metric()
+        +get_polar_angle()
+        +update_map()
+        +update_fog_of_war_mask()
+    }
+
+    Measure <|-- Success
+    Measure <|-- SPL
+    SPL <|-- SoftSPL
+    Measure <|-- Collisions
+    Measure <|-- DistanceToGoal
+    Measure <|-- TopDownMap
+
+    class MoveForwardAction {
+        +step()
+    }
+    class TurnLeftAction {
+        +step()
+    }
+    class TurnRightAction {
+        +step()
+    }
+    class StopAction {
+        +reset()
+        +step()
+    }
+    class LookUpAction {
+        +step()
+    }
+    class LookDownAction {
+        +step()
+    }
+    class TeleportAction {
+        +step()
+        +action_space()
+        -_get_uuid()
+    }
+
+    SimulatorTaskAction <|-- MoveForwardAction
+    SimulatorTaskAction <|-- TurnLeftAction
+    SimulatorTaskAction <|-- TurnRightAction
+    SimulatorTaskAction <|-- StopAction
+    SimulatorTaskAction <|-- LookUpAction
+    SimulatorTaskAction <|-- LookDownAction
+
+    class PointGoalSensor {
+        -_sim
+        -_goal_format
+        -_dimensionality
+        +get_observation()
+    }
+
+    class ImageGoalSensor {
+        -_sim
+        +get_observation()
+    }
+
+    class IntegratedPointGoalGPSAndCompassSensor {
+        +get_observation()
+    }
+
+    class HeadingSensor {
+        -_sim
+        +get_observation()
+    }
+
+    class EpisodicCompassSensor {
+        +get_observation()
+    }
+
+    class EpisodicGPSSensor {
+        -_sim
+        -_dimensionality
+        +get_observation()
+    }
+
+    class ProximitySensor {
+        -_sim
+        -_max_detection_radius
+        +get_observation()
+    }
+
+    simulator::Sensor <|-- PointGoalSensor
+    simulator::Sensor <|-- ImageGoalSensor
+    PointGoalSensor <|-- IntegratedPointGoalGPSAndCompassSensor
+    simulator::Sensor <|-- HeadingSensor
+    HeadingSensor <|-- EpisodicCompassSensor
+    simulator::Sensor <|-- EpisodicGPSSensor
+    simulator::Sensor <|-- ProximitySensor
+
+    class NavigationTask {
+        +overwrite_sim_config()
+        -_check_episode_is_active(): bool
+    }
+
+    EmbodiedTask <|-- NavigationTask
+}
+```
+
+## Utils
+```plantuml
+package logging {
+    class HabitatLogger {
+
+    }
+
+    class Logger <<builtin>> {
+    }
+
+    Logger <|-- HabitatLogger
 }
 ```
 
@@ -247,6 +447,11 @@ package vector_env {
 ```
 
 ## Baselines
+#### PPOTrainer Procedure
+1. `_init_train()`
+2. `_init_envs()`
+3. `_compute_actions_and_step_envs()`
+
 ```plantuml
 package base_trainer {
     abstract class BaseTrainer {
@@ -285,16 +490,36 @@ package ppo_trainer {
         +train()
         -_init_train()
         -_init_envs()
+        -_compute_actions_and_step_envs()
     }
 
     BaseRLTrainer <|-- PPOTrainer
-    note right of PPOTrainer::train()
-        * _init_train()
-        * _init_envs()
-    end note
+}
+
+package ppo {
+    class PPO {
+
+    }
+}
+
+package rollout_storage {
+    class RolloutStorage {
+        +buffers: TensorDict
+        +buffers[observations]
+        +buffers[recurrent_hidden_states]
+        +buffers[rewards]
+        +buffers[value_preds]
+        +buffers[returns]
+        +buffers[action_log_probs]
+        +buffers[actions]
+        +buffers[prev_actions]
+        +buffers[masks]
+    }
 }
 
 package env_utils {
     () "construct_envs()"
 }
 ```
+
+
