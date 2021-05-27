@@ -35,5 +35,8 @@
 * [reStructuredText](reStructuredText.md)
 * [multiprocessing](multiprocessing.md)
 
+## Builtin Types
+* [dict_view_object](dict_view_object.md)
+
 ## Magic Methods
 * [__new__method](__new__method)
