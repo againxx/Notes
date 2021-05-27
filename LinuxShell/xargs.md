@@ -37,3 +37,6 @@
 * `xargs rm < install_manifest.txt` 删除cmake install安装的文件
 * `cat install_manifest.txt | xargs -l1 dirname | sudo xargs rmdir -p` 删除cmake install留下的空目录
     - 可能会有很多报错, 因为要删除的目录非空, 可以通过`rmdir`的`--ignore-fail-on-non-empty`参数来抑制错误输出
+
+## Miscellaneous
+* `xargs` can only run with standalone executable but not builtin commands, so we cannot use `xargs cd`
