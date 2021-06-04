@@ -134,6 +134,7 @@ Test equaling of two floats
 from numpy.testing import assert_almost_equal, assert_array_almost_equal
 assert_almost_equal(actual, desired, decimal=7)
 assert_array_almost_equal(actual_arr, desired_arr, decimal=7)
+assert np.allclose(actual, desired)
 ```
 
 ### Image Testing
