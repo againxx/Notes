@@ -18,5 +18,8 @@
 ## Options for Developers
 * `-fdump-class-hierarchy` output a representation of each class's hierarchy and virtual function table layout to a file `<source>.class`
 
+## Precompiled Headers
+* `gcc xxx.h` compile header files will generate a precompiled headers that accelerate following compilations
+
 ## Reference
 [c - Trying to understand gcc option -fomit-frame-pointer - Stack Overflow](https://stackoverflow.com/questions/14666665/trying-to-understand-gcc-option-fomit-frame-pointer)
