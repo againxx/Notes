@@ -1,6 +1,7 @@
 # Notes
 
 * [Linux Shell](LinuxShell/linux_shell_index.md)
+* [Linux OS](LinuxOS/linux_os_index.md)
 * [Vim](Vim/vim_index.md)
 * [Python](Python/python_index.md)
 * [PyTorch](PyTorch/pytorch_index.md)
