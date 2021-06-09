@@ -6,3 +6,4 @@
 4. `tealdeer`
 5. `bat`
 6. `procs` ps的替代品
+7. `as-tree` print a list of paths as a tree

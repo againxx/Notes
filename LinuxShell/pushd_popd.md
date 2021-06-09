@@ -6,3 +6,4 @@
 4. `popd` 删除栈顶目录(出栈)
 5. `pushd -n` 选择`dirs -v`中的第n个目录
 6. `popd -n` 删除`dirs -v`中的第n个目录
+7. `~-n / ~+n` will expand to the same directory as `pushd -n / +n`

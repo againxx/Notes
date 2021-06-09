@@ -33,3 +33,4 @@
 | `-j, --junk-seesion-cookies`   | Ignore session cookies read from file              |
 | `-f, --fail`                   | Fail silently (no output at all) on HTTP errors    |
 | `--create-dirs`                | 创建必要的本地文件夹                               |
+| `-i`                           | Include the HTTP response headers                  |
