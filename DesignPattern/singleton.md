@@ -1,5 +1,7 @@
 # Singleton
 
+> Ensure a class only has one instance, and provide a global point of access to it.
+
 ## Advantage
 * Singleton may not be necessary in C++, the same functionality can be achieved by global variable and functions encapsulated in a namespace
 * But using a class can still organize things well (global variables and functions)
