@@ -24,4 +24,5 @@
 * [exa](exa.md)
 * [ulimit](ulimit.md)
 * [special_parameters](special_parameters.md)
+* [parameter_expansion](parameter_expansion.md)
 * [zip](zip.md)
