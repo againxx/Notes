@@ -11,7 +11,7 @@
 6. `sudo apt install <package_name>=<version_number>`
 7. `sudo apt remove`和`sudo apt purge`: purge同时删除配置文件，能对已经remove的包purge
 8. `apt search <search_term>`
-9. `apt show <package_name>`
+9. `apt show <package_name>` can show package dependencies
 10. `apt list --upgradeable`
 11. `apt list --installed`
 12. `apt list --all-versions`列出适合当前系统的所有包
