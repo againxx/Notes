@@ -37,10 +37,10 @@ class Cube(Square):
 and the `__init__()` of the superclass (`Square`) will be called automatically.
 
 ## A super() Deep Dive
-`super()` can also take two parameters
+`super(type, [object-or-type])` can also take two parameters
 1. the first parameter is the subclass type
 2. the second parameter is an object that is an instance of that subclass
-3. the second parameter can also be a type, in which case `issubclass(type2, type2)` must be true (this is useful for classmethods)
+3. the second parameter can also be a type, in which case `issubclass(type2, type)` must be true (this is useful for classmethods)
 
 ### The First Parameter
 ```python
@@ -74,6 +74,9 @@ the method returned is just a function, unassociated with an object’s context.
 > **Note**: Technically, `super()` doesn’t return a method. It returns a **proxy** **object**.
 > This is an object that delegates calls to the correct class methods without
 > making an additional object in order to do so.
+
+The second parameter can determine the method resolution order (mro) to be searched. The search starts from the class right after the first argument
+For example, if `__mro__` of second argument is (D -> B -> C -> A -> object) and the value of first argument is B, then super() searches (C -> A -> object)
 
 ## Reference
 [Supercharge Your Classes With Python super()](https://realpython.com/python-super/#super-in-multiple-inheritance)
