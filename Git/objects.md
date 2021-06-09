@@ -17,8 +17,9 @@ There are four types of objects in git, git stores *snapshots* instead of *diffe
 * A tree is a simple object that has a bunch of pointers to blobs and other trees, which represents the content of a directory or subdirectory
 ![tree object](https://gitee.com/againxx/image-storage/raw/master/images/object-tree.png =300x)
 
-* `git show <SHA1>`
+* `git show <SHA1>` list only file / directory names
 * `git ls-tree <SHA1>` include SHA1 code and permission mode for every object referenced by the tree
+* `git cat-file -p <SHA1>` same as `ls-tree`
 
 ```shell
 $ git ls-tree fb3a8bdd0ce
@@ -39,6 +40,7 @@ $ git ls-tree fb3a8bdd0ce
 * The commit object links a physical state of a tree with a description of how we got there and why
 ![commit object](https://gitee.com/againxx/image-storage/raw/master/images/object-commit.png =300x)
 
+* `git cat-file -p <SHA1>` without commit object SHA1
 * `git show -s --pretty=raw <SHA1>`
 ```shell
 $ git show -s --pretty=raw 2be7fcb476
