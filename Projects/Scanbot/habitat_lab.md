@@ -34,6 +34,14 @@ package dataset {
 ```
 
 ## Environment
+Environment contains three major components
+* Dataset
+* Simulator
+    - Determine one sort of observation_spaces (sensor_suite)
+* Task
+    - Determine another sort of observation_spaces (sensor_suite)
+    - Determine action_space
+
 ```plantuml
 package env {
     class Env {
@@ -62,33 +70,57 @@ package env {
         -_reset_stats()
         -_update_step_stats()
     }
+
+    class RLEnv {
+        -_env: Env
+        +habitat_env
+        +episodes
+        +current_episode
+        +observation_space
+        +action_space
+        +number_of_episodes
+        +reward_range
+        +reset()
+        +step()
+        {abstract} +get_reward_range()
+        {abstract} +get_reward()
+        {abstract} +get_done()
+        {abstract} +get_info()
+        +seed()
+        +render()
+        +close()
+        +__enter__()
+        +__exit__()
+    }
+
+    gym.Env <|-- RLEnv
 }
 ```
 
 ## Simulator
 ```plantuml
 package simulator {
-    class Simulator {
-        +sensor_suite: SensorSuite
-        +action_space: Space
+    abstract class Simulator {
+        {abstract} +sensor_suite: SensorSuite
+        {abstract} +action_space: Space
 
-        +reset()
-        +step()
-        +seed()
-        +reconfigure()
-        +geodesic_distance()
-        +get_agent_state()
-        +get_observation_at()
-        +sample_navigable_point()
-        +is_navigable()
-        +action_space_shortest_path()
-        +get_straight_shortest_path_points()
-        +up_vector()
-        +forward_vector()
-        +render()
+        {abstract} +reset(): Observations
+        {abstract} +step(): Observations
+        {abstract} +seed()
+        {abstract} +reconfigure()
+        {abstract} +geodesic_distance(): float
+        {abstract} +get_agent_state(): AgentState
+        {abstract} +get_observation_at(): Observations
+        {abstract} +sample_navigable_point(): List[float]
+        {abstract} +is_navigable(): bool
+        {abstract} +action_space_shortest_path(): List[ShortestPathPoint]
+        {abstract} +get_straight_shortest_path_points(): List[List[float]]
+        {abstract} +up_vector(): ndarray
+        {abstract} +forward_vector(): ndarray
+        {abstract} +render()
         +close()
-        +previous_step_collided()
-        +__enter__()
+        {abstract} +previous_step_collided(): bool
+        +__enter__(): Simulator
         +__exit__()
     }
 
@@ -501,6 +533,22 @@ package ppo {
 
     }
 }
+
+package environments {
+    () "get_env_class()"
+
+    class NavRLEnv {
+        +reset()
+        +step()
+        +get_reward_range()
+        +get_reward()
+        +get_done()
+        +get_info()
+        -_episode_success()
+    }
+    env.RLEnv <|-- NavRLEnv
+}
+
 
 package rollout_storage {
     class RolloutStorage {

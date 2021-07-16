@@ -10,6 +10,7 @@
 * `-fomit-frame-pointer` don't keep the frame pointer in a register (RBX) for functions that don't need one
     - this can make RBX be used as general purpose register and spare the room for optimizations
     - but make the debugger harder for back tracing (don't know where the stack frames begin and end)
+* `-ffunction-sections / -fdata-sections` place each function or data item into its own section in the output file
 
 ## Options for Code Generation Conventions
 * `-fcommon` whether to put uninitialized global variables into COMMON block, the default is `-fno-common` (put them in .bss section)

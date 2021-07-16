@@ -1,8 +1,18 @@
 # Targets
 
+Target is to CMake what object is to C++
+
 ## Two Main Ways to Add Targets
 * `add_executable`
 * `add_library`
+
+## PUBLIC, PRIVATE, and INTERFACE
+![Keywords example](https://gitee.com/againxx/image-storage/raw/master/images/04-mermaid-libs.svg =750x)
+
+* Only `Interface Library`, `Public Library`, and `Main Library` will affect `myprogram`
+* There are two collections of properties
+    - **private properties** control what happens when you build that target (`PRIVATE`, `PUBLIC`)
+    - **interface properties** tell targets linked to this one what to do when building (`PUBLIC`, `INTERFACE`)
 
 ## Pseudo Targets
 Don't represent outputs of the buildsystem, but only input such as external dependencies, aliases or other non-build artifacts
@@ -35,6 +45,22 @@ Reasons:
 #### Interface Imported
 需要导入外部的纯头文件库的时候使用INTERFACE IMPORTED target
 
+## Describe the relationship between targets
+CMake use `target_link_libraries` and keywords `PUBLIC`, `PRIVATE`, `INTERFACE` to connect targets together
+
+### The importance of head files
+> You have a library, `my_lib`, made from `my_lib.hpp` and `my_lib.cpp.` It requires at least C++14 to compile.
+> If you then add my_exe, and it needs `my_lib,` should that force `my_exe` to compile with C++14 or better?
+
+1. Whether `my_exe` needs C++14 or not is a build requirement
+2. Build requirement often relies on **dependence's header files**
+3. If header file `my_lib.hpp` contains C++14 features, this is a **PUBLIC** requirement
+4. If header file is valid in all versions of C++, and only the implementations inside `my_lib.cpp` require C++14, then this is a **PRIVATE** requirement
+5. If the `my_lib.cpp` does not include the `my_lib.hpp` and does not require C++14, the need of C++14 from `my_lib.hpp` is a **INTERFACE** requirement
+
+
 ## Reference
 * [[https://stackoverflow.com/questions/36648375/what-are-the-differences-between-imported-target-and-interface-libraries|imported vs interface]]
 * [cmake - Can I install shared imported library? - Stack Overflow](https://stackoverflow.com/questions/41175354/can-i-install-shared-imported-library)
+* [Working with Targets – More Modern CMake](https://hsf-training.github.io/hsf-training-cmake-webpage/04-targets/index.html)
+* [CMake target_link_libraries Interface Dependencies - Stack Overflow](https://stackoverflow.com/questions/26037954/cmake-target-link-libraries-interface-dependencies)

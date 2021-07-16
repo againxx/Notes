@@ -30,6 +30,7 @@ And the libraries are looked for in the same directory where the executable is f
 **Note:**
 * Using `gcc -L <path/to/libraries>` only let the linker add dependency successfully, but it will not add the specified path into `rpath`
 * By using `ldd`, the dependent libraries will be marked `not found`
+* `LD_DEBUG` environment variable can be set to see the dynamic linking debug info
 
 ### After compilation
 * `chrpath -r ` this command could fail if no rpath was set previously

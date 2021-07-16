@@ -52,6 +52,7 @@ p = &b; // break
 * `step` step into
 * `stepi` step into function call at assembly level
 * `finish` exit current function and return to the caller function
+* `until [location]` Execute until past the current line or past a `location`
 
 ## Disassemble
 * `disass[emble]` 反汇编
@@ -79,7 +80,7 @@ p = &b; // break
 ## Assignment
 * `print x=4` set x to 4 and print the result
 * `set x=4` only set x to 4 and do not change the value history
-* `set variable x=4` `set` has many subcommannd, prefer `set variable` to avoid conflicts
+* `set variable x=4` set has many subcommannd, prefer `set variable` to avoid conflicts
 * `set {int}0x83040 = 4` store values into arbitrary memory location
 
 ## Stack back trace
