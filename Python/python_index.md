@@ -4,6 +4,7 @@
 * [pip](pip.md)
 * [virtualenv](virtualenv.md)
 * [conda](conda.md)
+* [wheels](wheels.md)
 * [exception](exception.md)
 * [type hints](type_hints.md)
 * [decorators](decorators.md)
