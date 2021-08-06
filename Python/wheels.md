@@ -7,7 +7,7 @@
 
 ## Source distribution
 * Contain not only python code but the source code of any extension modules (such as C or C++)
-* These extension modules need to be compiled at user's side 
+* These extension modules need to be compiled at user's side
 * Source distribution also contain a bundle of metadata sitting in a directory called `<package-name>.egg-info`
     - which helps with building and installign the package
 * A source distribution will get created with `python setup.py sdist`
