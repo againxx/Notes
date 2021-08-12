@@ -22,6 +22,7 @@
 * [class struct difference](class_struct_difference.md)
 * [one definition rule](one_definition_rule.md)
 * [vtable](vtable.md)
+* [types](types.md)
 
 ## Container
 * [string](string.md)
