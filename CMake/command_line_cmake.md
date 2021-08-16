@@ -69,5 +69,8 @@ CMAKE_BUILD_TYPE影响:
 | `--prefix <prefix>` | overide installation prefix |
 | `-v, --verbose`     | enable verbose output       |
 
-## 4. Reference
+## 4. Cross compiling
+`cmake -DCMAKE_TOOLCHAIN_FILE=path/to/file` will load a toolchain file to set values for compilers
+
+## 5. Reference
 [Complete Version](https://cmake.org/cmake/help/latest/manual/cmake.1.html)

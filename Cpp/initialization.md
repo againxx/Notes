@@ -33,6 +33,7 @@
 
 ### 值初始化的情况
 * 如果对std::array进行列表初始化, 初始值的数目必须等于或小于array的大小, 如果初始值数目小于array的大小, 它们被用来初始array中靠前的元素, 所有剩余元素进行值初始化
+* For **aggregate class**, when using list initialization, if the number of initial values less than the number of members, the remained members will be value-initialized
 
 ## 列表初始化 (list initialization)
 
