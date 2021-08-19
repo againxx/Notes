@@ -28,6 +28,8 @@ from sound.effects import *
 * Relative imports will use leading dots. A single leading dot indicates a relative import, starting with the current package.
 Two or more leading dots give a relative import to the parent(s) of the current package, one level per dot after the first.
 * Relative imports must always use `from <> import`; `import <>` is always absolute
+* When a module is run as a scirpt (main file) inside a package, this scirpt cannot use relative import
+    - `python attempted relative import with no known parent package`
 
 ```python
 from . import echo
