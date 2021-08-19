@@ -41,3 +41,6 @@
 
 ## Magic Methods
 * [__new__method](__new__method)
+
+## Interact with C
+* [buffer protocol](buffer_protocol.md)
