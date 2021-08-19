@@ -11,3 +11,6 @@ Difference between **interface** and **mixin**:
 
 ## Goal
 The main goal of trait is horizontal code reuse and not wanting to necessarily inherit from an abstract class
+
+## Type traits in C++
+* In C++, type traits are a suit of templates defined in `<type_traits>` which can be used for type transformation in template metaprogramming

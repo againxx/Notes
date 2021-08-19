@@ -22,5 +22,12 @@
 ## Type traits
 > A type traits is a (templated) struct, and the member variable(s) and/or member types of the struct give you information about the type that it is templated on
 
+### Why should we use type traits?
+1. Writing generic algorithms
+2. Restrict templates (use `enable_if`)
+3. Provide optimized version of generic code for some types
+    - `std::vector` will check if type T is movable and non-except when allocating new memory, otherwise it has to copy the old elements instead (strong exception guarantee)
+    - Further more, `std::vector` can check trivial copyable to decide whether to use `memcpy` directly without calling constructor, which is even faster
+
 ## Reference
 [CppCon 2015:Marshall Clow “Type Traits - what are they and why should I use them?" - YouTube](https://www.youtube.com/watch?v=VvbTP_k_Df4)
