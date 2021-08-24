@@ -208,6 +208,7 @@ class Starship:
     stats: ClassVar[dict[str, int]] = {} # class variable, belongs to the whole class
     damage: int = 10                     # instance variable, belongs to an object
 ```
+[PEP-526/class_and_instance_variable_annotations](https://www.python.org/dev/peps/pep-0526/#class-and-instance-variable-annotations)
 
 #### Conditional Import for Type Checking
 * `TYPE_CHECKING` is a special constant assumed to be **True** by 3rd party static type checkers but **False** at runtime
