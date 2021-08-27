@@ -3,6 +3,29 @@
 reStructuredText is an official markup language for Python docs and PEPs, which has suffix `.rst`
 
 ## Syntax
+### Paragraphs
+* Chunks of text separated by one or more blank lines
+* All lines of the same paragraph must be in the same level of indentation
+
+### Inline markup
+* italics: one asterisk `*text*`
+* boldface: two asterisks `**text**`
+* code samples: backquotes `` `text` ``
+
+### Lists
+* `#` sign can be used for autonumbered list
+```
+* This is a bulleted list.
+* It has two items, the second
+  item uses two lines.
+
+1. This is a numbered list.
+2. It has two items too.
+
+#. This is a numbered list.
+#. It has two items too.
+```
+
 ### Headers
 ```
 Section header
@@ -71,4 +94,5 @@ For details on how to install, please read :ref:`install-guide`.
 A tool to generate HTMLs from reStructuredText
 
 ## Reference
-[PEP 287 -- reStructuredText Docstring Format | Python.org](https://www.python.org/dev/peps/pep-0287/)
+* [PEP 287 -- reStructuredText Docstring Format | Python.org](https://www.python.org/dev/peps/pep-0287/)
+* [reStructuredText Primer — Sphinx documentation](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html)

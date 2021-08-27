@@ -33,7 +33,6 @@
 * [module](module.md)
 * [package](package.md)
 * [attrs](attrs.md)
-* [reStructuredText](reStructuredText.md)
 * [multiprocessing](multiprocessing.md)
 
 ## Builtin Types
@@ -44,3 +43,6 @@
 
 ## Interact with C
 * [buffer protocol](buffer_protocol.md)
+
+## Documentation
+* [reStructuredText](reStructuredText.md)
