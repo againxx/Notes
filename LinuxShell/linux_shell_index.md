@@ -27,3 +27,4 @@
 * [parameter_expansion](parameter_expansion.md)
 * [zip](zip.md)
 * [arch_cleanup](arch_cleanup.md)
+* [tty_pts](tty_pts.md)
