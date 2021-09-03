@@ -1,6 +1,13 @@
 # Find
 
-`find <directory> [<tests>] [<options>] [<actions>]`
+`find <directories> [<tests>] [<options>] [<actions>]`
+
+* **Tests**: return true or false on the basis of some properties of the examined files
+* **Actions**: have some side effects and return true of false based on whether they are successful or not
+* **Options**:
+    - **global options**: affect the tests or actions specified on any part of the command line
+    - **positional options**: affect only tests or actions which follow them
+* **Operators**: join other items together (for example `-o` and `-a`)
 
 ## Tests
 ### Name Test
