@@ -44,12 +44,14 @@ Buffer即内存中待编辑的文件，例`vim .vimrc .zshrc`会同时打开两�
 | `Ctrl-w + <bar>`               | 水平方向最大化当前窗口                           |
 | `<N>Ctrl-w + <bar>`            | 把当前活动窗口的宽度设为N列                      |
 | `Ctrl-w + =`                   | 使各窗口均等                                     |
-| `Ctrl-w + <>`                  | 左右调整窗口大小, 自定义为`ALT-,.`               |
+| `Ctrl-w + <>`                  | 左右调整窗口大小, 自定义为`ALT-[]`               |
 | `Ctrl-w + +-`                  | 上下调整窗口大小, 自定义为`ALT-=-`               |
 | `lcd <path>`                   | 设置当前窗口的本地工作目录                       |
 | `Ctrl-w + ]`                   | 在水平分割窗口中打开tag所在文件                  |
 | `Ctrl-w + f`                   | 在水平分割窗口中打开光标下的文件                 |
 | `Ctrl-w + F`                   | 在水平分割窗口中打开光标下的文件, 并跳转到指定行 |
+| `:res[ize] <N>, z<N><cr>`      | set current window height to N                   |
+| `:ver[tical] res[ize] <N>`     | set current window width to N                    |
 
 ## Tab (layout)
 Tab是用来配置不同Window布局的
