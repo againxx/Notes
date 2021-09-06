@@ -3,9 +3,9 @@
 Instead of creating a `list` / sequence from `dict.keys()`, python returns a **Dict View Object**
 
 Methods that return dict view objects:
-1. `dict.keys()`
-2. `dict.values()`
-3. `dict.items()`
+1. `dict.keys()`, which should inherit from `collections.abc.KeysView`
+2. `dict.values()`, which should inherit from `collections.abc.ValuesView`
+3. `dict.items()`, which should inherit from `collections.abc.ItemsView`
 
 ## Properties
 * The returned objects will reflect the original dict's change dynamically
