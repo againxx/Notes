@@ -14,7 +14,6 @@
 * [file_types](file_types.md)
 * [numpy](numpy.md)
 * [pandas](pandas.md)
-* [testing](testing.md)
 * [ordered_dict](ordered_dict.md)
 * [namedtuple](namedtuple.md)
 * [heapq](heapq.md)
