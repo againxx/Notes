@@ -31,3 +31,4 @@
 * [true_false](true_false.md)
 * [process management](process_management.md)
 * [quoting](quoting.md)
+* [dmesg](dmesg.md)
