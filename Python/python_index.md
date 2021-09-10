@@ -33,6 +33,7 @@
 * [package](package.md)
 * [attrs](attrs.md)
 * [multiprocessing](multiprocessing.md)
+* [context manager](context_manager.md)
 
 ## Builtin Types
 * [dict_view_object](dict_view_object.md)
