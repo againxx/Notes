@@ -32,3 +32,4 @@
 * [process management](process_management.md)
 * [quoting](quoting.md)
 * [dmesg](dmesg.md)
+* [file system hierarchy](file_system_hierarchy.md)
