@@ -20,3 +20,4 @@
 * [wildcards](wildcards.md)
 * [zsh_git_plugin](zsh_git_plugin.md)
 * [objects](objects.md)
+* [reset](reset.md)
