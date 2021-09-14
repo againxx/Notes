@@ -5,3 +5,4 @@
 * [Trait](trait.md)
 * [AoS vs SoA](aos_soa.md)
 * [Debounce vs Throttle](debounce_vs_throttle.md)
+* [Multiple inheritance](multiple_inheritance.md)
