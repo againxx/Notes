@@ -56,6 +56,13 @@ signature: |
 ```
 
 ## Anchoring
+Anchors and aliases let you identify an item with an anchor, and then refer to that item with an alias later in
+the same document.
+* **Anchors** are identified by an `&` character
+* **Aliases** by an `*` character
+* Anchor names can also be reused, aliases will refer to the most recent instance of an anchor
+* In alias, `<<` is a special key that indicates key-values from another mapping should be merged into this mapping
+
 ```yaml
 person:
     name: &name "Mike"
