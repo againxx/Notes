@@ -9,6 +9,7 @@
 * `git log -p/--patch -U<n>` diffs with <n> lines of context
 * `git log --graph` 以ascii码树的形式展示commit历史
 * `git log --grep` 仅显示包含grep pattern的commit
+* `git log -g` show reflog information with log style output
 
 ## Commit Ranges
 

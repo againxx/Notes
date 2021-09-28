@@ -2,6 +2,7 @@
 
 * [basics](basics.md)
 * [branch](branch.md)
+* [checkout](checkout.md)
 * [config](config.md)
 * [diff](diff.md)
 * [git_tools](git_tools.md)
