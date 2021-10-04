@@ -9,3 +9,4 @@
 * `conda env remove --name, -n <env_name>` 删除环境
 * `conda remove --name, -n <env_name> --all` 删除环境
 * `conda remove [-n <env_name>] <package_list>` 删除指定环境的指定package
+* `$CONDA_PREFIX/conda-meta/<package-name-and-version>-<hash>.json` contains all the metadata of the installed package including all files that the package contains
