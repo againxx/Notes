@@ -37,7 +37,7 @@ And the libraries are looked for in the same directory where the executable is f
 * `patchelf --set-rpath ‘$ORIGIN/path/to/library’ <executable>`
 
 ## RUNPATH
-The only difference between `RPATH` and `RUNPATH` is the order they are searched in. Specifically, their relation to `LD_LIBRARY_PATH` 
+The only difference between `RPATH` and `RUNPATH` is the order they are searched in. Specifically, their relation to `LD_LIBRARY_PATH`
 * `RPATH` is searched in before `LD_LIBRARY_PATH` while `RUNPATH` is searched in after.
 * The meaning of this is that `RPATH` cannot be changed dynamically with environment variables while `RUNPATH` can
 
