@@ -1,7 +1,7 @@
 # Tag
 
 ## Questions
-* What're the lightweight tags and how to create them?
+* What are the lightweight tags and how to create them?
 
 ## Create tag
 * `git tag <tag_name>` create a normal tag
@@ -27,7 +27,10 @@
     - `git push origin --delete <tag_names>`
     - `git push origin :<tag_name>`
 
+## Fetch tag from remote
+* `git fetch --tags`
+
 ## Checkout to tag
-* Cannot directly checkout to a tag (use SHA1 hash reference instead)
+* Cannot directly checkout to a tag (use SHA1 hash reference instead), it actually can !!
 * But can create a branch from a tag and checkout to that branch
     * `git checkout -b <branch_name> <tag_name>`

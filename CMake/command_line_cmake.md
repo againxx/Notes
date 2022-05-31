@@ -34,6 +34,8 @@ CMake project的关键概念:
 
 `-P <cmake-script-file>` run a script
 
+`--system-information` output the default compilers and the corresponding options
+
 **不同CMAKE_BUILD_TYPE的区别**
 
 CMAKE_BUILD_TYPE影响:
@@ -48,6 +50,10 @@ CMAKE_BUILD_TYPE影响:
 3. RelWithDebInfo: `-O2 -g -DNDEBUG`
 4. MinSizeRel: `-Os -DNDEBUG`
 
+For buildsystem that support multi-type configuration, use `CMAKE_CONFIGURATION_TYPES` to set multiple types
+* `cmake .. -G"Visual Studio 12 2017 Win64" -D CMAKE_CONFIGURATION_TYPES="Release;Debug"`
+* `cmake --build . --config Release` use `--config` to decide build which configuration
+
 ## 2. Build a project
 
 构建一个已经生成的binary tree  
@@ -59,7 +65,7 @@ CMAKE_BUILD_TYPE影响:
 | `--target <tgt>..., -t <tgt>...`   | 构建tgt而不是默认的target, 可以指定多个空格分割的target, 可以通过help来查看生成了哪些target |
 | `--clean-first`                    | 先build clean target然后再build                                                             |
 | `--verbose, -v`                    | 开启详细输出, 包括具体的build commands                                                      |
-| `--`                               | 将剩余的参数传给原生build工具                                                               |
+| `--`                               | 将剩余的参数传给原生build工具, 也可以用`-- VERBOSE=1`来开启详细输出                         |
 
 ## 3. Install a project
 `cmake --install <dir> [<options>]`

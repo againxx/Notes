@@ -46,3 +46,4 @@
 39. `strings` 可以打印二进制文件中的字符串, 可以用来查看二进制的gcc编译版本`strings -a <binary/library> |grep "GCC: ("`
 40. `lsb_release` ubuntu上列出发行版信息
 41. `timeout` and `timelimit` terminate the process after period of time
+42. `$$` current shell's pid

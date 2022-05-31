@@ -23,6 +23,7 @@
 * [one definition rule](one_definition_rule.md)
 * [vtable](vtable.md)
 * [types](types.md)
+* [translation_linkage](linkage.md)
 
 ## Container
 * [string](string.md)
@@ -30,3 +31,13 @@
 
 ## Tricks
 * [double-stringize_trick](double-stringize_trick.md)
+
+## GCC
+* [visibility](visibility.md)
+
+## Concurrency
+* [atomic_flag](atomic_flag.md)
+* [sequential consistency](sequential_consistency.md)
+
+## C++20
+* [concept](concept.md)

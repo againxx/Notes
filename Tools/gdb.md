@@ -112,7 +112,7 @@ p = &b; // break
 ## Attach to Running Process
 * `gdb -p <PID> <program>`
 
-In recent linux kernel, if you try to attach debugger to a running process, even if by the same user,
+In recent Linux kernel, if you try to attach debugger to a running process, even if by the same user,
 gdb will politely refuse with error message:
 > ptrace: Operation not permitted.
 
@@ -128,7 +128,7 @@ The reason is a newly enabled security feature YAMA to specifically restrict ins
 ## Signals
 * gdb will capture the debugged program's signals and decide want to do
 * `info signals` check the gdb handlers for different signals
-* `handle <signals_num> [no]stop [no]print [no]pass` change the signal hanlder behaviors
+* `handle <signals_num> [no]stop [no]print [no]pass` change the signal handler behaviors
 * `SIGINT & SIGTRAP` are special, which are used for stop and breakpoint, and will not be passed into the debugged program
     - gdb can add a trap-related instruction to set breakpoints
 

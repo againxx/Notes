@@ -25,9 +25,11 @@
 ### Why should we use type traits?
 1. Writing generic algorithms
 2. Restrict templates (use `enable_if`)
-3. Provide optimized version of generic code for some types
+3. Provide **optimized** version of generic code for some types, first analyze code at compile-time and based on that analysis to choose the optional version
     - `std::vector` will check if type T is movable and non-except when allocating new memory, otherwise it has to copy the old elements instead (strong exception guarantee)
     - Further more, `std::vector` can check trivial copyable to decide whether to use `memcpy` directly without calling constructor, which is even faster
+        - Internally, C functions like `memcmp`, `memset`, `memcpy`, or `memmove` are used
 
 ## Reference
-[CppCon 2015:Marshall Clow “Type Traits - what are they and why should I use them?" - YouTube](https://www.youtube.com/watch?v=VvbTP_k_Df4)
+* [CppCon 2015:Marshall Clow “Type Traits - what are they and why should I use them?" - YouTube](https://www.youtube.com/watch?v=VvbTP_k_Df4)
+* [Type-Traits: Performance Matters - ModernesCpp.com](https://www.modernescpp.com/index.php/type-traits-performance-matters)
