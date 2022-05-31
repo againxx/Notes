@@ -9,4 +9,4 @@ D-Bus is a message bus system (software bus) for inter-process communication, it
     - each user session
         - used for some desktop applications
 
-![D-Bus Demonstration](https://gitee.com/againxx/image-storage/raw/master/images/interprocess-communication-using-dbus.png =750x)
+![D-Bus Demonstration](http://images.againxx.cn/interprocess-communication-using-dbus.png =750x)

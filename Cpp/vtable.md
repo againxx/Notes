@@ -22,7 +22,7 @@ Virtual table is mainly used to support dynamic dispatch
 * vtable exists at class level, meaning there exists a single vtable per class, and is shared by all instances
 * We can use `g++ -fdump-class-hierarchy` to examine virtual table and vpointer
 
-![vtable example](https://gitee.com/againxx/image-storage/raw/master/images/vtables.png =750x)
+![vtable example](http://images.againxx.cn/vtables.png =750x)
 
 ## Vpointer
 * The class having vtable will have an extra member **vpointer**, which points to the virtual table
@@ -30,7 +30,7 @@ Virtual table is mainly used to support dynamic dispatch
 * When a call to a virtual function on an object is performed, the vpointer of that object is used to find the corresponding vtable of the class
 * Next the function name is used as index to the vtable to find the correct routine to be executed
 
-![vpointer example](https://gitee.com/againxx/image-storage/raw/master/images/vpointer.png =750x)
+![vpointer example](http://images.againxx.cn/vpointer.png =750x)
 
 ## Reference
 [Understandig Virtual Tables in C++ | Pablo Arias](https://pabloariasal.github.io/2017/06/10/understanding-virtual-tables/)

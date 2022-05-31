@@ -5,7 +5,7 @@ Linux system directories typically contain three part
 * Category
 * Application
 
-![three parts](https://gitee.com/againxx/image-storage/raw/master/images/20210911082920.png =750x)
+![three parts](http://images.againxx.cn/20210911082920.png =750x)
 
 ## Category part
 #### Categories for programs

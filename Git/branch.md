@@ -56,6 +56,6 @@ There are three different branches to delete
 2. remote origin branch `X`
 3. local remote-tracking branch `origin/X` that tracks the remote X
 
-![remote tracking branch](https://gitee.com/againxx/image-storage/raw/master/images/NLAqw.png)
+![remote tracking branch](http://images.againxx.cn/NLAqw.png)
 
 [great answer about three different branches](https://stackoverflow.com/a/23961231)

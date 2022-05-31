@@ -7,7 +7,7 @@ Target is to CMake what object is to C++
 * `add_library`
 
 ## PUBLIC, PRIVATE, and INTERFACE
-![Keywords example](https://gitee.com/againxx/image-storage/raw/master/images/04-mermaid-libs.svg =750x)
+![Keywords example](http://images.againxx.cn/04-mermaid-libs.svg =750x)
 
 * Only `Interface Library`, `Public Library`, and `Main Library` will affect `myprogram`
 * There are two collections of properties

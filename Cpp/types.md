@@ -16,7 +16,7 @@
 13. member object pointer
 13. member function pointer
 
-![type hierarchy](https://gitee.com/againxx/image-storage/raw/master/images/20210810094936.png =750x)
+![type hierarchy](http://images.againxx.cn/20210810094936.png =750x)
 * there are more integral types now
 
 ## Type traits

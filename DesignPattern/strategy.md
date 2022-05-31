@@ -3,7 +3,7 @@
 > Design a family of algorithms, encapsulate each one, and make them interchangeable.
 > Strategy lets the algorithm vary independently from the clients that use it.
 
-![UML for strategy pattern](https://gitee.com/againxx/image-storage/raw/master/images/20210609174358.png =750x)
+![UML for strategy pattern](http://images.againxx.cn/20210609174358.png =750x)
 
 ## Components
 * Context

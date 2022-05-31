@@ -16,7 +16,7 @@ If HEAD was a merge, then
 * **first parent** is the branch into which we merged,
 * **second parent** is the branch we merged.
 
-![Referencing commits using ~ and ^](https://gitee.com/againxx/image-storage/raw/master/images/git-graph.svg)
+![Referencing commits using ~ and ^](http://images.againxx.cn/git-graph.svg)
 
 ## reflog
 * `git reflog` 可以查看HEAD所指位置的历史记录

@@ -9,13 +9,13 @@ There are four types of objects in git, git stores *snapshots* instead of *diffe
 ## Blob Object
 * Blob is a chunk of binary data, it doesn't have any attributes even a file name
 * Two files have the same contents will share the same blob object (this reduces the redundancy of the same files between different commits)
-![blob object](https://gitee.com/againxx/image-storage/raw/master/images/object-blob.png =300x)
+![blob object](http://images.againxx.cn/object-blob.png =300x)
 
 * `git show <SHA1> / git cat-file -p <SHA1>` to examine its contents
 
 ## Tree Object
 * A tree is a simple object that has a bunch of pointers to blobs and other trees, which represents the content of a directory or subdirectory
-![tree object](https://gitee.com/againxx/image-storage/raw/master/images/object-tree.png =300x)
+![tree object](http://images.againxx.cn/object-tree.png =300x)
 
 * `git show <SHA1>` list only file / directory names
 * `git ls-tree <SHA1>` include SHA1 code and permission mode for every object referenced by the tree
@@ -38,7 +38,7 @@ $ git ls-tree fb3a8bdd0ce
 
 ## Commit Object
 * The commit object links a physical state of a tree with a description of how we got there and why
-![commit object](https://gitee.com/againxx/image-storage/raw/master/images/object-commit.png =300x)
+![commit object](http://images.againxx.cn/object-commit.png =300x)
 
 * `git cat-file -p <SHA1>` without commit object SHA1
 * `git show -s --pretty=raw <SHA1>`
@@ -56,7 +56,7 @@ committer Junio C Hamano <gitster@pobox.com> 1187591163 -0700
 ```
 
 ## Tag Object
-![tag object](https://gitee.com/againxx/image-storage/raw/master/images/object-tag.png =300x)
+![tag object](http://images.againxx.cn/object-tag.png =300x)
 * Tag object can be viewed using `git cat-file tag <tag_name>`
 * `git tag` can also be used to create "lightweight tags", which are not tag objects at all, but just simple references whose names begin with "refs/tags/"
 
@@ -72,7 +72,7 @@ $>tree
 
 2 directories, 3 files
 ```
-![objects example](https://gitee.com/againxx/image-storage/raw/master/images/objects-example.png =750x)
+![objects example](http://images.againxx.cn/objects-example.png =750x)
 
 ## Reference
 [Git Book - The Git Object Model](https://shafiul.github.io//gitbook/1_the_git_object_model.html)

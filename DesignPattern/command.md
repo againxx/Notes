@@ -5,7 +5,7 @@
 
 > Commands are an object-oriented replacement for callbacks
 
-![UML for command pattern](https://gitee.com/againxx/image-storage/raw/master/images/20210611090431.png =750x)
+![UML for command pattern](http://images.againxx.cn/20210611090431.png =750x)
 
 ## Goal
 * Decouple an object that invokes an operation (the Invoker) for the provider object that implements it (the Receiver)

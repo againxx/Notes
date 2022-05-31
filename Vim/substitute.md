@@ -4,7 +4,7 @@
 
 其中range、flags和count是可选的
 
-![Substitute Summary](https://gitee.com/againxx/image-storage/raw/master/images/vim-substitute.jpg =750x)
+![Substitute Summary](http://images.againxx.cn/vim-substitute.jpg =750x)
 
 ## Flags
 * `g` 全局替换, 即将匹配到的所有项都替换掉, 而不仅仅是第一个

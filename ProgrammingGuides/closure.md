@@ -9,7 +9,7 @@
 * A closure can close over free variables (variables that are not defined in the function itself) from outer environment
 * A closure **is not equal** to anonymous function, albeit they always come together
 
-![Closure Demonstration](https://gitee.com/againxx/image-storage/raw/master/images/20210611195814.png =750x)
+![Closure Demonstration](http://images.againxx.cn/20210611195814.png =750x)
 
 ## Examples
 ### Python

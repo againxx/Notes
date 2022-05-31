@@ -1,6 +1,6 @@
 # String
 
-![String Memory Layout](https://gitee.com/againxx/image-storage/raw/master/images/string_layout.png =750x)
+![String Memory Layout](http://images.againxx.cn/string_layout.png =750x)
 * In order to be compatible with c string, the `end()` iterator points to the `\0`
 
 ## Use string in interface

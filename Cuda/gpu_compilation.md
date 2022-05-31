@@ -17,7 +17,7 @@
     - Virtual architecture should always be chosen as **low** as possible, thereby maximizing the actual GPUs to run on.
     - Real architecture should be chosen as **high** as possible (assuming that this always generates better code)
 
-![virtual & real architectures](https://gitee.com/againxx/image-storage/raw/master/images/20211127101041.png =750x)
+![virtual & real architectures](http://images.againxx.cn/20211127101041.png =750x)
 
 ## Further Mechanisms
 Compilation staging in itself does not help towards the goal of application compatibility with future GPUs, there are two other mechanisms
@@ -29,7 +29,7 @@ Compilation staging in itself does not help towards the goal of application comp
 * The command below allows generation of exactly matching GPU binary code, when the application is launched on an `sm_50` or later architecture
     - `nvcc x.cu --gpu-architecture=compute_50 --gpu-code=compute_50`
 
-![just-in-time compilation](https://gitee.com/againxx/image-storage/raw/master/images/20211127103125.png =750x)
+![just-in-time compilation](http://images.againxx.cn/20211127103125.png =750x)
 
 ### Fatbinaries
 * A different solution to overcome startup delay by JIT while still allowing execution on newer GPUs is to specify multiple code instances

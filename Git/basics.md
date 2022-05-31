@@ -54,7 +54,7 @@ Staging area -> Repository
 * `git commit -v` 会打开文本编辑器, 同时详细的输出所有staging area (即将commit的修改) 中文件的diff情况
 * `git commit -a` 跳过使用暂存区域, 把所有已跟踪的文件暂存起来一并提交
 
-![State Transition](https://gitee.com/againxx/image-storage/raw/master/images/20201219095340.png =750x)
+![State Transition](http://images.againxx.cn/20201219095340.png =750x)
 
 ## What is index?
 
