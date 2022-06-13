@@ -10,6 +10,7 @@
 * [Cpp](Cpp/cpp_index.md)
 * [Cuda](Cuda/cuda_index.md)
 * [Java](Java/java_index.md)
+* [Rust](Rust/rust_index.md)
 * [Tmux](Tmux/tmux_index.md)
 * [Testing](Testing/testing_index.md)
 * [Linking](Linking/linking_index.md)
