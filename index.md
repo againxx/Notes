@@ -7,6 +7,8 @@
 * [PyTorch](PyTorch/pytorch_index.md)
 * [Git](Git/git_index.md)
 * [CMake](CMake/cmake_index.md)
+* [Make](Make/make_index.md)
+* [Network](Network/network_index.md)
 * [Cpp](Cpp/cpp_index.md)
 * [Cuda](Cuda/cuda_index.md)
 * [Java](Java/java_index.md)
