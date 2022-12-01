@@ -1,4 +1,4 @@
-# LinuxShell
+# Linux Shell
 
 * [apt](apt.md)
 * [array](array.md)
@@ -12,6 +12,7 @@
 * [redirection](redirection.md)
 * [ripgrep](ripgrep.md)
 * [sed](sed.md)
+* [awk](awk.md)
 * [small commands](small_commands.md)
 * [rust_command_line_tools](rust_command_line_tools.md)
 * [source](source.md)
@@ -33,3 +34,4 @@
 * [quoting](quoting.md)
 * [dmesg](dmesg.md)
 * [file system hierarchy](file_system_hierarchy.md)
+* [sort](sort.md)
