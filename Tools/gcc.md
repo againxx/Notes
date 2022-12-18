@@ -11,6 +11,13 @@
     - this can make RBX be used as general purpose register and spare the room for optimizations
     - but make the debugger **harder** for back tracing (don't know where the stack frames begin and end)
 * `-ffunction-sections / -fdata-sections` place each function or data item into its own section in the output file
+* `-march` tells the compiler that it should produce code for a certain kind of CPU. For instance, to take benefit of AVX instructions
+* `-ftree-vectorize` attempts to vectorize loops using the selected ISA if possible
+    - note that, this option doesn't always improve code, and usually makes the code larger
+* `-mtune` generate more generic code than `-march`; though it will tune code for a certain CPU, it does not take into account available instruction sets and ABI
+
+> Warning:
+> Do not  use -march=native or -mtune=native in CLFAGS or CXXFLAGS variables when compiling with distcc
 
 ## Options for Code Generation Conventions
 * `-fcommon` whether to put uninitialized global variables into COMMON block, the default is `-fno-common` (put them in .bss section)
@@ -28,4 +35,5 @@
 * `gcc xxx.h` will generate a precompiled headers that accelerate following compilations
 
 ## Reference
-[c - Trying to understand gcc option -fomit-frame-pointer - Stack Overflow](https://stackoverflow.com/questions/14666665/trying-to-understand-gcc-option-fomit-frame-pointer)
+* [c - Trying to understand gcc option -fomit-frame-pointer - Stack Overflow](https://stackoverflow.com/questions/14666665/trying-to-understand-gcc-option-fomit-frame-pointer)
+* [[https://wiki.gentoo.org/wiki/GCC_optimization|GCC optimization - Gentoo Wiki]]

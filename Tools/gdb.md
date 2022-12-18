@@ -144,5 +144,13 @@ The reason is a newly enabled security feature YAMA to specifically restrict ins
 * `show/set record stop-at-limit <on/off>` linear-mode / circular-mode when the buffer is full
 * `info record insn-number` show how many instructions are currently saved
 
+## Index Files
+* GDB provides a way to build an index, which speeds up startup. A convenient program called `gdb-add-index` can be used
+to add the index to a symbol file.
+* To create an index file, use the `save gdb-index` command
+* Once you have created and index file, we can merge it into the symbol file using `objcopy`
+    - `objcopy --add-section .gdb_index=symfile.gdb-index --set-section-flags .gdb_index=readonly symfile symfile`
+* It's possible for GDB to automatically save a copy of index in cache on disk by `set index-cache enabled on`
+
 ## Reference
 * [ProcessRecord/Tutorial - GDB Wiki](https://sourceware.org/gdb/wiki/ProcessRecord/Tutorial)

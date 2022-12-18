@@ -10,6 +10,7 @@
 * [nm](nm.md)
 * [pkg config](pkg-config.md)
 * [make](make.md)
+* [ld](ld.md)
 
 ## Cuda
 * [cuda-gdb](cuda-gdb.md)
@@ -18,6 +19,7 @@
 * size
 * xxd
 * [addr2line](addr2line.md)
+* [objcopy](objcopy.md)
 
 ## Performance
 * [perf](perf.md)
