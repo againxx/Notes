@@ -11,5 +11,9 @@ Or the short-hand version:
 * This causes the linker to perform an exhaustive search through all the libs in the group until all symbols are resolved,
 which may have a possible performance impact.
 
+## Environment Variables
+* `LD_DEBUG` can be used to display various information about the runtime linker
+* When `LD_BIND_NOW` is set, all symbol bindings will occur the application gains control
+
 ## gold
 * An alternative linker _gold_  has a `--gdb-index` option to build the gdb index at link time

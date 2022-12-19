@@ -27,3 +27,4 @@
 * [English](English/english_index.md)
 * [Projects](Projects/projects_index.md)
 * [Binary Exploitation](BinaryExploitation/binary_exploitation_index.md)
+* [Rationale](Rationale/rationale_index.md)
