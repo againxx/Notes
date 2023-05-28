@@ -7,6 +7,7 @@
 * [diff](diff.md)
 * [git_tools](git_tools.md)
 * [github](github.md)
+* [github actions](github_actions.md)
 * [head](head.md)
 * [ignore](ignore.md)
 * [log](log.md)
