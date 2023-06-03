@@ -24,6 +24,7 @@
 * [vtable](vtable.md)
 * [types](types.md)
 * [translation_linkage](linkage.md)
+* [atomic](atomic.md)
 
 ## Container
 * [string](string.md)
