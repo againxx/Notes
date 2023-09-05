@@ -32,6 +32,7 @@
 
 ## Tricks
 * [double-stringize_trick](double-stringize_trick.md)
+* [double-checked locking](double-checked_locking.md)
 
 ## GCC
 * [visibility](visibility.md)
