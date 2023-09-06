@@ -28,3 +28,4 @@
 * [Projects](Projects/projects_index.md)
 * [Binary Exploitation](BinaryExploitation/binary_exploitation_index.md)
 * [Rationale](Rationale/rationale_index.md)
+* [Bazel](Bazel/bazel_index.md)
